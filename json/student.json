@@ -7,7 +7,24 @@
     "gradYear":"",
     "major":"",
     "gpa":3.6,
-    "failedCourses":"",
-    "currentCourses":"",
-    "completedCourses":""
+    "failedCourses": [
+      {
+        "courseID": "courseid placeholder"
+      }
+    ],
+    "currentCourses": [
+      {
+        "courseID": "courseid placeholder"
+      }
+     
+    ],
+    "completedCourses": [
+      {
+        "course": {
+          "courseID": "courseid placeholder"
+        },
+        "grade": "A"
+      }
+      
+    ]
 }]
