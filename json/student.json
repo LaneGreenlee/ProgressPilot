@@ -1,0 +1,13 @@
+[{
+    "username":"",
+    "password":"",
+    "firstName":"",
+    "lastName":"",
+    "uscID":"",
+    "gradYear":"",
+    "major":"",
+    "gpa":3.6,
+    "failedCourses":"",
+    "currentCourses":"",
+    "completedCourses":""
+}]
