@@ -1,20 +1,6 @@
 [{
-    "coursesNeeded":[
-        {
-            "courseCode":"",
-            "courseNumber":"",
-            "courseDescription":["",""],
-            "creditHours":3,
-            "isTransfer":false
-        },
-        {
-            "courseCode":"",
-            "courseNumber":"",
-            "courseDescription":["",""],
-            "creditHours":3,
-            "isTransfer":false
-        }
-      ], 
-      "totalCreditHours":16,
-      "IsComplete":false
+    "semesterID":"",
+    "coursesNeeded":["", "", ""], 
+    "totalCreditHours":16,
+    "IsComplete":false
 }]
