@@ -1,8 +1,22 @@
 [{
     "gpaRequirement":2.5,
     "totalHours":125,
-    "college":"",
-    "majorName":"",
-    "courses":"",
-    "majorMap":""
+    "college":"College of Engineering and Computing",
+    "majorName":"Computer_Science",
+    "courses":[
+        {
+            "courseCode":"",
+            "courseNumber":"",
+            "courseDescription":["",""],
+            "creditHours":3,
+            "isTransfer":false
+        },
+        {
+            "courseCode":"",
+            "courseNumber":"",
+            "courseDescription":["",""],
+            "creditHours":3,
+            "isTransfer":false
+        }
+      ]
 }]

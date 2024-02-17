@@ -1,7 +1,7 @@
 [{
     "courseCode":"",
     "courseNumber":"",
-    "courseDescription":"",
+    "courseDescription":["",""],
     "creditHours":3,
     "isTransfer":false
 }]
