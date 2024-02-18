@@ -1,0 +1,10 @@
+[{
+    "courseCode":"CSCE",
+    "courseNumber":"247",
+    "courseAttributes":["PR"],
+    "courseDescription":["Fundamentals of software design and development","software implementation strategies",
+                        "object-oriented design techniques","functional design techniques"],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"f4dbb1b0-a3ce-4334-ac29-883bdf85a1f2"
+}]
