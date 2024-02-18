@@ -1,6 +1,9 @@
 [{
-    "semestersNeeded":["","",""],
-    "student":"",
-    "whatIfCourses":["","",""],
-    "majorMap":["","",""]
+    "semestersNeeded":["faf0e219-4beb-412b-b77c-aceb4b83ac4a","62081639-b2df-490c-87fb-70c0a04ad075",
+                        "2d6782a4-5fb5-4bb2-93cb-0f1f3b8d3c68"],
+    "student":"dfd6364e-d994-4e1f-bf55-1b1fd823b0c4",
+    "whatIfCourses":["d882655e-b016-4a82-abe4-5ed7b6dd8546","77fb0224-0de8-412e-a228-15d53fd1fc6b",
+                    "4f270eec-f8d3-4eff-b124-6df136d74347"],
+    "majorMap":["f4dbb1b0-a3ce-4334-ac29-883bdf85a1f2","673d279c-a44b-498e-913e-e3e26abcfe93",
+                "89f69027-db94-4614-8194-b3c37ecc069a"]
 }]

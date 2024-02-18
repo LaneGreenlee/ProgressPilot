@@ -1,6 +1,7 @@
 [{
-    "semesterID":"",
-    "coursesNeeded":["", "", ""], 
+    "semesterID":"faf0e219-4beb-412b-b77c-aceb4b83ac4a",
+    "coursesNeeded":["cee10ec9-ca43-40f4-abd2-e454dabd79fa", "4048368c-49c0-4e50-9336-f388c61a2ef1",
+                     "497032d5-ff62-45c7-981e-35af7b5cb22e"], 
     "totalCreditHours":16,
     "IsComplete":false
 }]
