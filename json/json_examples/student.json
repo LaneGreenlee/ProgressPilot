@@ -1,0 +1,15 @@
+[{
+    "username":"",
+    "password":"",
+    "firstName":"",
+    "lastName":"",
+    "uscID":"",
+    "user_UUID":"",
+    "gradYear":"",
+    "major":"",
+    "gpa":3.6,
+    "scholarships":["Life","Palmetto Fellows"],
+    "failedCourses":["","",""],
+    "currentCourses":["","",""],
+    "completedCourses":["" ,"",""]
+}]
