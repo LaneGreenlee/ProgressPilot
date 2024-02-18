@@ -4,6 +4,6 @@
     "firstName":"",
     "lastName":"",
     "uscID":"",
-    "userID":"",
+    "user-UUID":"",
     "students":["","",""]
 }]
