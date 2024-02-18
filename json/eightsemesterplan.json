@@ -1,4 +1,6 @@
 [{
     "semestersNeeded":["","",""],
-    "student":""
+    "student":"",
+    "whatIfCourses":["","",""],
+    "majorMap":["","",""]
 }]
