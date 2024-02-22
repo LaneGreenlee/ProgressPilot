@@ -10,6 +10,6 @@ public class MajorList {
     protected void removeMajor (Major major) {
         
     }
-    protected Major getMajor (String majorName) {
-        return major;
+    protected MajorName getMajor (MajorName majorName) {
+        return majorName;
 }
