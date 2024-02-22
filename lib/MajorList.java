@@ -11,5 +11,5 @@ public class MajorList {
         
     }
     protected Major getMajor (String majorName) {
-        return majorName;
+        return major;
 }
