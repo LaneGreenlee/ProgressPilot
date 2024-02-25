@@ -1,6 +1,6 @@
 package lib;
 
-public enum ApplicationArea {
+public enum ApplicationAreaEnum {
     Bioinformatics,
     Cloud_Native_Application_Development,
     Computer_Game_Design_and_Development,
