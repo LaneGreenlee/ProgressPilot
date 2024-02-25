@@ -16,7 +16,7 @@ public class Major {
     public MajorName getMajorName (MajorName majorName) {
         return majorName;
     }
-    public void addApplicationArea (applicationArea apArea) {
-        
+    public void addApplicationArea (ApplicationArea apArea) {
+
     }
 }

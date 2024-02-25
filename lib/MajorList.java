@@ -11,5 +11,6 @@ public class MajorList {
         
     }
     protected MajorName getMajor (MajorName majorName) {
-        return majorName;
+        return null;
+}
 }
