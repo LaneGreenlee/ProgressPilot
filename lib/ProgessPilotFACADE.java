@@ -15,7 +15,7 @@ public class ProgessPilotFACADE {
 
     }
     public ArrayList<Course> getAllCourses() {
-
+        
     }
     public ArrayList<Major> getAllMajors() {
 

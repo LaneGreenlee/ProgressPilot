@@ -1,7 +1,7 @@
 package lib;
 
-import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.HashMap;
 public class EightSemesterPlan {
     private  ArrayList<Semester> semestersNeeded;
     private Student student;
