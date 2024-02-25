@@ -28,13 +28,13 @@ public class Student extends User{
     return this.gpa;
   }
   public String FailedCourseWarning(Course failedcourses) {
-
+    return null;
   } 
   public String scholarshipWarning(double gpa) {
-
+    return null;
   }
   protected boolean meetsRequirements() {
-
+    return false;
   }
   protected void addCurrentCourse(Course course) {
 
