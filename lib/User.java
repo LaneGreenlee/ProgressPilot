@@ -8,7 +8,7 @@ public class User {
     public String lastName;
     public UUID user_UUID;
     protected String uscID;
-    protected User(String userName, String password, String firstName, String lastName, String uscID) {
-        
+    public User(String userName, String password, String firstName, String lastName, String uscID) {
+
     }
 }
