@@ -3,12 +3,12 @@ import java.util.ArrayList;
 public class Advisor {
     protected ArrayList<Student> students;
 
-    public Advisor(ArrayList<Student>) {
+    public Advisor(ArrayList<Student> students) {
 
     }
 
     public String addNotes(String note, Student student ) {
-
+      return null;
     }
 
     protected void addStudent( Student student ) {
@@ -20,16 +20,16 @@ public class Advisor {
     }
 
     protected boolean checkIfFailing(Student student) {
-
+      return false;
     }
     protected void enterGrade (Student student, Course course, Grade grade) {
 
     }
     protected ArrayList<Student> viewStudents() {
-
+      return null;
     }
     protected Course viewCourse() {
-
+      return null;
     }
     protected void createCourse() {
 
