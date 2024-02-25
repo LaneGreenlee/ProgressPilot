@@ -1,14 +1,14 @@
 package lib;
 
-import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.HashMap;
 public class eightsemesterplan {
     private  ArrayList<Semester> semestersNeeded;
     private Student student;
     protected ArrayList<Course> whatIfCourses;
     protected ArrayList<Course> majorMap;
 
-    public eightsemesterplan (Student student, takeCouses ArrayList<Couse>) {
+    public eightsemesterplan (Student student, takeCouses ArrayList<Course>) {
 
     }
     public ArrayList<Course> getMajorMap (Major major) {
