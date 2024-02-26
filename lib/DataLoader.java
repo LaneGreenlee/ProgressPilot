@@ -13,10 +13,17 @@ public class DataLoader {
     public ArrayList<Major> getMajors() {
         return new ArrayList<Major>();
     }
-    public ArrayList<Student> getAllStudents() {
-        
+    public ArrayList<Student> getAllStudents(Advisor advisor) {
+        ArrayList<Student> allStudents = new ArrayList<>();
+        if (advisor != null) {
+            ArrayList<Student> advisorStudents = advisor.viewStudents();
+            if (advisorStudents != null) {
+                allStudents.addAll(advisorStudents);
+            }
+        }
+        return allStudents;
     }
     public ArrayList<Advisor> getAllAdvisors() {
-        
+        return null;
     }
 }
