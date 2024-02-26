@@ -7,15 +7,23 @@ public class Student extends User{
   private String gradYear;
   private Major major;
   private Double gpa;
-  private ArrayList<Scholarship> Scholarships;
+  private ArrayList<Scholarship> scholarships;
   private ArrayList<Course> failedCourses;
   private ArrayList<Course> currentCourses;
   public HashMap<Course, Grade> completedCourses;
 
 
 
-  public Student(String userName, String password, String firstName, String lastName, String uscID) {
+  public Student(String userName, String password, String firstName, String lastName, String uscID,
+                  String gradYear, Major major, Double gpa) {
         super(userName, password, firstName, lastName, uscID);
+        this.gradYear = gradYear;
+        this.major = major;
+        this.gpa = gpa;
+        this.scholarships = new ArrayList<>();
+        this.failedCourses = new ArrayList<>();
+        this.currentCourses = new ArrayList<>();
+        this.completedCourses = new HashMap<>();
         //TODO Auto-generated constructor stub
     }
   protected void addEightSemesterPlan() {

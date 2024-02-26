@@ -13,4 +13,10 @@ public class DataLoader {
     public ArrayList<Major> getMajors() {
         return new ArrayList<Major>();
     }
+    public ArrayList<Student> getAllStudents() {
+        
+    }
+    public ArrayList<Advisor> getAllAdvisors() {
+        
+    }
 }

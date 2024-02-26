@@ -26,7 +26,7 @@ public class Advisor {
 
     }
     protected ArrayList<Student> viewStudents() {
-      return null;
+      return students;
     }
     protected Course viewCourse() {
       return null;
