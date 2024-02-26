@@ -13,7 +13,7 @@ public class Advisor extends User{
     }
 
     protected void addStudent( Student student ) {
-
+      students.add(student);
     }
 
     protected void removeStudent( Student student ) {

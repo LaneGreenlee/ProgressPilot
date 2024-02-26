@@ -6,6 +6,7 @@ import java.util.HashMap;
 public class Student extends User{
   private String gradYear;
   private Major major;
+  private MajorName majorName;
   private Double gpa;
   private ArrayList<Scholarship> scholarships;
   private ArrayList<Course> failedCourses;
@@ -15,10 +16,10 @@ public class Student extends User{
 
 
   public Student(String userName, String password, String firstName, String lastName, String uscID,
-                  String gradYear, Major major, Double gpa) {
+                  String gradYear, MajorName major, Double gpa) {
         super(userName, password, firstName, lastName, uscID);
         this.gradYear = gradYear;
-        this.major = major;
+        this.majorName = major;
         this.gpa = gpa;
         this.scholarships = new ArrayList<>();
         this.failedCourses = new ArrayList<>();
