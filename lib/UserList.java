@@ -8,8 +8,13 @@ public class UserList {
 
     }
     
-    public User getUser() {
+    public static  User getUser(String userName) {
         return null;
+    }
+
+    public static  void addUser(User newUser) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'addUser'");
     }
     
 

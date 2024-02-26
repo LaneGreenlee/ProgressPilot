@@ -5,21 +5,39 @@ import java.util.ArrayList;
 public class ProgessPilotFACADE {
     private User user;
 
+    // Login method
     public User login(String userName, String password) {
-      this.user = UserList.getUser();
-      if (user.getUserName().equals(userName) && user.getPassword().equals(password))
-        return user;
-      else
-        return null;
+        // Assuming UserList.getUser() method is intended to find a user by username
+        this.user = UserList.getUser(userName); // Adjusted to pass userName
+        if (this.user != null && this.user.getPassword().equals(password)) {
+            return this.user;
+        } else {
+            return null;
+        }
     }
-    public void logout() {
 
+    // Logout method
+    public void logout() {
+        this.user = null;
     }
+
+    // Check if a user is logged in
     public boolean isLoggedIn() {
-      if (login(user.getUserName(), user.getPassword())!= null)
-        return true;
-      else
-        return false;
+        return this.user != null;
+    }
+
+    // Signup method
+    public User signup(String userName, String password, String firstName, String lastName, String uscID) {
+        // Check if user already exists
+        if (UserList.getUser(userName) != null) {
+            // User already exists
+            return null;
+        } else {
+            // Create a new user and add it to the user list
+            User newUser = new User(userName, password, firstName, lastName, uscID);
+            UserList.addUser(newUser); // Assuming there's an addUser method in UserList
+            return newUser;
+        }
     }
     public ArrayList<Course> getAllCourses() {
       return null;
