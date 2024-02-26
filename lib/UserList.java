@@ -7,6 +7,7 @@ public class UserList {
     public UserList() {
 
     }
+    
     public User getUser() {
         return null;
     }
