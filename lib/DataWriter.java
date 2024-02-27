@@ -30,7 +30,7 @@ public class DataWriter {
 
     public void saveAllStudents() {
         UserList students = UserList.getInstance();
-        ArrayList<Student> studentList = students.getStudents();
+        ArrayList<Student> studentList = students.getAllStudents();
         JSONArray jsonStudents = new JSONArray();
 
         for (Student student : studentList) {
@@ -42,7 +42,7 @@ public class DataWriter {
 
     public void saveAllAdvisors() {
         UserList advisors = UserList.getInstance();
-        ArrayList<Advisor> advisorList = advisors.getAdvisors(); // Assuming there's a method to get advisors
+        ArrayList<Advisor> advisorList = advisors.getAllAdvisors(); // Assuming there's a method to get advisors
         JSONArray jsonAdvisors = new JSONArray();
 
         for (Advisor advisor : advisorList) {
@@ -61,7 +61,7 @@ public class DataWriter {
         studentDetails.put(USER_USER_NAME, student.getUserName());
         studentDetails.put(USER_PASSWORD, student.getPassword());
         studentDetails.put(STUDENT_GRAD_YEAR, student.getGradYear());
-        studentDetails.put(STUDENT_MAJOR, student.getMajor().toString()); // Assuming Major has a toString method
+        studentDetails.put(STUDENT_MAJOR, student.getMajor().toString()); 
         studentDetails.put(STUDENT_GPA, student.getGPA());
         // Handle scholarships, failedCourses, currentCourses, completedCourses appropriately
         // For lists and maps, you might need to convert them to JSONArray or JSONObject

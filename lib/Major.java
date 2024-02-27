@@ -19,4 +19,7 @@ public class Major {
     public void addApplicationArea (ApplicationAreaEnum apArea) {
 
     }
+    public String toString(){
+      return null;
+    }
 }

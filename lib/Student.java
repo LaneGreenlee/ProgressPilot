@@ -58,16 +58,10 @@ public class Student extends User{
   public String getPassword() {
     return password;
   }
-public Object getId() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'getId'");
+public String getId() {
+    return this.uscID;
 }
-public Object getEmail() {
-  // TODO Auto-generated method stub
-  throw new UnsupportedOperationException("Unimplemented method 'getEmail'");
-}
-public Object getGradYear() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'getGradYear'");
+public String getGradYear() {
+    return this.gradYear;
 }
 }

@@ -3,6 +3,7 @@ package lib;
 import java.util.ArrayList;
 
 public class UserList {
+    private static UserList instance;
     private ArrayList<User> user;
     private ArrayList<Student> students;
     private ArrayList<Advisor> advisors;
@@ -36,17 +37,13 @@ public class UserList {
     public ArrayList<Advisor> getAllAdvisors() {
         return advisors;
     }
-    public ArrayList<Advisor> getAdvisors() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAdvisors'");
-    }
-    public ArrayList<Student> getStudents() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getStudents'");
-    }
+    
     public static UserList getInstance() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getInstance'");
+       if (instance == null)
+       {
+        return (instance = new UserList());
+       }
+       else return instance;
     }
     
 
