@@ -8,6 +8,7 @@ public class User {
     public String lastName;
     public UUID user_UUID;
     protected String uscID;
+    // constructor called when user is loaded from json ( has UUID )
     public User(String userName, String password, String firstName, String lastName, String uscID, UUID user_UUID) {
         this.username = userName;
         this.password = password;
@@ -15,6 +16,15 @@ public class User {
         this.lastName = lastName;
         this.uscID = uscID;
         this.user_UUID = user_UUID;
+    }
+    // constructor called when user is loaded from json ( has UUID )
+    public User(String userName, String password, String firstName, String lastName, String uscID) {
+        this.username = userName;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.uscID = uscID;
+        this.user_UUID = UUID.randomUUID();
     }
     public String getUserName() {
         return username;
