@@ -18,7 +18,6 @@ public class DataWriter {
     private static final String USER_FIRST_NAME = "firstName";
     private static final String USER_LAST_NAME = "lastName";
     private static final String USER_USER_NAME = "userName";
-    private static final String USER_EMAIL = "email";
     private static final String USER_PASSWORD = "password";
     private static final String STUDENT_GRAD_YEAR = "gradYear";
     private static final String STUDENT_MAJOR = "major";
@@ -60,7 +59,6 @@ public class DataWriter {
         studentDetails.put(USER_FIRST_NAME, student.getFirstName());
         studentDetails.put(USER_LAST_NAME, student.getLastName());
         studentDetails.put(USER_USER_NAME, student.getUserName());
-        studentDetails.put(USER_EMAIL, student.getEmail());
         studentDetails.put(USER_PASSWORD, student.getPassword());
         studentDetails.put(STUDENT_GRAD_YEAR, student.getGradYear());
         studentDetails.put(STUDENT_MAJOR, student.getMajor().toString()); // Assuming Major has a toString method
