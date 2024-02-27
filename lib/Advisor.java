@@ -51,4 +51,9 @@ public class Advisor extends User{
     protected void deleteAccount(Student student) {
         
     }
+
+    public Student[] getStudents() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getStudents'");
+    }
 }

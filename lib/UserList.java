@@ -36,6 +36,18 @@ public class UserList {
     public ArrayList<Advisor> getAllAdvisors() {
         return advisors;
     }
+    public ArrayList<Advisor> getAdvisors() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAdvisors'");
+    }
+    public ArrayList<Student> getStudents() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getStudents'");
+    }
+    public static UserList getInstance() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getInstance'");
+    }
     
 
     
