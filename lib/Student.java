@@ -2,6 +2,7 @@ package lib;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.UUID;
 
 public class Student extends User{
   private String gradYear;
@@ -15,9 +16,9 @@ public class Student extends User{
 
 
 
-  public Student(String userName, String password, String firstName, String lastName, String uscID,
-                  String gradYear, MajorName major, Double gpa) {
-        super(userName, password, firstName, lastName, uscID);
+  public Student(UUID user_UUID, String userName, String password, String firstName, String lastName, String uscID,
+        String gradYear, MajorName major, Double gpa) {
+        super(userName, password, firstName, lastName, uscID, user_UUID);
         this.gradYear = gradYear;
         this.majorName = major;
         this.gpa = gpa;
@@ -54,6 +55,7 @@ public class Student extends User{
   public Major getMajor() {
     return this.major;
   }
-
-    
+  public String getPassword() {
+    return password;
+  }
 }

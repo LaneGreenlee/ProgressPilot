@@ -1,10 +1,11 @@
 package lib;
 import java.util.ArrayList;
+import java.util.UUID;
 public class Advisor extends User{
     protected ArrayList<Student> students;
 
-    public Advisor(ArrayList<Student> students, String userName, String password, String firstName, String lastName, String uscID) {
-      super(userName, password, firstName, lastName, uscID);
+    public Advisor(ArrayList<Student> students, String userName, String password, String firstName, String lastName, String uscID, UUID user_UUID) {
+      super(userName, password, firstName, lastName, uscID, user_UUID);
       this.students = students;
     }
 

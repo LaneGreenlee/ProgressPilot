@@ -54,20 +54,20 @@ public class DataWriter {
             e.printStackTrace();
         }
     }
-        public static JSONObject getUserJSON(User user) {
-        JSONObject userDetails = new JSONObject();
-        userDetails.put(USER_ID, user.getId().toString());
-        userDetails.put(USER_TYPE, user.getType());
-        userDetails.put(USER_FIRST_NAME, user.getFirstName());
-        userDetails.put(USER_LAST_NAME, user.getLastName());
-        userDetails.put(USER_USER_NAME, user.getUserName());
-        userDetails.put(USER_EMAIL, user.getEmail());
-        userDetails.put(USER_PASSWORD, user.getPassword());
-        userDetails.put(USER_CURRENT_COURSE_ID, user.getCurrentCourseID().toString());
-        userDetails.put(USER_CURRENT_TOPIC_ID, user.getCurrentTopicID().toString());
-        userDetails.put(USER_CURRENT_LESSON_ID, user.getCurrentLessonID().toString());
+        public static JSONObject getStudentJSON(Student student) {
+        JSONObject studentDetails = new JSONObject();
+        studentDetails.put(USER_ID, student.getId().toString());
+        studentDetails.put(USER_TYPE, student.getType());
+        studentDetails.put(USER_FIRST_NAME, student.getFirstName());
+        studentDetails.put(USER_LAST_NAME, student.getLastName());
+        studentDetails.put(USER_USER_NAME, student.getUserName());
+        studentDetails.put(USER_EMAIL, student.getEmail());
+        studentDetails.put(USER_PASSWORD, student.getPassword());
+        studentDetails.put(USER_CURRENT_COURSE_ID, student.getCurrentCourseID().toString());
+        studentDetails.put(USER_CURRENT_TOPIC_ID, student.getCurrentTopicID().toString());
+        studentDetails.put(USER_CURRENT_LESSON_ID, student.getCurrentLessonID().toString());
 
-        return userDetails;
+        return studentDetails;
     }
 
 }
