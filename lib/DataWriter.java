@@ -43,7 +43,7 @@ public class DataWriter {
 		
 		// Creation of Objects in JSON 
 		for(int i=0; i< advisorList.size(); i++) {
-			jsonUsers.add(getUserJSON(advisorList.get(i)));
+			jsonUsers.add(getStudentJSON(advisorList.get(i)));
 		}
 
         // Write the JSON file
