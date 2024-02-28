@@ -13,7 +13,6 @@ public class UserList {
         advisors = new ArrayList<>();
     }
     public static  User getUser(String userName) {
-     System.out.println(user.get(0));
       for (int i =0; i< user.size(); i++) {
         if (user.get(i).username.equals(userName))
         return user.get(i);

@@ -43,8 +43,8 @@ private int getUserCommand(int numCommands) {
 }
 private void login() {
     boolean run = true;
-    User userOne = new User ("Hello", "World", "Hani", "Foster", "P798790");
-    User userTwo = new User ("World", "Hellow", "Foster", "Hani", "P1231");
+    User userOne = new User ("Hello", "World", "Hey", "Man", "P798790");
+    User userTwo = new User ("World", "Hello", "Man", "Hey", "P1231");
     progressPilot.userlist.addUser(userOne);
     progressPilot.userlist.addUser(userTwo);
     String userName = getField("Username");
