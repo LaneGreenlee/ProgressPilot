@@ -4,7 +4,12 @@ import java.util.ArrayList;
 
 public class ProgessPilotFACADE {
     private User user;
+    protected UserList userlist;
 
+    public ProgessPilotFACADE () {
+        userlist = new UserList();
+
+    }
     // Login method
     public User login(String userName, String password) {
         // Assuming UserList.getUser() method is intended to find a user by username
@@ -24,6 +29,7 @@ public class ProgessPilotFACADE {
     // Check if a user is logged in
     public boolean isLoggedIn() {
         return this.user != null;
+        //return this.user != null;
     }
 
     // Signup method

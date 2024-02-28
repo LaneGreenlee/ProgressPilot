@@ -40,7 +40,7 @@ public class DataLoader {
                 String uscID = (String) studentJson.get("uscID");
                 MajorName major = (MajorName) studentJson.get("major");
                 Double gpa = (Double) studentJson.get("gpa");
-                students.add(new Student(userName, password, firstName, lastName, uscID, uscID, major, gpa));
+                students.add(new Student(userName, password, firstName, lastName, uscID, major, gpa));
             }
         } catch (IOException | ParseException e) {
             ((Throwable) e).printStackTrace();

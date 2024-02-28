@@ -14,8 +14,6 @@ public class Student extends User{
   private ArrayList<Course> currentCourses;
   public HashMap<Course, Grade> completedCourses;
 
-
-
   public Student(UUID user_UUID, String userName, String password, String firstName, String lastName, String uscID,
         String gradYear, MajorName major, Double gpa) {
         super(userName, password, firstName, lastName, uscID, user_UUID);

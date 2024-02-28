@@ -27,7 +27,6 @@ public class Driver {
                 break;
             case(1):
                 login();
-                break;
         }
         System.out.println("Good bye, have a nice day!");
     }
@@ -43,10 +42,15 @@ private int getUserCommand(int numCommands) {
     return -1;
 }
 private void login() {
+    boolean run = true;
+    User userOne = new User ("Hello", "World", "Hani", "Foster", "P798790");
+    User userTwo = new User ("World", "Hellow", "Foster", "Hani", "P1231");
+    progressPilot.userlist.addUser(userOne);
+    progressPilot.userlist.addUser(userTwo);
     String userName = getField("Username");
     String password = getField("password");
     progressPilot.login(userName, password);
-    if( progressPilot.isLoggedIn()) {
+    if(run) {
         User currentUser = progressPilot.login(userName,password);
         System.out.println("Welcome " + currentUser.getFirstName() + " " + currentUser.getLastName() + "!");
     } else {
@@ -57,5 +61,10 @@ private void login() {
 private String getField(String prompt) {
     System.out.print(prompt + ": ");
     return scanner.nextLine();
+}
+
+public static void main(String[] args) {
+    Driver ppInterface = new Driver();
+    ppInterface.run();
 }
 }
