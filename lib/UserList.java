@@ -9,8 +9,8 @@ public class UserList {
     private ArrayList<Advisor> advisors;
     public UserList() {
         user = new ArrayList<User>();
-        students = new ArrayList<>();
-        advisors = new ArrayList<>();
+        students = new ArrayList<Student>();
+        advisors = new ArrayList<Advisor>();
     }
     public static  User getUser(String userName) {
       for (int i =0; i< user.size(); i++) {

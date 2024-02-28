@@ -58,5 +58,11 @@ public class ProgessPilotFACADE {
     public ArrayList<Course> getCourseByMajor (Major major) {
       return null;
     }
+    public boolean createAccount(String userName, String password, String firstName, String lastName, String uscID)
+	{
+        User newUser = new User(userName, password, firstName, lastName, uscID);
+		UserList.addUser(newUser);
+        return true;
+	}
 
 }

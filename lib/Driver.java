@@ -23,8 +23,7 @@ public class Driver {
         }
         switch(userCommand) {
             case(0):
-                //createAccount();
-                break;
+                createAccount();
             case(1):
                 login();
         }
@@ -66,5 +65,18 @@ private String getField(String prompt) {
 public static void main(String[] args) {
     Driver ppInterface = new Driver();
     ppInterface.run();
+}
+private void createAccount() {
+    String userName = getField("Username");
+    String password = getField("Password");
+    String firstName = getField("First Name");
+    String lastName = getField("Last Name");
+    String uscID = getField("USC ID");
+    
+    if(progressPilot.createAccount(userName, password, firstName, lastName, uscID)) {
+        System.out.println("You have successfully created an account");
+    } else {
+        System.out.println("Sorry an account with that username already exists");
+    }
 }
 }
