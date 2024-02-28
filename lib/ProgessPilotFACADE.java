@@ -5,9 +5,13 @@ import java.util.ArrayList;
 public class ProgessPilotFACADE {
     private User user;
     protected UserList userlist;
+    protected MajorList majorList;
+    protected CourseList courseList;
 
     public ProgessPilotFACADE () {
         userlist = new UserList();
+        majorList = new MajorList();
+        courseList = new CourseList();
 
     }
     // Login method
