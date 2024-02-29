@@ -40,6 +40,11 @@ public class DataLoader {
                 String uscID = (String) studentJson.get("uscID");
                 MajorName major = (MajorName) studentJson.get("major");
                 Double gpa = (Double) studentJson.get("gpa");
+                Scholarship scholarship = (Scholarship) studentJson.get("scholarships");
+                ArrayList<Course> failedCourses = (ArrayList<Course>) studentJson.get("failedCourse");
+                ArrayList<Course> currentCourses = (ArrayList<Course>) studentJson.get("currentCourses");
+                ArrayList<Course> completedCourses = (ArrayList<Course>) studentJson.get("completedCourses");
+
                 students.add(new Student(userName, password, firstName, lastName, uscID, major, gpa));
             }
         } catch (IOException | ParseException e) {
@@ -70,7 +75,7 @@ public class DataLoader {
                 String firstName = (String) advisorJson.get("firstName");
                 String lastName = (String) advisorJson.get("lastName");
                 String uscID = (String) advisorJson.get("uscID");
-
+                ArrayList<Student> students = (ArrayList<Student>) advisorJson.get("Students");
                 // Create Advisor object passing the list of students
                 advisors.add(new Advisor(allStudents, userName, password, firstName, lastName, uscID));
             }
