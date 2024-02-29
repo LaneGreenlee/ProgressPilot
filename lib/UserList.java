@@ -4,19 +4,26 @@ import java.util.ArrayList;
 
 public class UserList {
     private static UserList instance;
+    private ArrayList<User> user;
     private ArrayList<Student> students;
     private ArrayList<Advisor> advisors;
     public UserList() {
-        students = new ArrayList<>();
-        advisors = new ArrayList<>();
+        user = new ArrayList<User>();
+        students = new ArrayList<Student>();
+        advisors = new ArrayList<Advisor>();
     }
     public static  User getUser(String userName) {
-        return null;
+      for (int i =0; i< user.size(); i++) {
+        if (user.get(i).username.equals(userName))
+        return user.get(i);
+      }
+      return null;
     }
 
     public static  void addUser(User newUser) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addUser'");
+        
+        user.add(newUser);
+        //throw new UnsupportedOperationException("Unimplemented method 'addUser'");
     }
     public void addStudent(Student student) {
         students.add(student);
