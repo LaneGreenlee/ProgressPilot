@@ -3,6 +3,8 @@ package lib;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.UUID;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -38,14 +40,18 @@ public class DataLoader {
                 String firstName = (String) studentJson.get("firstName");
                 String lastName = (String) studentJson.get("lastName");
                 String uscID = (String) studentJson.get("uscID");
+                UUID user_UUID = (UUID) studentJson.get("user_UUID");
+                String gradYear = (String) studentJson.get("gradYear");
                 MajorName major = (MajorName) studentJson.get("major");
                 Double gpa = (Double) studentJson.get("gpa");
                 Scholarship scholarship = (Scholarship) studentJson.get("scholarships");
                 ArrayList<Course> failedCourses = (ArrayList<Course>) studentJson.get("failedCourse");
                 ArrayList<Course> currentCourses = (ArrayList<Course>) studentJson.get("currentCourses");
-                ArrayList<Course> completedCourses = (ArrayList<Course>) studentJson.get("completedCourses");
+                // Hashmap cast needs to be checked for json (not correct atm)
+                HashMap<Course, Grade> completedCourses = (HashMap<Course, Grade>) studentJson.get("completedCourses");
 
-                students.add(new Student(userName, password, firstName, lastName, uscID, major, gpa));
+                students.add(new Student(user_UUID, userName, password, firstName,lastName, uscID,
+                gradYear, major, gpa, scholarship, failedCourses, currentCourses, completedCourses));
             }
         } catch (IOException | ParseException e) {
             ((Throwable) e).printStackTrace();
@@ -75,9 +81,10 @@ public class DataLoader {
                 String firstName = (String) advisorJson.get("firstName");
                 String lastName = (String) advisorJson.get("lastName");
                 String uscID = (String) advisorJson.get("uscID");
+                UUID user_UUID = (UUID) advisorJson.get("user_UUID");
                 ArrayList<Student> students = (ArrayList<Student>) advisorJson.get("Students");
                 // Create Advisor object passing the list of students
-                advisors.add(new Advisor(allStudents, userName, password, firstName, lastName, uscID));
+                advisors.add(new Advisor(students,userName,password,firstName,lastName,uscID,user_UUID));
             }
         } catch (IOException | ParseException e) {
             e.printStackTrace();
