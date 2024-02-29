@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class UserList {
     private static UserList instance;
-    private ArrayList<User> user;
     private ArrayList<Student> students;
     private ArrayList<Advisor> advisors;
     public UserList() {
@@ -44,6 +43,19 @@ public class UserList {
         return (instance = new UserList());
        }
        else return instance;
+    }
+    public ArrayList<User> getAllUsers() {
+        ArrayList<User> Users = new ArrayList<User>();
+        for (int i =0; i< this.students.size(); i++)
+        {
+            Users.add(this.students.get(i));
+        }
+        for (int i =0; i< this.advisors.size(); i++)
+        {
+            Users.add(this.advisors.get(i));
+        }
+        return Users;
+        
     }
     
 
