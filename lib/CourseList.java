@@ -3,9 +3,9 @@ package lib;
 import java.util.ArrayList;
 
 public class CourseList {
-    public ArrayList<Course> Courses;
+    public ArrayList<Course> courses;
     public CourseList() {
-        
+        courses = new ArrayList<Course>();
     }
     protected void alterCourse(Course course) {
 
