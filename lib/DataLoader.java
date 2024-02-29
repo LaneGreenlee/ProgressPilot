@@ -63,9 +63,6 @@ public class DataLoader {
     public ArrayList<Advisor> getAllAdvisors(String filePath) {
         ArrayList<Advisor> advisors = new ArrayList<>();
 
-        // First, get all students to pass to Advisor constructor
-        ArrayList<Student> allStudents = getAllStudents(filePath);
-
         try {
             JSONParser parser = new JSONParser();
             Object obj = parser.parse(new FileReader(filePath));
