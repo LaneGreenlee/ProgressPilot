@@ -9,22 +9,35 @@ public class Student extends User{
   private Major major;
   private MajorName majorName;
   private Double gpa;
-  private ArrayList<Scholarship> scholarships;
+  private Scholarship scholarship;
   private ArrayList<Course> failedCourses;
   private ArrayList<Course> currentCourses;
   public HashMap<Course, Grade> completedCourses;
 
   public Student(UUID user_UUID, String userName, String password, String firstName, String lastName, String uscID,
-        String gradYear, MajorName major, Double gpa) {
+        String gradYear, MajorName major, Double gpa, Scholarship scholarship) {
         super(userName, password, firstName, lastName, uscID, user_UUID);
         this.gradYear = gradYear;
         this.majorName = major;
         this.gpa = gpa;
-        this.scholarships = new ArrayList<>();
+        this.scholarship = scholarship;
         this.failedCourses = new ArrayList<>();
         this.currentCourses = new ArrayList<>();
         this.completedCourses = new HashMap<>();
         //TODO Auto-generated constructor stub
+    }
+
+  public Student(UUID user_UUID, String userName, String password, String firstName, String lastName, String uscID,
+        String gradYear, MajorName major, Double gpa, Scholarship scholarship, ArrayList<Course> failedCourses,
+        ArrayList<Course> currentCourses, HashMap<Course, Grade> completedCourses) {
+      super(userName, password, firstName, lastName, uscID, UUID.randomUUID());
+      this.gradYear = gradYear;
+      this.majorName = major;
+      this.gpa = gpa;
+      this.scholarship = scholarship;
+      this.failedCourses = failedCourses;
+      this.currentCourses = currentCourses;
+      this.completedCourses = completedCourses;
     }
   protected void addEightSemesterPlan() {
 

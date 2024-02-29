@@ -11,5 +11,8 @@
     "scholarships":["Life","Palmetto Fellows"],
     "failedCourses":["","",""],
     "currentCourses":["","",""],
-    "completedCourses":["" ,"",""]
+    "completedCourses": {
+        "class1uuid" : "A+",
+        "class2uuid" : "B+"
+    }
 }]

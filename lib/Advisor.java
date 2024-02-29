@@ -4,6 +4,12 @@ import java.util.UUID;
 public class Advisor extends User{
     protected ArrayList<Student> students;
 
+    // constrcutor for creating new advisor
+    public Advisor(String userName, String password, String firstName, String lastName, String uscID, UUID user_UUID) {
+      super(userName, password, firstName, lastName, uscID, user_UUID);
+      this.students = new ArrayList<Student>();
+    }
+    //constructor for loading
     public Advisor(ArrayList<Student> students, String userName, String password, String firstName, String lastName, String uscID, UUID user_UUID) {
       super(userName, password, firstName, lastName, uscID, user_UUID);
       this.students = students;
