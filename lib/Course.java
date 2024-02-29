@@ -6,6 +6,7 @@ import java.util.UUID;
 public class Course {
     public String courseCode;
     public String courseNumber;
+    public String fullName;
     public ArrayList<String> courseAttributes;
     public String[] courseDescription;
     public int creditHours;
@@ -14,6 +15,7 @@ public class Course {
     private ArrayList<HashMap<Course, Double>> prereqs;
 
     public Course(String courseCode, String courseNumber, String courseDescription, int creditHours) {
+    fullName = courseCode + " " + courseNumber;
     }
 
     public boolean isAIU(Course course) {
@@ -54,5 +56,8 @@ public class Course {
 
     public Course getPrereq(Course course) {
         return null;
+    }
+    public String getFullName () {
+        return this.fullName;
     }
 }
