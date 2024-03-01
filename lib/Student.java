@@ -69,10 +69,19 @@ public class Student extends User{
   public String getPassword() {
     return password;
   }
-public String getId() {
+  public String getId() {
     return this.uscID;
-}
-public String getGradYear() {
+  }
+  public String getGradYear() {
     return this.gradYear;
-}
+  }
+  public Scholarship getScholarship() {
+    return this.scholarship;
+  }
+  public ArrayList<Course> getCurrentCourses() {
+    return this.currentCourses;
+  }
+  public ArrayList<Course> getFailedCourses() {
+    return this.failedCourses;
+  }
 }
