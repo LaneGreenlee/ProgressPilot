@@ -4,19 +4,37 @@ import java.util.ArrayList;
 
 public class UserList {
     private static UserList instance;
-    private ArrayList<Student> students;
-    private ArrayList<Advisor> advisors;
+    private static ArrayList<User> user;
+    private static ArrayList<Student> students;
+    private static ArrayList<Advisor> advisors;
     public UserList() {
         students = new ArrayList<>();
         advisors = new ArrayList<>();
     }
     public static  User getUser(String userName) {
+        for (int i =0; i< user.size(); i++) {
+            if (user.get(i).username.equals(userName))
+            return user.get(i);
+    }
+        return null;
+    }
+    public static  Student getStudent(String userName) {
+        for (int i =0; i < students.size(); i++) {
+            if (students.get(i).username.equals(userName))
+            return students.get(i);
+    }
+        return null;
+    }
+    public static  Advisor getAdvisor(String userName) {
+        for (int i =0; i < advisors.size(); i++) {
+            if (advisors.get(i).username.equals(userName))
+            return advisors.get(i);
+    }
         return null;
     }
 
     public static  void addUser(User newUser) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addUser'");
+        user.add(newUser);
     }
     public void addStudent(Student student) {
         students.add(student);
@@ -38,11 +56,11 @@ public class UserList {
     }
     
     public static UserList getInstance() {
-       if (instance == null)
-       {
+        if (instance == null)
+        {
         return (instance = new UserList());
-       }
-       else return instance;
+        }
+        else return instance;
     }
     public ArrayList<User> getAllUsers() {
         ArrayList<User> Users = new ArrayList<User>();
