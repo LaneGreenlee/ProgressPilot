@@ -8,13 +8,14 @@ public class Major {
     public int totalHours;
     public String college;
     public ArrayList<Course> courses;
+    public MajorName majorName;
     public UUID majorID;
     
     public Major (Double gpaRequirement, int totalHours, String college, MajorName majorName, ArrayList<Course> courses) {
 
     }
-    public MajorName getMajorName (MajorName majorName) {
-        return majorName;
+    public MajorName getMajorName () {
+        return this.majorName;
     }
     public void addApplicationArea (ApplicationAreaEnum apArea) {
 

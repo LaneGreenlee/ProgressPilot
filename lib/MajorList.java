@@ -8,8 +8,13 @@ public class MajorList {
         Major newMajor = new Major(gpaRequirement, totalHours, college, majorName, courses);
         major.add(newMajor);
     }
-    protected void removeMajor (Major major) {
-
+    protected void removeMajor (String majorName) {
+      for (int i =0; i< major.size(); i++) {
+        if (major.get(i).getMajorName().toString().equals(majorName)) {
+            major.remove(i);
+            System.out.println(majorName + " was Deleted");
+        }
+      }
     }
     protected MajorName getMajor (MajorName majorName) {
         return majorName;
