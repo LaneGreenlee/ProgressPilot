@@ -26,11 +26,12 @@ public class DataLoader {
         //ArrayList<Student> students = new ArrayList<>();
 
         try {
+            FileReader reader = new FileReader(filePath);
             JSONParser parser = new JSONParser();
             Object obj = parser.parse(new FileReader(filePath));
-            JSONObject jsonObject = (JSONObject) obj;
+            //JSONObject jsonObject = (JSONObject) obj;
 
-            JSONArray studentsArray = (JSONArray) jsonObject.get("students");
+            JSONArray studentsArray = (JSONArray) new JSONParser().parse(reader);
 
             for (Object studentObj : studentsArray) {
                 JSONObject studentJson = (JSONObject) studentObj;
@@ -40,9 +41,9 @@ public class DataLoader {
                 String firstName = (String) studentJson.get("firstName");
                 String lastName = (String) studentJson.get("lastName");
                 String uscID = (String) studentJson.get("uscID");
-                UUID user_UUID = (UUID) studentJson.get("user_UUID");
+                UUID user_UUID = UUID.fromString((String)studentJson.get("user_UUID"));
                 String gradYear = (String) studentJson.get("gradYear");
-                MajorName major = (MajorName) studentJson.get("major");
+                MajorName major = Enum.valueOf(MajorName.class,(String)studentJson.get("major"));
                 Double gpa = (Double) studentJson.get("gpa");
                 Scholarship scholarship = (Scholarship) studentJson.get("scholarships");
                 ArrayList<Course> failedCourses = (ArrayList<Course>) studentJson.get("failedCourse");
