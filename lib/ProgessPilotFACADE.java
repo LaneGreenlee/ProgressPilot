@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class ProgessPilotFACADE {
     private User user;
+    private Student student;
+    private Advisor advisor;
     protected UserList userlist;
     protected MajorList majorList;
     protected CourseList courseList;
@@ -20,6 +22,24 @@ public class ProgessPilotFACADE {
         this.user = UserList.getUser(userName); // Adjusted to pass userName
         if (this.user != null && this.user.getPassword().equals(password)) {
             return this.user;
+        } else {
+            return null;
+        }
+    }
+    public Student studentLogin(String userName, String password) {
+        // Assuming UserList.getUser() method is intended to find a user by username
+        this.student = UserList.getStudent(userName); // Adjusted to pass userName
+        if (this.student != null && this.student.getPassword().equals(password)) {
+            return this.student;
+        } else {
+            return null;
+        }
+    }
+    public Advisor advisorLogin(String userName, String password) {
+        // Assuming UserList.getUser() method is intended to find a user by username
+        this.advisor = UserList.getAdvisor(userName); // Adjusted to pass userName
+        if (this.advisor != null && this.advisor.getPassword().equals(password)) {
+            return this.advisor;
         } else {
             return null;
         }

@@ -8,7 +8,7 @@
     "gradYear":"",
     "major":"",
     "gpa":3.6,
-    "scholarships":["Life","Palmetto Fellows"],
+    "scholarship": "",
     "failedCourses":["","",""],
     "currentCourses":["","",""],
     "completedCourses": {
