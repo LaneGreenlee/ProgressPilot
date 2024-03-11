@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class UserList {
     private static UserList instance;
     private static ArrayList<User> user;
-    private static ArrayList<Student> students;
+    public static ArrayList<Student> students;
     private static ArrayList<Advisor> advisors;
     public UserList() {
         students = new ArrayList<>();

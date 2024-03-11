@@ -23,7 +23,7 @@ public class DataLoader {
         return new ArrayList<Major>();
     }
      public ArrayList<Student> getAllStudents(String filePath) {
-        ArrayList<Student> students = new ArrayList<>();
+        //ArrayList<Student> students = new ArrayList<>();
 
         try {
             JSONParser parser = new JSONParser();
@@ -50,7 +50,7 @@ public class DataLoader {
                 // Hashmap cast needs to be checked for json (not correct atm)
                 HashMap<Course, Grade> completedCourses = (HashMap<Course, Grade>) studentJson.get("completedCourses");
 
-                students.add(new Student(user_UUID, userName, password, firstName,lastName, uscID,
+                UserList.students.add(new Student(user_UUID, userName, password, firstName,lastName, uscID,
                 gradYear, major, gpa, scholarship, failedCourses, currentCourses, completedCourses));
             }
         } catch (IOException | ParseException e) {
@@ -58,7 +58,7 @@ public class DataLoader {
             // Handle exceptions
         }
 
-        return students;
+        return UserList.students;
     }
     public ArrayList<Advisor> getAllAdvisors(String filePath) {
         ArrayList<Advisor> advisors = new ArrayList<>();

@@ -9,13 +9,18 @@ public class Driver {
     private String[] loginOptions = {"Student", "Advisor"};
     private Scanner scanner;
     private ProgessPilotFACADE progressPilot;
+    private DataLoader dataLoader;
 
     Driver() {
         scanner = new Scanner(System.in);
         progressPilot = new ProgessPilotFACADE();
-
+        dataLoader = new DataLoader();
+        dataLoader.getAllStudents("json/json_examples/student_ex.json");
     }
-
+    /**
+     * Type '1' to sign up type '2' to login
+    */
+    
     public void run() {
         System.out.println(WELCOME_MESSAGE);
         int userCommand = getUserCommand(mainMenuOptions.length);
@@ -50,6 +55,10 @@ private int getUserCommand(int numCommands) {
     
     return -1;
 }
+/**
+ * Type '1' for student login
+ * Type '2' for advisor login
+ */
 private void login() {
     boolean run = true;
     int userCommand = loginType(loginOptions.length);
@@ -58,8 +67,10 @@ private void login() {
     }
     switch(userCommand) {
         case(0):
+            System.out.println("Student Login: ");
             studentLogin();
         case(1):
+            System.out.println("Advisor Login: ");
             advisorLogin();
         }
 }
