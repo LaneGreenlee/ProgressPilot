@@ -15,56 +15,115 @@ public class Course {
     public UUID courseID;
     private ArrayList<HashMap<Course, Double>> prereqs;
 
+    /**
+     * Constructor of a course by taking in course code, number, description and how many credit hours it is
+     * @param courseCode Letters for the class ex. CSCE
+     * @param courseNumber Number for the class ex. 247
+     * @param courseDescription Describes what the class accomplishes
+     * @param creditHours number of credit hours the course it
+     */
     public Course(String courseCode, String courseNumber, String courseDescription, int creditHours) {
     fullName = courseCode + " " + courseNumber;
     }
-
+    /***
+     * Checks if the course passed in is AIU
+     * @param course course to check if it is AIU
+     * @return true if AIU, false if not
+     */
     public boolean isAIU(Course course) {
         return (course.courseAttributes.contains("AIU"));
         
     }
-
+    /***
+     * Checks if the course passed in is SCI
+     * @param course course to check if it is SCI
+     * @return true if SCI, false if not
+     */
     public boolean isSCI(Course course) {
         return false;
     }
-
+    /***
+     * Checks if the course passed in is GFL
+     * @param course course to check if it is GFL
+     * @return true if GFL, false if not
+     */
     public boolean isGFL(Course course) {
         return false;
     }
-
+    /***
+     * Checks if the course passed in is GHS
+     * @param course course to check if it is GHS
+     * @return true if GHS, false if not
+     */
     public boolean isGHS(Course course) {
         return false;
     }
-
+    /***
+     * Checks if the course passed in is GSS
+     * @param course course to check if it is GSS
+     * @return true if GSS, false if not
+     */
     public boolean isGSS(Course course) {
         return false;
     }
-
+    /***
+     * Checks if the course passed in is CMS
+     * @param course course to check if it is CMS
+     * @return true if CMS, false if not
+     */
     public boolean isCMS(Course course) {
         return false;
     }
-
+    /***
+     * Checks if the course passed in is INF
+     * @param course course to check if it is INF
+     * @return true if INF, false if not
+     */
     public boolean isINF(Course course) {
         return false;
     }
-
+    /***
+     * Checks if the course passed in is a founding document course
+     * @param course course to check if it is a founding document course
+     * @return true if a founding document course, false if not
+     */
     public boolean isFoundingDoc(Course course) {
         return false;
     }
-
+    /***
+     * Checks if the course passed in is Liberal Arts
+     * @param course course to check if it is Liberal Arts
+     * @return true if Liberal Arts, false if not
+     */
     public boolean isLiberalArts(Course course) {
         return false;
     }
-
+    /***
+     * Checks if the course passed has a pre req
+     * @param course course to check if has a pre req
+     * @return the courses that are the pre req of the course passed in 
+     */
     public Course getPrereq(Course course) {
         return null;
     }
+    /**
+     * combines class code, number and description
+     * @return String of full name of course
+     */
     public String getFullName () {
         return this.fullName;
     }
+    /**
+     * Returns the grade
+     * @return grade for course
+     */
     public Grade getGrade() {
         return this.grade;
     }
+    /**
+     * returns the amount of credit hours a course is
+     * @return number of credit hours a course is
+     */
     public int getCreditHours() {
         return this.creditHours;
     }

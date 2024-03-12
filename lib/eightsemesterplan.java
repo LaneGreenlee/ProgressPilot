@@ -2,20 +2,19 @@ package lib;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import lib.EightSemesterPlan.whatIf;
 public class EightSemesterPlan {
     private  ArrayList<Semester> semestersNeeded;
     private Student student;
     protected ArrayList<Course> whatIfCourses;
     protected ArrayList<Course> majorMap;
 
-    public EightSemesterPlan (Student student, ArrayList<Course> takeCouses ) {
+ 
+    public EightSemesterPlan (Student student, ArrayList<Course> takeCourses ) {
 
-    }
+}
     public ArrayList<Course> getMajorMap (Major major) {
       return null;
-    }
+}
 public HashMap <Course, Grade> completedMajorMap () {
     return null;
 }

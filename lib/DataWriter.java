@@ -27,7 +27,11 @@ public class DataWriter {
     private static final String STUDENT_CURRENT_COURSES = "currentCourses";
     private static final String STUDENT_COMPLETED_COURSES = "completedCourses";
     // Additional constants for Advisor-specific fields
-
+    /**
+     * Creates instance of userlist and adds all students to the student list.
+     * Creates new JSONArray and adds students to this Array
+     * Writes to JSON using private method
+     */
     public void saveAllStudents() {
         UserList students = UserList.getInstance();
         ArrayList<Student> studentList = students.getAllStudents();
@@ -39,6 +43,11 @@ public class DataWriter {
 
         writeToFile(jsonStudents, STUDENT_FILE_NAME);
     }
+    /**
+     * Creates instance of userlist and adds all advisor to the advisor list.
+     * Creates new JSONArray and adds advisor to this Array
+     * Writes to JSON using private method
+     */
     public void saveAllAdvisors() {
         UserList advisors = UserList.getInstance();
         ArrayList<Advisor> advisorList = advisors.getAllAdvisors(); // Assuming there's a method to get advisors
@@ -50,7 +59,12 @@ public class DataWriter {
 
         writeToFile(jsonAdvisors, ADVISOR_FILE_NAME);
     }
-
+    /**
+     * Puts all of the student attributes into the JSON object then writes
+     * to the JSON file
+     * @param student Student passed in to then be saved to JSON object
+     * @return returns JSONObject that is then written to the file
+     */
     private static JSONObject getStudentJSON(Student student) {
         JSONObject studentDetails = new JSONObject();
         studentDetails.put(USER_ID, student.getId().toString());
@@ -94,7 +108,12 @@ public class DataWriter {
         return studentDetails;
     }
 
-
+    /**
+     * Puts all of the advisor attributes into the JSON object then writes
+     * to the JSON file
+     * @param advisor advisor passed in to then be saved to JSON object
+     * @return returns JSONObject that is then written to the file
+     */
     private JSONObject getAdvisorJSON(Advisor advisor) {
         JSONObject advisorDetails = new JSONObject();
         // Populate advisor-specific details
@@ -109,7 +128,11 @@ public class DataWriter {
 
         return advisorDetails;
     }
-
+    /**
+     * Private helper file to write to file
+     * @param jsonData JSON array created by saveAllAdvisors and saveAllStudents
+     * @param fileName String to file path to which it is being written to
+     */
     private void writeToFile(JSONArray jsonData, String fileName) {
         try (FileWriter file = new FileWriter(fileName)) {
             file.write(jsonData.toJSONString());

@@ -16,6 +16,13 @@ public class Driver {
     private DataLoader dataLoader;
     private DataWriter dataWriter;
 
+    /**
+     * Creates scanner, facade variable, data loader variable, data writer variable and then adds all students and all advisors
+     * from data loader
+     * @throws FileNotFoundException
+     * @throws ParseException
+     * @throws IOException
+     */
     Driver() throws FileNotFoundException, ParseException, IOException {
         scanner = new Scanner(System.in);
         progressPilot = new ProgessPilotFACADE();
@@ -26,11 +33,11 @@ public class Driver {
 
     }
     /**
-     * Type '1' to sign up type '2' to login
+    * Presents the user with the choice to either sign up or log in
     */
-    
     public void run() {
         System.out.println(WELCOME_MESSAGE);
+        System.out.println("Press '1' for sign up or press '2' for login");
         int userCommand = getUserCommand(mainMenuOptions.length);
         if (userCommand == -1) {
             System.out.println("Not a valid command");
@@ -44,8 +51,13 @@ public class Driver {
         
         System.out.println("Good bye, have a nice day!");
     }
+/**
+ * Decides whether signing in as an advisor or student
+ * @param numCommands input to show if they are logging in as a student or advisor
+ * @return int that the user put in
+ */
 private int loginType (int numCommands) {
-    System.out.print("Login as a student or advisor? ");
+    System.out.print("Login as a student or advisor? \n'1' for student or '2' for advisor ");
     String userIn = scanner.nextLine();
     int command = Integer.parseInt(userIn) - 1;
     
@@ -53,6 +65,11 @@ private int loginType (int numCommands) {
     
     return -1;
 }
+/**
+ * Takes in user input to decide whether to go to sign up or log in
+ * @param numCommands input to decide whether signing up or logging
+ * @return returns an int that the user put in
+ */
 private int getUserCommand(int numCommands) {
     System.out.print("What would you like to do?: ");
     
@@ -64,8 +81,9 @@ private int getUserCommand(int numCommands) {
     return -1;
 }
 /**
- * Type '1' for student login
- * Type '2' for advisor login
+ * Determines which login type it is
+ * If user chooses one it checks the student array list and has user type in user name and password
+ * If user chooses one it checks the advisor array list and has user type in user name and password
  */
 private void login() {
     boolean run = true;
@@ -90,7 +108,9 @@ private String getField(String prompt) {
     System.out.print(prompt + ": ");
     return scanner.nextLine();
 }
-
+/**
+ * Takes in input from user and creates a new user with the information
+ */
 private void createAccount() {
     String userName = getField("Username");
     String password = getField("Password");
@@ -103,6 +123,10 @@ private void createAccount() {
         System.out.println("Sorry an account with that username already exists");
     }
 }
+/**
+ * Takes in username and password and checks the student array list to see if the profile
+ * exist and if it does it signs them in
+ */
 private void studentLogin() {
     String userName = getField("Username");
     String password = getField("password");
@@ -110,6 +134,10 @@ private void studentLogin() {
         Student currentStudent = progressPilot.studentLogin(userName, password);
         System.out.println("Welcome " + currentStudent.getFirstName() + " " + currentStudent.getLastName() + "!");
 }
+/**
+ * Takes in username and password and checks the advisor array list to see if the profile
+ * exist and if it does it signs them in
+ */
 private void advisorLogin() {
     String userName = getField("Username");
     String password = getField("password");
