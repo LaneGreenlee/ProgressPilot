@@ -19,7 +19,8 @@ public class Course {
     }
 
     public boolean isAIU(Course course) {
-        return false;
+        return (course.courseAttributes.contains("AIU"));
+        
     }
 
     public boolean isSCI(Course course) {
@@ -59,5 +60,8 @@ public class Course {
     }
     public String getFullName () {
         return this.fullName;
+    }
+    public int getCreditHours() {
+        return this.creditHours;
     }
 }
