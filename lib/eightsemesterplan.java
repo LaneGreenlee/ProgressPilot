@@ -2,6 +2,8 @@ package lib;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import lib.EightSemesterPlan.whatIf;
 public class EightSemesterPlan {
     private  ArrayList<Semester> semestersNeeded;
     private Student student;
@@ -34,8 +36,19 @@ protected ArrayList<Course> getPlan (Student student) {
   return null;
 }
 protected void printTranscript() {
+        System.out.println("Transcript for: " + student.getFirstName() + " " + student.getLastName());
+        System.out.println("Student ID: " + student.getId());
+        System.out.println("Major: " + student.getMajor().getMajorName()); 
 
-}
+        for (Semester semester : semestersNeeded) {
+            System.out.println("Semester: "); 
+            for (Course course : semester.getCurrentCourses()) {
+                Grade grade = student.getCompletedCourses().get(course);
+                String gradeStr = (grade != null) ? grade.toString() : "In Progress";
+                System.out.println(course.getFullName() + " - " + gradeStr);
+            }
+        }
+      }
 class whatIf {
     public whatIf (Student student, Major major) {
         

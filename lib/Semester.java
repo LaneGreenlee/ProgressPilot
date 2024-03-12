@@ -51,4 +51,7 @@ protected void savePlan(ArrayList<Course> courses) {
 protected void deletePlan() {
   this.plan.clear();
 }
+protected ArrayList<Course> getCurrentCourses(){
+  return this.currentCourses;
+}
 }
