@@ -7,6 +7,7 @@ public class Course {
     public String courseCode;
     public String courseNumber;
     public String fullName;
+    public Grade grade;
     public ArrayList<String> courseAttributes;
     public String[] courseDescription;
     public int creditHours;
@@ -59,5 +60,8 @@ public class Course {
     }
     public String getFullName () {
         return this.fullName;
+    }
+    public Grade getGrade() {
+        return this.grade;
     }
 }
