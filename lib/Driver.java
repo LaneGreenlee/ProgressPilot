@@ -14,13 +14,16 @@ public class Driver {
     private Scanner scanner;
     private ProgessPilotFACADE progressPilot;
     private DataLoader dataLoader;
+    private DataWriter dataWriter;
 
     Driver() throws FileNotFoundException, ParseException, IOException {
         scanner = new Scanner(System.in);
         progressPilot = new ProgessPilotFACADE();
         dataLoader = new DataLoader();
+        dataWriter = new DataWriter();
         dataLoader.getAllStudents("json/json_examples/student_ex.json");
         dataLoader.getAllAdvisors("json/json_examples/admin_ex.json");
+
     }
     /**
      * Type '1' to sign up type '2' to login
