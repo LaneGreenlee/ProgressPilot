@@ -36,7 +36,7 @@ public class DataLoader {
             for (Object studentObj : studentsArray) {
                 JSONObject studentJson = (JSONObject) studentObj;
 
-                String userName = (String) studentJson.get("userName");
+                String userName = (String) studentJson.get("username");
                 String password = (String) studentJson.get("password");
                 String firstName = (String) studentJson.get("firstName");
                 String lastName = (String) studentJson.get("lastName");
@@ -45,11 +45,12 @@ public class DataLoader {
                 String gradYear = (String) studentJson.get("gradYear");
                 MajorName major = Enum.valueOf(MajorName.class,(String)studentJson.get("major"));
                 Double gpa = (Double) studentJson.get("gpa");
-                Scholarship scholarship = Enum.valueOf(Scholarship.class,(String)studentJson.get("scholarship"));
+                Scholarship scholarship = Scholarship.Hope;
                 ArrayList<Course> failedCourses = (ArrayList<Course>) studentJson.get("failedCourse");
                 ArrayList<Course> currentCourses = (ArrayList<Course>) studentJson.get("currentCourses");
                 // Hashmap cast needs to be checked for json (not correct atm)
-                HashMap<Course, Grade> completedCourses = (HashMap<Course, Grade>) studentJson.get("completedCourses");
+                //HashMap<Course, Grade> completedCourses = (HashMap<Course, Grade>) studentJson.get("completedCourses");
+                HashMap<Course, Grade> completedCourses = null;
 
                 UserList.students.add(new Student(user_UUID, userName, password, firstName,lastName, uscID,
                 gradYear, major, gpa, scholarship, failedCourses, currentCourses, completedCourses));

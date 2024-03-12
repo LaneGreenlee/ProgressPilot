@@ -13,15 +13,15 @@ public class UserList {
     }
     public static  User getUser(String userName) {
         for (int i =0; i< user.size(); i++) {
-            if (user.get(i).username.equals(userName))
+            if (user.get(i).getUserName().equals(userName))
             return user.get(i);
     }
         return null;
     }
     public static  Student getStudent(String userName) {
         for (int i =0; i < students.size(); i++) {
-            if (students.get(i).username.equals(userName))
-            return students.get(i);
+               if (students.get(i).getUserName().equals(userName))
+                return students.get(i);
     }
         return null;
     }

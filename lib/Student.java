@@ -8,6 +8,7 @@ public class Student extends User{
   private String gradYear;
   private Major major;
   private MajorName majorName;
+  private String userName;
   private Double gpa;
   private Scholarship scholarship;
   private ArrayList<Course> failedCourses;
@@ -17,6 +18,7 @@ public class Student extends User{
   public Student(UUID user_UUID, String userName, String password, String firstName, String lastName, String uscID,
         String gradYear, MajorName major, Double gpa, Scholarship scholarship) {
         super(userName, password, firstName, lastName, uscID, user_UUID);
+        this.userName = userName;
         this.gradYear = gradYear;
         this.majorName = major;
         this.gpa = gpa;
@@ -31,6 +33,7 @@ public class Student extends User{
         String gradYear, MajorName major, Double gpa, Scholarship scholarship, ArrayList<Course> failedCourses,
         ArrayList<Course> currentCourses, HashMap<Course, Grade> completedCourses) {
       super(userName, password, firstName, lastName, uscID, UUID.randomUUID());
+      this.userName = userName;
       this.gradYear = gradYear;
       this.majorName = major;
       this.gpa = gpa;
@@ -63,9 +66,13 @@ public class Student extends User{
   public HashMap<Course, Grade> getCompletedCourses() {
     return this.completedCourses;
   }
+  public String getUserName() {
+    return username;
+  }
   public Major getMajor() {
     return this.major;
   }
+  
   public String getPassword() {
     return password;
   }
