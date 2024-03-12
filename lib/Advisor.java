@@ -58,7 +58,7 @@ public class Advisor extends User{
         
     }
 
-    public Student[] getStudents() {
+    public ArrayList<Student> getStudents() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getStudents'");
     }
