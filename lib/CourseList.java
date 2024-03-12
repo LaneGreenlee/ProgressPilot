@@ -7,7 +7,7 @@ public class CourseList {
     private DataLoader loader;
     public CourseList() {
        Courses = new ArrayList<Course>();
-       Courses = loader.getCourses();
+       //Courses = loader.getCourses();
     }
     protected void deleteCourse(String courseName) {
         for (int i =0; i < Courses.size(); i++) {

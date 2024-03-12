@@ -45,7 +45,7 @@ public class DataLoader {
                 String gradYear = (String) studentJson.get("gradYear");
                 MajorName major = Enum.valueOf(MajorName.class,(String)studentJson.get("major"));
                 Double gpa = (Double) studentJson.get("gpa");
-                Scholarship scholarship = (Scholarship) studentJson.get("scholarships");
+                Scholarship scholarship = Enum.valueOf(Scholarship.class,(String)studentJson.get("scholarship"));
                 ArrayList<Course> failedCourses = (ArrayList<Course>) studentJson.get("failedCourse");
                 ArrayList<Course> currentCourses = (ArrayList<Course>) studentJson.get("currentCourses");
                 // Hashmap cast needs to be checked for json (not correct atm)
