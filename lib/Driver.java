@@ -77,6 +77,7 @@ private void login() {
         case(0):
             System.out.println("Student Login: ");
             studentLogin();
+            dataWriter.saveAllStudents();
             break;
         case(1):
             System.out.println("Advisor Login: ");

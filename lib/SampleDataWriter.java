@@ -224,6 +224,11 @@ public class DataWriter extends DataConstants {
             commentsArray.add(commentsDetails);
         }
     }
+
+    public void saveAllStudents() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'saveAllStudents'");
+    }
 }
 
 }

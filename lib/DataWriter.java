@@ -39,7 +39,6 @@ public class DataWriter {
 
         writeToFile(jsonStudents, STUDENT_FILE_NAME);
     }
-
     public void saveAllAdvisors() {
         UserList advisors = UserList.getInstance();
         ArrayList<Advisor> advisorList = advisors.getAllAdvisors(); // Assuming there's a method to get advisors
