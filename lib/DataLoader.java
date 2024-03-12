@@ -63,19 +63,20 @@ public class DataLoader {
         return UserList.students;
     }
     public ArrayList<Advisor> getAllAdvisors(String filePath) {
-        ArrayList<Advisor> advisors = new ArrayList<>();
-
+        
         try {
+            FileReader reader = new FileReader(filePath);
             JSONParser parser = new JSONParser();
             Object obj = parser.parse(new FileReader(filePath));
-            JSONObject jsonObject = (JSONObject) obj;
+            //JSONObject jsonObject = (JSONObject) obj;
 
-            JSONArray advisorsArray = (JSONArray) jsonObject.get("advisors");
+            JSONArray advisorsArray = (JSONArray) new JSONParser().parse(reader);
+
 
             for (Object advisorObj : advisorsArray) {
                 JSONObject advisorJson = (JSONObject) advisorObj;
 
-                String userName = (String) advisorJson.get("userName");
+                String userName = (String) advisorJson.get("username");
                 String password = (String) advisorJson.get("password");
                 String firstName = (String) advisorJson.get("firstName");
                 String lastName = (String) advisorJson.get("lastName");
@@ -83,13 +84,13 @@ public class DataLoader {
                 UUID user_UUID = (UUID) advisorJson.get("user_UUID");
                 ArrayList<Student> students = (ArrayList<Student>) advisorJson.get("Students");
                 // Create Advisor object passing the list of students
-                advisors.add(new Advisor(students,userName,password,firstName,lastName,uscID,user_UUID));
+                UserList.advisors.add(new Advisor(students,userName,password,firstName,lastName,uscID,user_UUID));
             }
         } catch (IOException | ParseException e) {
-            e.printStackTrace();
+            ((Throwable) e).printStackTrace();
             // Handle exceptions
         }
 
-        return advisors;
+        return UserList.advisors;
     }
 }

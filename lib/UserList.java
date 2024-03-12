@@ -6,7 +6,7 @@ public class UserList {
     private static UserList instance;
     private static ArrayList<User> user;
     public static ArrayList<Student> students;
-    private static ArrayList<Advisor> advisors;
+    public static ArrayList<Advisor> advisors;
     public UserList() {
         students = new ArrayList<>();
         advisors = new ArrayList<>();
@@ -27,7 +27,7 @@ public class UserList {
     }
     public static  Advisor getAdvisor(String userName) {
         for (int i =0; i < advisors.size(); i++) {
-            if (advisors.get(i).username.equals(userName))
+            if (advisors.get(i).getUserName().equals(userName))
             return advisors.get(i);
     }
         return null;

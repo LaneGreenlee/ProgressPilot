@@ -1,7 +1,11 @@
 package lib;
 
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
+
+import org.json.simple.parser.ParseException;
 
 public class Driver {
     private static final String WELCOME_MESSAGE = "Welcome to Progress Pilot!";
@@ -11,11 +15,12 @@ public class Driver {
     private ProgessPilotFACADE progressPilot;
     private DataLoader dataLoader;
 
-    Driver() {
+    Driver() throws FileNotFoundException, ParseException, IOException {
         scanner = new Scanner(System.in);
         progressPilot = new ProgessPilotFACADE();
         dataLoader = new DataLoader();
         dataLoader.getAllStudents("json/json_examples/student_ex.json");
+        dataLoader.getAllAdvisors("json/json_examples/admin_ex.json");
     }
     /**
      * Type '1' to sign up type '2' to login
@@ -108,7 +113,7 @@ private void advisorLogin() {
         Advisor currentAdvisor = progressPilot.advisorLogin(userName, password);
         System.out.println("Welcome " + currentAdvisor.getFirstName() + " " + currentAdvisor.getLastName() + "!");
 }
-public static void main(String[] args) {
+public static void main(String[] args) throws FileNotFoundException, ParseException, IOException {
     Driver ppInterface = new Driver();
     ppInterface.run();
 }
