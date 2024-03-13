@@ -10,11 +10,6 @@ public class Major {
     public ArrayList<Course> courses;
     public MajorName majorName;
     public UUID majorID;
-<<<<<<< HEAD
-    public CourseList courselist;
-    public ApplicationArea applicationArea;
-    
-=======
     /**
      * constructor to create a major based on the requirements
      * @param gpaRequirement required gpa for the major
@@ -23,7 +18,6 @@ public class Major {
      * @param majorName name of the major from the MajorName enum
      * @param courses courses required to complete the major
      */
->>>>>>> 79dba630ebb492a4edbca70fadba26ddc60d4f86
     public Major (Double gpaRequirement, int totalHours, String college, MajorName majorName, ArrayList<Course> courses) {
       this.gpaRequirement = gpaRequirement;
       this.totalHours = totalHours;
@@ -38,7 +32,8 @@ public class Major {
         return this.majorName;
     }
     /**
-     * passes in the application area that is being added and then adds courses to what is required
+     * passes in the application area that is being added and then adds it to the
+     * students profile
      * @param apArea application area that is being added
      */
     public void addApplicationArea(ApplicationAreaEnum apArea) {

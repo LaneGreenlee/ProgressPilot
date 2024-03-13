@@ -8,7 +8,15 @@ public class User {
     public String lastName;
     public UUID user_UUID;
     protected String uscID;
-    // constructor called when user is loaded from json ( has UUID )
+    /**
+     * the constructor for a user when loaded from JSON and has a UUID
+     * @param userName username for the user
+     * @param password password for the user
+     * @param firstName first name of the user
+     * @param lastName last name of the user
+     * @param uscID uscID of the user
+     * @param user_UUID UUID for the user
+     */
     public User(String userName, String password, String firstName, String lastName, String uscID, UUID user_UUID) {
         this.username = userName;
         this.password = password;
@@ -17,7 +25,14 @@ public class User {
         this.uscID = uscID;
         this.user_UUID = user_UUID;
     }
-    // constructor called when user is loaded from json ( has UUID )
+    /**
+     * When creating a new user, needs a UUID
+     * @param userName username for the user
+     * @param password password for the user
+     * @param firstName first name of the user
+     * @param lastName last name of the user
+     * @param uscID uscID of the user
+     */
     public User(String userName, String password, String firstName, String lastName, String uscID) {
         this.username = userName;
         this.password = password;

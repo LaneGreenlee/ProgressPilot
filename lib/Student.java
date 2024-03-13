@@ -152,12 +152,21 @@ public String getUserName() {
   public String getGradYear() {
     return this.gradYear;
   }
+  /**
+   * @return the scholarship that the student has
+   */
   public Scholarship getScholarship() {
     return this.scholarship;
   }
+  /**
+   * @return array list of all current courses being taken
+   */
   public ArrayList<Course> getCurrentCourses() {
     return this.currentCourses;
   }
+  /**
+   * @return array list of all failed courses
+   */
   public ArrayList<Course> getFailedCourses() {
     return this.failedCourses;
   }

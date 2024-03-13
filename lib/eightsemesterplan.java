@@ -8,7 +8,6 @@ public class EightSemesterPlan {
     protected ArrayList<Course> whatIfCourses;
     protected ArrayList<Course> majorMap;
 
- 
     public EightSemesterPlan (Student student, ArrayList<Course> takeCourses ) {
 
 }

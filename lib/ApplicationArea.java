@@ -15,7 +15,10 @@ public class ApplicationArea {
         this.applicationArea = applicationArea;
         this.requiredCourses = requiredCourses;
     }
-
+    /**
+     * Clears the requireed course list is clear then adds courses based on what
+     * application area the student adds to their major
+     */
     public void setRequiredCourses() {
         requiredCourses.clear(); // Ensure the list is empty before adding new courses
     
