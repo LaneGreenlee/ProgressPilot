@@ -10,6 +10,8 @@ public class Major {
     public ArrayList<Course> courses;
     public MajorName majorName;
     public UUID majorID;
+    public CourseList courselist;
+    public ApplicationArea applicationArea;
     
     public Major (Double gpaRequirement, int totalHours, String college, MajorName majorName, ArrayList<Course> courses) {
       this.gpaRequirement = gpaRequirement;
@@ -23,38 +25,56 @@ public class Major {
     }
     public void addApplicationArea(ApplicationAreaEnum apArea) {
       switch (apArea) {
-          case Bioinformatics:
-            
-          case Cloud_Native_Application_Development:
+        case Bioinformatics:
+            this.applicationArea.applicationArea = "Bioinformatics";
+            break;
+        case Cloud_Native_Application_Development:
+            this.applicationArea.applicationArea = "Cloud Native Application Development";
+            break;
+        case Computer_Game_Design_and_Development:
+            this.applicationArea.applicationArea = "Computer Game Design and Development";
+            break;
+        case Data_Scientist:
+            this.applicationArea.applicationArea = "Data Scientist";
+            break;
+        case Cybersecurity:
+            this.applicationArea.applicationArea = "Cybersecurity";
+            break;
+        case Geographic_Information_Systems_Developer:
+            this.applicationArea.applicationArea = "Geographic Information Systems Developer";
+            break;
+        case Linguistics:
+            this.applicationArea.applicationArea = "Linguistics";
+            break;
+        case New_Media:
+            this.applicationArea.applicationArea = "New Media";
+            break;
+        case Risk_and_Insurance:
+            this.applicationArea.applicationArea = "Risk and Insurance";
+            break;
+        case Scientific_Computing:
+            this.applicationArea.applicationArea = "Scientific Computing";
+            break;
+        case Aerospace_Engineering:
+            this.applicationArea.applicationArea = "Aerospace Engineering";
+            break;
+        case Robotics:
+            this.applicationArea.applicationArea = "Robotics";
+            break;
+        case Web_Developer:
+            this.applicationArea.applicationArea = "Web Developer";
+            break;
+        default:
+            // handle any cases not matched above
+            break;}
+            this.applicationArea.setRequiredCourses();
+            courses.remove(courselist.getCourse("Application Area"));
+            courses.remove(courselist.getCourse("Application Area"));
+            courses.remove(courselist.getCourse("Application Area"));
+            courses.addAll(applicationArea.requiredCourses);
+    }
+    
 
-          case Computer_Game_Design_and_Development:
-
-          case Data_Scientist:
-          
-          case Cybersecurity:
-
-          case Geographic_Information_Systems_Developer:
-
-          case Linguistics:
-
-          case New_Media:
-
-          case Risk_and_Insurance:
-
-          case Scientific_Computing:
-
-          case Aerospace_Engineering:
-          
-          case Robotics:
-          
-          case Web_Developer:
-             
-              break;
-          default:
-              // handle any cases not matched above
-              break;
-      }
-  }
   
     public String toString(){
       String ret = "";
