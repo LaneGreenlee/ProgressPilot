@@ -12,16 +12,32 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class DataLoader {
-    
+    /***
+     * Returns an array list of courses
+     * @return ArrayList of courses
+     */
     public ArrayList<Course> getCourses() {
         return new ArrayList<Course>();
     }
+    /**
+     * shows all users in the array list
+     * @return array list of all users
+     */
     public ArrayList<User> getUsers() {
         return new ArrayList<User>();
     }
+    /**
+     * shows everything required the majors
+     * @return array list of all required the majors
+     */
     public ArrayList<Major> getMajors() {
         return new ArrayList<Major>();
     }
+    /**
+     * Reads in the JSON and adds all students in the student JSON to the array list
+     * @param filePath String of path to the JSON file that contains the students
+     * @return Array List of all students from the JSON
+     */
      public ArrayList<Student> getAllStudents(String filePath) {
         //ArrayList<Student> students = new ArrayList<>();
 
@@ -62,20 +78,26 @@ public class DataLoader {
 
         return UserList.students;
     }
+    /**
+     * Reads for the advisor JSON and adds them to the advisor array list
+     * @param filePath String of the file path to the advisors JSON
+     * @return array list loaded with all advisors from JSON
+     */
     public ArrayList<Advisor> getAllAdvisors(String filePath) {
-        ArrayList<Advisor> advisors = new ArrayList<>();
 
         try {
+            FileReader reader = new FileReader(filePath);
             JSONParser parser = new JSONParser();
             Object obj = parser.parse(new FileReader(filePath));
-            JSONObject jsonObject = (JSONObject) obj;
+            //JSONObject jsonObject = (JSONObject) obj;
 
-            JSONArray advisorsArray = (JSONArray) jsonObject.get("advisors");
+            JSONArray advisorsArray = (JSONArray) new JSONParser().parse(reader);
+
 
             for (Object advisorObj : advisorsArray) {
                 JSONObject advisorJson = (JSONObject) advisorObj;
 
-                String userName = (String) advisorJson.get("userName");
+                String userName = (String) advisorJson.get("username");
                 String password = (String) advisorJson.get("password");
                 String firstName = (String) advisorJson.get("firstName");
                 String lastName = (String) advisorJson.get("lastName");
@@ -83,13 +105,13 @@ public class DataLoader {
                 UUID user_UUID = (UUID) advisorJson.get("user_UUID");
                 ArrayList<Student> students = (ArrayList<Student>) advisorJson.get("Students");
                 // Create Advisor object passing the list of students
-                advisors.add(new Advisor(students,userName,password,firstName,lastName,uscID,user_UUID));
+                UserList.advisors.add(new Advisor(students,userName,password,firstName,lastName,uscID,user_UUID));
             }
         } catch (IOException | ParseException e) {
-            e.printStackTrace();
+            ((Throwable) e).printStackTrace();
             // Handle exceptions
         }
 
-        return advisors;
+        return UserList.advisors;
     }
 }
