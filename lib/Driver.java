@@ -132,6 +132,7 @@ private void studentLogin() {
     String password = getField("password");
     progressPilot.studentLogin(userName, password);
         Student currentStudent = progressPilot.studentLogin(userName, password);
+        dataWriter.saveAllStudents();
         System.out.println("Welcome " + currentStudent.getFirstName() + " " + currentStudent.getLastName() + "!");
 }
 /**

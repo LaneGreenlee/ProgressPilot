@@ -43,6 +43,7 @@ public class DataWriter {
 
         writeToFile(jsonStudents, STUDENT_FILE_NAME);
     }
+
     /**
      * Creates instance of userlist and adds all advisor to the advisor list.
      * Creates new JSONArray and adds advisor to this Array
