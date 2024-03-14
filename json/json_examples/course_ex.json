@@ -355,15 +355,5 @@
     "creditHours":3,
     "isTransfer":false,
     "courseID":"81a869d4-bf87-4715-b4d8-8d7e14d6f273"
-},
-
-{
-    "courseCode":" ",
-    "courseNumber":" ",
-    "courseAttributes":[" "],
-    "courseDescription":[" "],
-    "creditHours":3,
-    "isTransfer":false,
-    "courseID":" "
 }
 ]
