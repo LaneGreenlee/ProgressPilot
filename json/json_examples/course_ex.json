@@ -1,10 +1,184 @@
-[{
+[
+    {
+        "courseCode":"ENGL",
+        "courseNumber":"101",
+        "courseAttributes":["CC"],
+        "courseDescription":["Instruction in strategies for critically reading and analyzing literature and non-literary texts; structured, sustained practice in composing expository and analytical essays"],
+        "creditHours":3,
+        "isTransfer":false,
+        "courseID":"375e8ad4-b152-487c-9e06-72ad02e7127b"
+    },
+    {
+        "courseCode":"MATH",
+        "courseNumber":"141",
+        "courseAttributes":["CC"],
+        "courseDescription":["Functions, limits, derivatives, introduction to integrals, the Fundamental Theorem of Calculus, applications of derivatives and integrals. Four classroom hours and one laboratory hour per week."],
+        "creditHours":4,
+        "isTransfer":false,
+        "courseID":"0cc1b74c-4d49-4f60-8bc3-e467907b3601"
+    },
+    {
+        "courseCode":"CSCE",
+        "courseNumber":"145",
+        "courseAttributes":["PR"],
+        "courseDescription":["Problem-solving, algorithmic design, and programming. Three lectures and two laboratory hours per week."],
+        "creditHours":4,
+        "isTransfer":false,
+        "courseID":"9f3e1d01-ef9c-4af3-8d2d-fdec413896b9"
+    },
+    {
     "courseCode":"CSCE",
-    "courseNumber":"247",
+    "courseNumber":"190",
     "courseAttributes":["PR"],
-    "courseDescription":["Fundamentals of software design and development","software implementation",
-                        "object-oriented design techniques","functional design techniques"],
+    "courseDescription":["An introduction to the field of computing: trends in computing technology, the profession, and careers; subdisciplines in computing; the nature of research and development."],
+    "creditHours":1,
+    "isTransfer":false,
+    "courseID":"767b7f00-cb3c-43a1-b405-6eccadf6ad77"
+},
+
+{
+    "courseCode":"ENGL",
+    "courseNumber":"102",
+    "courseAttributes":["CC"],
+    "courseDescription":["Instruction and intensive practice in researching, analyzing, and composing written arguments about academic and public issues."],
     "creditHours":3,
     "isTransfer":false,
-    "courseID":"f4dbb1b0-a3ce-4334-ac29-883bdf85a1f2"
-}]
+    "courseID":"1bed169b-64b1-4140-9dbb-a585ee879347"
+},
+{
+    "courseCode":"MATH",
+    "courseNumber":"142",
+    "courseAttributes":["CC"],
+    "courseDescription":["Methods of integration, sequences and series, approximations.   Four classroom hours and one laboratory hour per week."],
+    "creditHours":4,
+    "isTransfer":false,
+    "courseID":"b62aa096-37bb-4708-8f96-cc7d687973e2"
+},
+{
+    "courseCode":"CHEM",
+    "courseNumber":"111",
+    "courseAttributes":["SCI"],
+    "courseDescription":["Methods of integration, sequences and series, approximations.   Four classroom hours and one laboratory hour per week."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"ef337ac9-e6ca-49e0-b856-50213daacc13"
+},
+{
+    "courseCode":"CHEM",
+    "courseNumber":"111L",
+    "courseAttributes":["SCI"],
+    "courseDescription":["Introduction to the principles and techniques of experimental chemistry with emphasis on formula investigations, equations, elementary statistics, and chemical reactivity. "],
+    "creditHours":1,
+    "isTransfer":false,
+    "courseID":"e70af63e-fc98-46fa-8a0c-016c33b881ae"
+},
+{
+    "courseCode":"PHYS",
+    "courseNumber":"211",
+    "courseAttributes":["SCI"],
+    "courseDescription":["Classical mechanics and wave motion. Calculus-level course for students of science and engineering."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"771c566f-7359-4e23-9dfb-5f04f01bbd25"
+},
+{
+    "courseCode":"PHYS",
+    "courseNumber":"211L",
+    "courseAttributes":["SCI"],
+    "courseDescription":["Experiments, exercises, and demonstrations to accompany PHYS 211."],
+    "creditHours":1,
+    "isTransfer":false,
+    "courseID":"0e481d2d-135f-407b-98da-2984fd35095c"
+},
+{
+    "courseCode":"CSCE",
+    "courseNumber":"146",
+    "courseAttributes":["PR"],
+    "courseDescription":["Continuation of CSCE 145. Rigorous development of algorithms and computer programs; elementary data structures. Three lecture hours and two laboratory hours per week."],
+    "creditHours":4,
+    "isTransfer":false,
+    "courseID":"2914bf41-848b-4c8b-8b89-297f528c15b4"
+},
+{
+    "courseCode":"CSCE",
+    "courseNumber":"215",
+    "courseAttributes":["PR"],
+    "courseDescription":["UNIX operating system, user-level system commands, and programming tools. UNIX scripting languages."],
+    "creditHours":1,
+    "isTransfer":false,
+    "courseID":"898f6870-b58d-447f-8bd6-75cb9899db89"
+},
+
+{
+    "courseCode":"CSCE",
+    "courseNumber":"211",
+    "courseAttributes":["PR"],
+    "courseDescription":["Number systems, Boolean algebra, logic design, sequential machines."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"16ec31cb-f8dc-49cc-add4-36f7061eef36"
+},
+{
+    "courseCode":"CSCE",
+    "courseNumber":"240",
+    "courseAttributes":["PR"],
+    "courseDescription":["Pointers; memory management; advanced programming language structures: operator overloading, iterators, multiple inheritance, polymorphism, templates, virtual functions; Unix programming environment."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"3486581f-77ac-4407-9d49-e28618035fd6"
+},
+{
+    "courseCode":"MATH",
+    "courseNumber":"374",
+    "courseAttributes":["PR"],
+    "courseDescription":["Propositional and predicate logic; proof techniques; recursion and recurrence relations; sets, combinatorics, and probability; functions, relations, and matrices; algebraic structures."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"1e489cea-4d50-47fe-b5ab-36b6eb0651ce"
+},
+{
+    "courseCode":"CHEM",
+    "courseNumber":"112",
+    "courseAttributes":["SCI"],
+    "courseDescription":["Continuation of CHEM 111. Special emphasis on chemical equilibrium. Three lecture and one recitation hours per week."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"b20e56f4-42e0-470f-bef8-1a7637979d65"
+},
+{
+    "courseCode":"CHEM",
+    "courseNumber":"112L",
+    "courseAttributes":["SCI"],
+    "courseDescription":["Continuation of CHEM 111L with emphasis on solution properties, kinetics, equilibrium, acids and bases, and qualitative analysis."],
+    "creditHours":1,
+    "isTransfer":false,
+    "courseID":"abcaebdb-fad8-4911-9d8d-64a825325b03"
+},
+{
+    "courseCode":"PHYS",
+    "courseNumber":"212",
+    "courseAttributes":["SCI"],
+    "courseDescription":["Classical electromagnetism and optics."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"b3d392ff-ccd5-46af-92d5-d2663369c13d"
+},
+{
+    "courseCode":"PHYS",
+    "courseNumber":"212L",
+    "courseAttributes":["SCI"],
+    "courseDescription":["Experiments, exercises, and demonstrations to accompany PHYS 212"],
+    "creditHours":1,
+    "isTransfer":false,
+    "courseID":"b3d392ff-ccd5-46af-92d5-d2663369c13d"
+},
+{
+    "courseCode":" ",
+    "courseNumber":" ",
+    "courseAttributes":[" "],
+    "courseDescription":[" "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":" "
+},
+]
