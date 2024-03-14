@@ -16,9 +16,33 @@ public class DataLoader {
      * Returns an array list of courses
      * @return ArrayList of courses
      */
-    public ArrayList<Course> getCourses() {
-        return new ArrayList<Course>();
+    public ArrayList<Course> getCourses(String filePath) {
+        ArrayList<Course> courses = new ArrayList<>();
+        JSONParser parser = new JSONParser();
+
+        try (FileReader reader = new FileReader(filePath)) {
+            JSONArray coursesArray = (JSONArray) parser.parse(reader);
+
+            for (Object o : coursesArray) {
+                JSONObject courseJson = (JSONObject) o;
+                UUID uuid = UUID.fromString((String) courseJson.get("uuid"));
+                String subject = (String) courseJson.get("subject");
+                String number = (String) courseJson.get("number");
+                String name = (String) courseJson.get("name");
+                String description = (String) courseJson.get("description");
+                int creditHours = (int)Double.parseDouble((String) courseJson.get("credit_hours"));
+                
+
+                Course course = new Course(uuid, subject, number, name, coursesArray, description, creditHours, false);
+                courses.add(course);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return courses;
     }
+
     /**
      * shows all users in the array list
      * @return array list of all users
@@ -67,7 +91,7 @@ public class DataLoader {
                 // Hashmap cast needs to be checked for json (not correct atm)
                 //HashMap<Course, Grade> completedCourses = (HashMap<Course, Grade>) studentJson.get("completedCourses");
                 HashMap<Course, Grade> completedCourses = null;
-
+                
                 UserList.students.add(new Student(user_UUID, userName, password, firstName,lastName, uscID,
                 gradYear, major, gpa, scholarship, failedCourses, currentCourses, completedCourses));
             }

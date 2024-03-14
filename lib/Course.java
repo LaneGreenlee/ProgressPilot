@@ -4,16 +4,17 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class Course {
-    public String courseCode;
-    public String courseNumber;
-    public String fullName;
+    public UUID courseID; // Unique identifier, similar to "uuid"
+    public String courseCode; // Similar to "subject" in the new format
+    public String courseNumber; // Similar to "number" in the new format
+    public String fullName; // Course name, similar to "name" in the new format
+    public ArrayList<String> courseAttributes; // Attributes, potentially similar to "semesters_offered" or additional attributes
+    public String description; // Course description, merged from "courseDescription" array into a single String
+    public int creditHours; // Number of credit hours, changed from int to double to accommodate partial credits if necessary
+    public boolean isTransfer; // Retained from original
+    private ArrayList<String> semestersOffered; // New, indicating which semesters the course is offered in
     public Grade grade;
-    public ArrayList<String> courseAttributes;
-    public String[] courseDescription;
-    public int creditHours;
-    public boolean isTransfer;
-    public UUID courseID;
-    private ArrayList<HashMap<Course, Double>> prereqs;
+
 
     /**
      * Constructor of a course by taking in course code, number, description and how many credit hours it is
@@ -22,9 +23,22 @@ public class Course {
      * @param courseDescription Describes what the class accomplishes
      * @param creditHours number of credit hours the course it
      */
-    public Course(String courseCode, String courseNumber, String courseDescription, int creditHours) {
-    fullName = courseCode + " " + courseNumber;
+    public Course(UUID courseID, String courseCode, String courseNumber, String fullName, ArrayList<String> courseAttributes, String description, int creditHours, boolean isTransfer) {
+        this.courseID = courseID;
+        this.courseCode = courseCode;
+        this.courseNumber = courseNumber;
+        this.fullName = fullName;
+        this.courseAttributes = courseAttributes;
+        this.description = description;
+        this.creditHours = creditHours;
+        this.isTransfer = isTransfer;
+        this.semestersOffered = new ArrayList<>();
     }
+
+    public Course(String courseCode2, String courseNumber2, String courseDescription, int creditHours2) {
+        //TODO Auto-generated constructor stub
+    }
+
     /***
      * Checks if the course passed in is AIU
      * @param course course to check if it is AIU
@@ -127,4 +141,36 @@ public class Course {
     public int getCreditHours() {
         return this.creditHours;
     }
+    class Prerequisite {
+        private int choices;
+        private ArrayList<UUID> courseOptions;
+        private String minGrade;
+    
+        public Prerequisite(int choices, ArrayList<UUID> courseOptions, String minGrade) {
+            this.choices = choices;
+            this.courseOptions = courseOptions;
+            this.minGrade = minGrade;
+        }
+    
+        // Example getters
+        public int getChoices() { return choices; }
+        public ArrayList<UUID> getCourseOptions() { return courseOptions; }
+        public String getMinGrade() { return minGrade; }
+    }
+    public Object getCourseID() {
+        return this.courseID;
+    }
+
+    public Object getCourseCode() {
+        return this.courseCode;
+    }
+
+    public Object getCourseNumber() {
+        return this.courseNumber;
+    }
+
+    public Object getDescription() {
+        return this.description;
+    }
+    
 }

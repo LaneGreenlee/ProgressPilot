@@ -10,6 +10,8 @@ public class Major {
     public ArrayList<Course> courses;
     public MajorName majorName;
     public UUID majorID;
+    public ApplicationArea applicationArea;
+    public CourseList courseList;
     /**
      * constructor to create a major based on the requirements
      * @param gpaRequirement required gpa for the major
@@ -81,9 +83,9 @@ public class Major {
             // handle any cases not matched above
             break;}
             this.applicationArea.setRequiredCourses();
-            courses.remove(courselist.getCourse("Application Area"));
-            courses.remove(courselist.getCourse("Application Area"));
-            courses.remove(courselist.getCourse("Application Area"));
+            courses.remove(courseList.getCourse("Application Area"));
+            courses.remove(courseList.getCourse("Application Area"));
+            courses.remove(courseList.getCourse("Application Area"));
             courses.addAll(applicationArea.requiredCourses);
     }
     

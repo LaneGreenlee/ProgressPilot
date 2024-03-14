@@ -142,4 +142,30 @@ public class DataWriter {
             e.printStackTrace();
         }
     }
+    public void saveCourses(ArrayList<Course> courses, String filePath) {
+        JSONArray jsonCourses = new JSONArray();
+
+        for (Course course : courses) {
+            JSONObject courseJson = new JSONObject();
+            courseJson.put("uuid", course.getCourseID().toString());
+            courseJson.put("subject", course.getCourseCode());
+            courseJson.put("number", course.getCourseNumber());
+            courseJson.put("name", course.getFullName());
+            courseJson.put("description", course.getDescription());
+            courseJson.put("credit_hours", String.valueOf(course.getCreditHours()));
+            // Assume handling for isTransfer and courseAttributes if applicable
+            
+            // Handle semestersOffered, prerequisites, corequisites
+
+            jsonCourses.add(courseJson);
+        }
+
+        try (FileWriter file = new FileWriter(filePath)) {
+            file.write(jsonCourses.toJSONString());
+            file.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
