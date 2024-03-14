@@ -87,7 +87,6 @@ private int getUserCommand(int numCommands) {
  * If user chooses one it checks the advisor array list and has user type in user name and password
  */
 private void login() {
-    boolean run = true;
     int userCommand = loginType(loginOptions.length);
     if (userCommand == -1) {
         System.out.println("Not a valid command");
@@ -149,6 +148,9 @@ private int studentChoice(int numCommands) {
     return -1;
 }
 private void studentOptions() {
+    boolean run = true;
+    int userChoose = 0;
+    while (run){
     int userCommand = studentChoice(loginOptions.length);
     if (userCommand == -1) {
         System.out.println("Not a valid command");
@@ -156,14 +158,25 @@ private void studentOptions() {
     switch(userCommand) {
         case(0):
             System.out.println("View Courses: ");
-            currentStudent.getCompletedCourses();
+            //currentStudent.getCompletedCourses();
             dataWriter.saveAllStudents();
             break;
+
         case(1):
             System.out.println("Courses that need to be taken: ");
-            currentStudent.getCoursesRemaining();
+            //currentStudent.getCoursesRemaining();
             break;
         }
+        System.out.println("\nWould you like to continue working?\n '1' for yes, '2' for no");
+         String input = scanner.nextLine();
+        int command = Integer.parseInt(input);
+        if (command == 1){
+            userCommand = 0;
+            run = true;
+        }
+        else
+            run = false;
+    }
 }
 /**
  * Takes in username and password and checks the advisor array list to see if the profile
