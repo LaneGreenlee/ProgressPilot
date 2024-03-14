@@ -87,7 +87,13 @@ public class DataLoader {
                 MajorName major = MajorName.Computer_Science;
                 Double gpa = (Double) studentJson.get("gpa");
                 Scholarship scholarship = Scholarship.Hope;
-                String failedCourses = (String) studentJson.get("failedCourse");
+                JSONArray failedCoursesJSON = (JSONArray)studentJson.get("failedCourses");
+                ArrayList<Course> failedCourses = new ArrayList<Course>();
+                for (Object idObj : failedCoursesJSON) {
+                    UUID courseId = UUID.fromString((String)idObj);
+                    Course course = CourseList.getInstance().getCourse(courseId);
+                    failedCourses.add(course);
+                }
                 JSONArray currentCoursesJSON = (JSONArray)studentJson.get("currentCourses");
                 ArrayList<Course> currentCourses = new ArrayList<Course>();
                 for (Object idObj : currentCoursesJSON) {
