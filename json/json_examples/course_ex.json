@@ -255,24 +255,6 @@
     "courseID":"6c7c2f3d-6a66-41a6-815d-d3f5f6c09d2d"
 },
 {
-    "courseCode":" ",
-    "courseNumber":" ",
-    "courseAttributes":[" "],
-    "courseDescription":[" "],
-    "creditHours":3,
-    "isTransfer":false,
-    "courseID":"5bf43887-ae3a-4818-b5b4-36602affbc8e"
-},
-{
-    "courseCode":" ",
-    "courseNumber":" ",
-    "courseAttributes":[" "],
-    "courseDescription":[" "],
-    "creditHours":3,
-    "isTransfer":false,
-    "courseID":"4b366c46-e8ed-475d-97dd-04be44b83adf"
-},
-{
     "courseCode":"CSCE",
     "courseNumber":"416",
     "courseAttributes":["PR"],
@@ -334,6 +316,36 @@
     "creditHours":3,
     "isTransfer":false,
     "courseID":"51efaa37-07b1-4944-812b-6f08399f1bc5"
+},
+
+
+
+{
+    "courseCode":"CRJU",
+    "courseNumber":"313",
+    "courseAttributes":[" "],
+    "courseDescription":[" "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"0a435957-9795-42ba-932e-0cfc1c22f749"
+},
+{
+    "courseCode":"LAWS",
+    "courseNumber":"525",
+    "courseAttributes":[" "],
+    "courseDescription":[" "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"57c713a3-7b78-49c6-8b0b-475dd2b5f14b"
+},
+{
+    "courseCode":"JOUR",
+    "courseNumber":"303",
+    "courseAttributes":[" "],
+    "courseDescription":[" "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":" "
 },
 {
     "courseCode":" ",
