@@ -29,9 +29,9 @@ public class Driver {
         progressPilot = new ProgessPilotFACADE();
         dataLoader = new DataLoader();
         dataWriter = new DataWriter();
+        dataLoader.getCourses("json/json_examples/course_ex.json");
         dataLoader.getAllStudents("json/json_examples/student_ex.json");
         dataLoader.getAllAdvisors("json/json_examples/admin_ex.json");
-
     }
     /**
     * Presents the user with the choice to either sign up or log in

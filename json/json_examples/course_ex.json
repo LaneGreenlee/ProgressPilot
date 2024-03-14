@@ -1,5 +1,14 @@
 [
     {
+        "courseCode":"Math",
+        "courseNumber":"115",
+        "courseAttributes":["CC"],
+        "courseDescription":["Topics in algebra and trigonometry specifically needed for MATH 141, MATH 142, MATH 241. Subsets of the real line, absolute value; polynomial, rational, inverse, logarithmic, exponential functions; circular functions; analytic trigonometry.    FS: 12/05/2018.   CL: 2020."],
+        "creditHours":4,
+        "isTransfer":false,
+        "courseID":"84b21549-16e9-4117-978c-39a43fb665b2"
+    },
+    {
         "courseCode":"ENGL",
         "courseNumber":"101",
         "courseAttributes":["CC"],

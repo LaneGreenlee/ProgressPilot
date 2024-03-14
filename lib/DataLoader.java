@@ -25,21 +25,21 @@ public class DataLoader {
 
             for (Object o : coursesArray) {
                 JSONObject courseJson = (JSONObject) o;
-                UUID uuid = UUID.fromString((String) courseJson.get("uuid"));
-                String subject = (String) courseJson.get("subject");
-                String number = (String) courseJson.get("number");
-                String name = (String) courseJson.get("name");
-                String description = (String) courseJson.get("description");
-                int creditHours = (int)Double.parseDouble((String) courseJson.get("credit_hours"));
-                
-
-                Course course = new Course(uuid, subject, number, name, coursesArray, description, creditHours, false);
+                UUID uuid = UUID.fromString((String) courseJson.get("courseID"));
+                String code = (String) courseJson.get("courseCode");
+                String number = (String) courseJson.get("courseNumber");
+                String subject = (String) courseJson.get("courseCode");
+                String name = (String) courseJson.get("courseCode");
+                String description = "Hello";
+                double creditHours = Double.parseDouble(String.valueOf(courseJson.get("creditHours")));
+                int creditHoursInt = (int) creditHours; // Convert double to int 
+            
+                Course course = new Course(uuid, subject, number, name, coursesArray, description, creditHoursInt, false);
                 courses.add(course);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return courses;
     }
 

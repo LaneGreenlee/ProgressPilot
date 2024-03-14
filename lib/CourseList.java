@@ -5,14 +5,15 @@ import java.util.UUID;
 
 public class CourseList {
     private static CourseList courseList;
-    private ArrayList<Course> Courses;
+    public ArrayList<Course> Courses;
     private DataLoader loader;
     /**
      * Constructor by created ArrayList of courses
      */
     private CourseList() {
        Courses = new ArrayList<Course>();
-       //Courses = loader.getCourses();
+       loader = new DataLoader();
+       Courses = loader.getCourses("json/json_examples/course_ex.json");
     }
 
     public static CourseList getInstance(){
@@ -58,6 +59,9 @@ public class CourseList {
     }
 
     protected Course getCourse(UUID id) {
+      if(Courses.size()==0) {
+        System.out.println("cooked again");
+      }
       for (int i =0; i < Courses.size(); i++) {
         if (id.equals(Courses.get(i).getCourseID())) {
           return Courses.get(i);
