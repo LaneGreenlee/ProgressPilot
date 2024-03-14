@@ -83,8 +83,8 @@ public class DataLoader {
                 String uscID = (String) studentJson.get("uscID");
                 UUID user_UUID = UUID.fromString((String)studentJson.get("user_UUID"));
                 String gradYear = (String) studentJson.get("gradYear");
-                MajorName major = MajorName.Computer_Information_Systems;
-                //MajorName major = Enum.valueOf(MajorName.class,(String)studentJson.get("major"));
+                //MajorName major = MajorName.Computer_Information_Systems;
+                MajorName major = MajorName.Computer_Science;
                 Double gpa = (Double) studentJson.get("gpa");
                 Scholarship scholarship = Scholarship.Hope;
                 ArrayList<Course> failedCourses = (ArrayList<Course>) studentJson.get("failedCourse");

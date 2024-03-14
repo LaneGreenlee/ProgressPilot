@@ -170,7 +170,12 @@ public String getUserName() {
   public ArrayList<Course> getFailedCourses() {
     return this.failedCourses;
   }
-
+  public ArrayList<Course> getCoursesRemaining() {
+    ArrayList<Course> remaining = new ArrayList<Course>();
+    remaining.addAll(major.courses);
+    remaining.removeAll(completedCourses.keySet());
+    return remaining;
+  }
 public boolean meetsPrerequisites(Course course) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'meetsPrerequisites'");
