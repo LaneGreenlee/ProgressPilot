@@ -48,7 +48,7 @@
 {
     "courseCode":"ENGL",
     "courseNumber":"102",
-    "courseAttributes":["CC"],
+    "courseAttributes":["INF"],
     "courseDescription":["Instruction and intensive practice in researching, analyzing, and composing written arguments about academic and public issues."],
     "creditHours":3,
     "isTransfer":false,
