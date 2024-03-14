@@ -170,7 +170,170 @@
     "courseDescription":["Experiments, exercises, and demonstrations to accompany PHYS 212"],
     "creditHours":1,
     "isTransfer":false,
-    "courseID":"b3d392ff-ccd5-46af-92d5-d2663369c13d"
+    "courseID":"18f1832f-0b62-44bf-8921-a36f343aead0"
+},
+
+{
+    "courseCode":"CSCE",
+    "courseNumber":"212",
+    "courseAttributes":["PR"],
+    "courseDescription":["Computer architecture, components. and organization; memory addressing; Input/Output; instruction sets; interrupts; assembly-language programming."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"e4bd594c-25d8-46e1-a7c9-26a4425d1e80"
+},
+{
+    "courseCode":"CSCE",
+    "courseNumber":"247",
+    "courseAttributes":["PR"],
+    "courseDescription":["Fundamentals of software design and development; software implementation strategies; object-oriented design techniques; functional design techniques; design patterns; design process; source control; testing."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"098820f3-9b68-4fb0-b7c2-a2a8f71b077e"
+},
+{
+    "courseCode":"MATH",
+    "courseNumber":"241",
+    "courseAttributes":["PR"],
+    "courseDescription":["Vector algebra, geometry of three-dimensional space; lines, planes, and curves in space; polar, cylindrical, and spherical coordinate systems; partial differentiation, max-min theory; multiple and iterated integration, line integrals, and Green’s theorem in the plane. "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"0acc5f8e-d7ef-413c-81ea-1d522be7ea14"
+},
+{
+    "courseCode":"CSCE",
+    "courseNumber":"311",
+    "courseAttributes":["PR"],
+    "courseDescription":["Operating system structure and function; process implementation, scheduling, and synchronization; memory management; security; naming protection; resource allocation; network file systems. "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"ded8e5f4-a93b-42de-ba28-418c5493429b"
+},
+{
+    "courseCode":" ",
+    "courseNumber":" ",
+    "courseAttributes":[" "],
+    "courseDescription":[" "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"89430a8a-232e-4f75-9b3f-f833e7712b66"
+},
+{
+    "courseCode":"CSCE",
+    "courseNumber":"350",
+    "courseAttributes":["PR"],
+    "courseDescription":["Techniques for representing and processing information, including the use of lists, trees, and graphs; analysis of algorithms; sorting, searching, and hashing techniques."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"e0fa1013-dd7b-47fe-a05d-d9068f094483"
+},
+{
+    "courseCode":"CSCE",
+    "courseNumber":"390",
+    "courseAttributes":["CC"],
+    "courseDescription":["Professional issues in the information technology professions; history and social context of computing; professional responsibilities; privacy; intellectual property; risks and liabilities of computer-based systems."],
+    "creditHours":1,
+    "isTransfer":false,
+    "courseID":"f62528f6-1081-4c61-91e1-01c5b9871b72"
+},
+{
+    "courseCode":"ENGL",
+    "courseNumber":"462",
+    "courseAttributes":["PR"],
+    "courseDescription":["Preparation for and practice in types of writing important to scientists, engineers, and computer scientists, from brief technical letters to formal articles and reports."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"fb845cb3-4553-468d-98d9-e968845aeaa8"
+},
+{
+    "courseCode":"ENGL",
+    "courseNumber":"463",
+    "courseAttributes":["PR"],
+    "courseDescription":["Extensive practice in different types of business writing, from brief letters to formal articles and reports."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"6c7c2f3d-6a66-41a6-815d-d3f5f6c09d2d"
+},
+{
+    "courseCode":" ",
+    "courseNumber":" ",
+    "courseAttributes":[" "],
+    "courseDescription":[" "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"5bf43887-ae3a-4818-b5b4-36602affbc8e"
+},
+{
+    "courseCode":" ",
+    "courseNumber":" ",
+    "courseAttributes":[" "],
+    "courseDescription":[" "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"4b366c46-e8ed-475d-97dd-04be44b83adf"
+},
+{
+    "courseCode":"CSCE",
+    "courseNumber":"416",
+    "courseAttributes":["PR"],
+    "courseDescription":["Concepts and components of computer networks and the Internet; network applications; network protocol stack"],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"1805c762-9328-430c-950f-dbe97a5fcfc1"
+},
+{
+    "courseCode":"STAT",
+    "courseNumber":"509",
+    "courseAttributes":["PR"],
+    "courseDescription":["Basic probability and statistics with applications and examples in engineering. Elementary probability, random variables and their distribution, random processes, statistical inference, linear regression, correlation and basic design of experiments with application to quality assurance, reliability, and life testing. May not be taken concurrently with or after STAT 513, STAT 515, or STAT 516. Not for C.A.S., M.A.S., or Ph.D credit in Statistics."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"6aede8de-aa03-4b47-8444-991f31144607"
+},
+{
+    "courseCode":"CSCE",
+    "courseNumber":"490",
+    "courseAttributes":["PR"],
+    "courseDescription":["Major team-based software design project to be undertaken in a student’s final year of study; project planning, software requirements analysis, design, and specification. Written reports and oral presentations in a technical setting. "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"44922176-760c-4c8e-bb87-7fe9eb12b4c4"
+},
+{
+    "courseCode":"CSCE",
+    "courseNumber":"355",
+    "courseAttributes":["PR"],
+    "courseDescription":["Basic theoretical principles of computing as modeled by formal languages, grammars, automata, and Turing machines; fundamental limits of computation."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"5f3d62ff-d693-4bd7-a085-8381a31eb356"
+},
+{
+    "courseCode":"MATH",
+    "courseNumber":"344",
+    "courseAttributes":["PR"],
+    "courseDescription":["General solutions of systems of linear equations, vector spaces and subspaces, linear transformations, determinants, orthogonality, characteristic polynomials, eigenvalues and eigenvectors, singular value decomposition, and generalized inverse.  MATH 344L is an optional laboratory course where additional applications will be discussed. "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"5f3781ca-4a14-4e5c-83bc-b9808a3f159c"
+},
+{
+    "courseCode":"MATH",
+    "courseNumber":"344L",
+    "courseAttributes":["PR"],
+    "courseDescription":["Computer based applications of linear algebra for science and engineering students. Topics include numerical analysis of matrices, direct and indirect methods for solving linear systems, and least squares method (regression). Typical applications include practical issues related to discrete Markov processes, image compression, and linear programming. "],
+    "creditHours":1,
+    "isTransfer":false,
+    "courseID":"3afa38be-7b9b-43e2-bfcc-2ef76cc19b44"
+},
+{
+    "courseCode":"CSCE",
+    "courseNumber":"492",
+    "courseAttributes":["PR"],
+    "courseDescription":["Continuation of CSCE 490. Computer system implementation, testing, verification and validation of results. Written reports and oral presentations in a technical setting."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"51efaa37-07b1-4944-812b-6f08399f1bc5"
 },
 {
     "courseCode":" ",
