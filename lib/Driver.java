@@ -15,6 +15,7 @@ public class Driver {
     private ProgessPilotFACADE progressPilot;
     private DataLoader dataLoader;
     private DataWriter dataWriter;
+    private Student currentStudent;
 
     /**
      * Creates scanner, facade variable, data loader variable, data writer variable and then adds all students and all advisors
@@ -95,6 +96,7 @@ private void login() {
         case(0):
             System.out.println("Student Login: ");
             studentLogin();
+
             dataWriter.saveAllStudents();
             break;
         case(1):
@@ -131,9 +133,37 @@ private void studentLogin() {
     String userName = getField("Username");
     String password = getField("password");
     progressPilot.studentLogin(userName, password);
-        Student currentStudent = progressPilot.studentLogin(userName, password);
+        currentStudent = progressPilot.studentLogin(userName, password);
         dataWriter.saveAllStudents();
         System.out.println("Welcome " + currentStudent.getFirstName() + " " + currentStudent.getLastName() + "!");
+        studentOptions();
+}
+private int studentChoice(int numCommands) {
+    System.out.print("Student Choices \n'1' View courses taken and grades earned or '2' Courses that need to be taken ");
+    String userIn = scanner.nextLine();
+    int command = Integer.parseInt(userIn) - 1;
+
+    if(command >= 0 && command <= numCommands -1)
+        return command;
+    
+    return -1;
+}
+private void studentOptions() {
+    int userCommand = studentChoice(loginOptions.length);
+    if (userCommand == -1) {
+        System.out.println("Not a valid command");
+    }
+    switch(userCommand) {
+        case(0):
+            System.out.println("View Courses: ");
+            currentStudent.getCompletedCourses();
+            dataWriter.saveAllStudents();
+            break;
+        case(1):
+            System.out.println("Courses that need to be taken: ");
+            currentStudent.getCoursesRemaining();
+            break;
+        }
 }
 /**
  * Takes in username and password and checks the advisor array list to see if the profile
