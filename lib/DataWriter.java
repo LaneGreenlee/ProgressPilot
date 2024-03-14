@@ -3,7 +3,6 @@ package lib;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -33,11 +32,11 @@ public class DataWriter {
      * Writes to JSON using private method
      */
     public void saveAllStudents() {
-        UserList students = UserList.getInstance();
-        ArrayList<Student> studentList = students.getAllStudents();
+        //UserList students = UserList.getInstance();
+        //ArrayList<Student> studentList = students.getAllStudents();
         JSONArray jsonStudents = new JSONArray();
 
-        for (Student student : studentList) {
+        for (Student student : UserList.students) {
             jsonStudents.add(getStudentJSON(student));
         }
 
@@ -76,34 +75,39 @@ public class DataWriter {
         studentDetails.put(USER_PASSWORD, student.getPassword());
         studentDetails.put(STUDENT_GRAD_YEAR, student.getGradYear());
         studentDetails.put(STUDENT_SCHOLARSHIPS, student.getScholarship());
-        studentDetails.put(STUDENT_MAJOR, student.getMajor().toString());
+        studentDetails.put(STUDENT_MAJOR, MajorName.Computer_Information_Systems);
         studentDetails.put(STUDENT_GPA, student.getGPA());
         // Handle scholarships, failedCourses, currentCourses, completedCourses appropriately
         // For lists and maps, you might need to convert them to JSONArray or JSONObject
-        JSONArray failedCoursesArray = new JSONArray();
-        for (Course course : student.getFailedCourses()) {
+        JSONArray failedCoursesArray = null;
+        //JSONArray failedCoursesArray = new JSONArray();
+        /*for (Course course : student.getFailedCourses()) {
             JSONObject courseObject = new JSONObject();
             courseObject.put("courseName", course.getFullName());
             courseObject.put("courseGrade", course.getGrade());
             failedCoursesArray.add(courseObject);
         }
+        */
         studentDetails.put(STUDENT_FAILED_COURSES, failedCoursesArray);
 
-        JSONArray currentCoursesArray = new JSONArray();
-        for (Course course : student.getCurrentCourses()) {
+        JSONArray currentCoursesArray = null;
+        /*for (Course course : student.getCurrentCourses()) {
             JSONObject courseObject = new JSONObject();
             courseObject.put("courseName", course.getFullName());
             courseObject.put("courseGrade", course.getGrade());
             currentCoursesArray.add(courseObject);
         }
+        */
         studentDetails.put(STUDENT_CURRENT_COURSES, currentCoursesArray);
 
-        JSONObject completedCoursesObject = new JSONObject();
+        JSONObject completedCoursesObject = null;
+        /*
         for (HashMap.Entry<Course, Grade> entry : student.getCompletedCourses().entrySet()) {
             Course course = entry.getKey();
             Grade grade = entry.getValue();
             completedCoursesObject.put(course.getFullName(), grade);
         }
+        */
         studentDetails.put(STUDENT_COMPLETED_COURSES, completedCoursesObject);
 
         return studentDetails;

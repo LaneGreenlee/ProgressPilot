@@ -8,7 +8,7 @@ public class Student extends User{
   private String gradYear;
   private Major major;
   private MajorName majorName;
-private String userName;
+  private String userName;
   private Double gpa;
   private Scholarship scholarship;
   private ArrayList<Course> failedCourses;
