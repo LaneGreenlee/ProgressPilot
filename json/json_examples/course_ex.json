@@ -323,8 +323,8 @@
 {
     "courseCode":"CRJU",
     "courseNumber":"313",
-    "courseAttributes":[" "],
-    "courseDescription":[" "],
+    "courseAttributes":["PR"],
+    "courseDescription":["Structure and organization of the federal and state criminal court systems and personnel. "],
     "creditHours":3,
     "isTransfer":false,
     "courseID":"0a435957-9795-42ba-932e-0cfc1c22f749"
@@ -332,8 +332,8 @@
 {
     "courseCode":"LAWS",
     "courseNumber":"525",
-    "courseAttributes":[" "],
-    "courseDescription":[" "],
+    "courseAttributes":["PR"],
+    "courseDescription":["A study of the Structure of the Federal Government and the function of the Supreme Court in constitutional government. Topics include principles of justiciability and standing; the development of federal power through the commerce clause and limits on state power flowing from the commerce and contract clauses; executive powers and the practice of separation of powers. The course will also generally consider the effect of the Fourteenth Amendment upon federalism, and conclude with the concept of state action as a limitation on the reach of the Amendment’s guarantees. Basis of Grade: Final examination. Form of Grade: Letter Grade."],
     "creditHours":3,
     "isTransfer":false,
     "courseID":"57c713a3-7b78-49c6-8b0b-475dd2b5f14b"
@@ -341,12 +341,13 @@
 {
     "courseCode":"JOUR",
     "courseNumber":"303",
-    "courseAttributes":[" "],
-    "courseDescription":[" "],
+    "courseAttributes":["PR"],
+    "courseDescription":["Examination of First Amendment free speech and press guarantees and limitations, including commercial speech regulation, libel, privacy, copyright, trademark and open records and meetings, and related ethical principles for mass communications professionals."],
     "creditHours":3,
     "isTransfer":false,
-    "courseID":" "
+    "courseID":"81a869d4-bf87-4715-b4d8-8d7e14d6f273"
 },
+
 {
     "courseCode":" ",
     "courseNumber":" ",
