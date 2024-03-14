@@ -48,7 +48,7 @@
 {
     "courseCode":"ENGL",
     "courseNumber":"102",
-    "courseAttributes":["CC"],
+    "courseAttributes":["INF"],
     "courseDescription":["Instruction and intensive practice in researching, analyzing, and composing written arguments about academic and public issues."],
     "creditHours":3,
     "isTransfer":false,
@@ -355,6 +355,192 @@
     "creditHours":3,
     "isTransfer":false,
     "courseID":"81a869d4-bf87-4715-b4d8-8d7e14d6f273"
+},
+
+
+{
+    "courseCode":"ARTE",
+    "courseNumber":"101",
+    "courseAttributes":["AIU"],
+    "courseDescription":["Introduction to art appreciation. Elements and principles of the visual arts, with examples from the history of art."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"20c303a6-e0e6-43b0-8dd7-5671f7d134a1"
+},
+{
+    "courseCode":"DANC",
+    "courseNumber":"101",
+    "courseAttributes":["AIU"],
+    "courseDescription":["Introduction to art appreciation. Elements and principles of the visual arts, with examples from the history of art."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"efec8889-2ac5-4fe5-a06f-ddb00a23df8c"
+},
+{
+    "courseCode":"FAMS",
+    "courseNumber":"110",
+    "courseAttributes":["AIU"],
+    "courseDescription":["Introduction to the critical study of film, video, photography, audio, and new media.  "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"cf3b4d01-3a42-4f31-8b53-58681f7a96e3"
+},
+{
+    "courseCode":"MART",
+    "courseNumber":"101",
+    "courseAttributes":["AIU"],
+    "courseDescription":["Introductory media arts creation and study for non-majors, with emphasis on developing an individual aesthetic for screen and related media."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"f257e044-6ebf-4bec-b312-74713b7d776d"
+},
+{
+    "courseCode":"SPAN",
+    "courseNumber":"220",
+    "courseAttributes":["AIU"],
+    "courseDescription":["Selected major works, especially contemporary works, in all genres of Hispanic literature in English translation. "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"c60b3b1b-a7c1-4027-8c7b-dc302fdff5d7"
+},
+
+{
+    "courseCode":"SPCH",
+    "courseNumber":"140",
+    "courseAttributes":["CMS"],
+    "courseDescription":["Introduction to theory and practice of oral communication in public, social, and institutional contexts. Includes foundational and cumulative training in the invention, performance, and critical analysis of oral communication, with emphasis on argumentation, persuasion, audience analysis, delivery, and ethical forms of engagement. "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"65a63fed-5a67-4292-acfb-87d05e0a2393"
+},
+{
+    "courseCode":"SPC",
+    "courseNumber":"145",
+    "courseAttributes":["CMS"],
+    "courseDescription":["Introduction to theory and practice of live and recorded online spoken communication in public, social, and institutional contexts. Training in invention, performance, and critical analysis of online spoken communication, including audience analysis, persuasion, delivery, and ethical engagement. Includes significant practice in preparing and presenting live online public communication."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"bc911d4e-90e1-415c-84c4-f5b9d9a7cb34"
+},
+{
+    "courseCode":"SAEL",
+    "courseNumber":"200",
+    "courseAttributes":["CMS"],
+    "courseDescription":["Introduction to nature and relationship of ethics and oral forms of advocacy. Includes foundational training in ethical theory and its relevance to    socio-political expression and training in the principles and performance of ethical oral communication, with emphasis on argumentation and audience engagement."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"fa325188-b33f-468f-9a6b-349a3a3efa08"
+},
+{
+    "courseCode":"PHIL",
+    "courseNumber":"325",
+    "courseAttributes":["CMS"],
+    "courseDescription":["An investigation of ethical issues in engineering and engineering-related technology. Topics include whistleblowing, employee/employer relations, environmental issues, issues related to advances in information technology, and privacy."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":" "
+},
+{
+    "courseCode":"PHIL",
+    "courseNumber":"213",
+    "courseAttributes":["CMS"],
+    "courseDescription":["Moral issues confronting men and women in contemporary society and the challenges of communicating effectively about them. Topics will vary but may include access to health care, euthanasia, abortion, same sex marriage and the moral and environmental consequences of eating animals."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"1fd852f6-6bc4-4fd1-90f7-8bfad559665c"
+},
+
+{
+    "courseCode":"POLI",
+    "courseNumber":"101",
+    "courseAttributes":["GSS"],
+    "courseDescription":["Introduction to theories about global politics. Issues and controversies central to global politics.   "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"9db24267-3232-44ef-8352-3ef2f9854691"
+},
+{
+    "courseCode":"GEOG",
+    "courseNumber":"103",
+    "courseAttributes":["GSS"],
+    "courseDescription":["A survey of the principles and methods of geographic inquiry. Not required for the geography major."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"49e40fe4-2fb9-47e3-b8ba-a115c410a045"
+},
+{
+    "courseCode":"ANTH",
+    "courseNumber":"101",
+    "courseAttributes":["GSS"],
+    "courseDescription":["An exploration of human origins, human evolution, human prehistory, and cultural existence from its less complex forms to early civilizations. An introduction to the concepts, methods, and data of physical, biological, and archaeological anthropology."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"97e22937-6c87-49dc-863c-e192132a4dcb"
+},
+{
+    "courseCode":"RELG",
+    "courseNumber":"101",
+    "courseAttributes":["GSS"],
+    "courseDescription":["Beliefs and practices of the world\u0027s religions and the methods scholars use to study them. "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"1f06e8ed-5166-4dec-9397-86270a63e249"
+},
+{
+    "courseCode":"WGST",
+    "courseNumber":"112",
+    "courseAttributes":["GSS"],
+    "courseDescription":["A social science perspective of women in psychological, sociological, historical, anthropological, economic, and political contexts; the changing roles, images, and institutions. "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"85be3796-58a1-4d53-a0d0-aa699c7b8c77"
+},
+
+{
+    "courseCode":"SOST",
+    "courseNumber":"201",
+    "courseAttributes":["GHS"],
+    "courseDescription":["Examination of major social and cultural developments of American South from early exploration to 1900."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"ba62907c-eb87-413b-b7fa-2cdd958c8ef8"
+},
+{
+    "courseCode":"HIST",
+    "courseNumber":"101",
+    "courseAttributes":["GHS"],
+    "courseDescription":["The rise and development of European civilization from its Mediterranean origins through the Renaissance and Reformation."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"7c9e4471-bb91-414e-bc17-50e679623ce9"
+},
+{
+    "courseCode":"FAMS",
+    "courseNumber":"300",
+    "courseAttributes":["GHS"],
+    "courseDescription":["Surveys the development of cinema and related media from the 1820s to the present. Attention to the relations among key technological, cultural, and industrial changes, their causes, and consequences. "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"fcc70bd0-7470-4a01-9c35-4c785d5de812"
+},
+{
+    "courseCode":"ARTH",
+    "courseNumber":"107",
+    "courseAttributes":["GHS"],
+    "courseDescription":["Art and culture of India, China, and Japan from prehistory to the present. "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"912fa179-2960-432f-a4f7-16ac6c4c2763"
+},
+
+{
+    "courseCode":" ",
+    "courseNumber":" ",
+    "courseAttributes":[" "],
+    "courseDescription":[" "],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":" "
 },
 
 {
