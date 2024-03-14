@@ -59,9 +59,6 @@ public class CourseList {
     }
 
     protected Course getCourse(UUID id) {
-      if(Courses.size()==0) {
-        System.out.println("cooked again");
-      }
       for (int i =0; i < Courses.size(); i++) {
         if (id.equals(Courses.get(i).getCourseID())) {
           return Courses.get(i);
