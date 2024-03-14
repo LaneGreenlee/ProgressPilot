@@ -87,8 +87,14 @@ public class DataLoader {
                 //MajorName major = Enum.valueOf(MajorName.class,(String)studentJson.get("major"));
                 Double gpa = (Double) studentJson.get("gpa");
                 Scholarship scholarship = Scholarship.Hope;
-                ArrayList<Course> failedCourses = (ArrayList<Course>) studentJson.get("failedCourse");
-                ArrayList<Course> currentCourses = (ArrayList<Course>) studentJson.get("currentCourses");
+                String failedCourses = (String) studentJson.get("failedCourse");
+                JSONArray currentCoursesJSON = (JSONArray)studentJson.get("currentCourses");
+                ArrayList<Course> currentCourses = new ArrayList<Course>();
+                for (Object idObj : currentCoursesJSON) {
+                    UUID courseId = UUID.fromString((String)idObj);
+                    Course course = CourseList.getInstance().getCourse(courseId);
+                    currentCourses.add(course);
+                }
                 // Hashmap cast needs to be checked for json (not correct atm)
                 //HashMap<Course, Grade> completedCourses = (HashMap<Course, Grade>) studentJson.get("completedCourses");
                 HashMap<Course, Grade> completedCourses = null;

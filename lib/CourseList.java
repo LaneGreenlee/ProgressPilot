@@ -1,16 +1,25 @@
 package lib;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class CourseList {
+    private static CourseList courseList;
     private ArrayList<Course> Courses;
     private DataLoader loader;
     /**
      * Constructor by created ArrayList of courses
      */
-    public CourseList() {
+    private CourseList() {
        Courses = new ArrayList<Course>();
        //Courses = loader.getCourses();
+    }
+
+    public static CourseList getInstance(){
+      if(courseList == null){
+        courseList = new CourseList();
+      }
+      return courseList;
     }
     /**
      * Removes course if a course with the course name exist
@@ -47,6 +56,17 @@ public class CourseList {
         System.out.println("Sorry no course were found with that name");
         return null;
     }
+
+    protected Course getCourse(UUID id) {
+      for (int i =0; i < Courses.size(); i++) {
+        if (id.equals(Courses.get(i).getCourseID())) {
+          return Courses.get(i);
+        }
+      }
+      System.out.println("Sorry no course were found with that name");
+      return null;
+  }
+
     /**
      * shows all courses that are in the array list
      * @return array list of all courses
