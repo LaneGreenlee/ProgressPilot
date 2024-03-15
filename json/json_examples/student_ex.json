@@ -9,10 +9,13 @@
     "major":"Computer_Science",
     "gpa":3.6,
     "scholarships":["Life","Palmetto Fellows"],
-    "failedCourses":["b3d392ff-ccd5-46af-92d5-d2663369c13d"], 
+    "failedCourses":["b3d392ff-ccd5-46af-92d5-d2663369c13d"],
     "currentCourses":[],
     "completedCourses": {
         "375e8ad4-b152-487c-9e06-72ad02e7127b" : "A",
-        "84b21549-16e9-4117-978c-39a43fb665b2" : "B"
+        "84b21549-16e9-4117-978c-39a43fb665b2" : "B",
+        "9f3e1d01-ef9c-4af3-8d2d-fdec413896b9" : "B",
+        "51efaa37-07b1-4944-812b-6f08399f1bc5" : "A"
+
     }
 }]

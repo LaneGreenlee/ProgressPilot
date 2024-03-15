@@ -14,6 +14,7 @@ public class Student extends User{
   private ArrayList<Course> failedCourses;
   private ArrayList<Course> currentCourses;
   public HashMap<Course, Grade> completedCourses;
+  private DataLoader loader;
   /**
    * The constructor of a brand new student who
    * has not taken any classes
@@ -31,6 +32,7 @@ public class Student extends User{
   public Student(UUID user_UUID, String userName, String password, String firstName, String lastName, String uscID,
         String gradYear, MajorName major, Double gpa, Scholarship scholarship) {
         super(userName, password, firstName, lastName, uscID, user_UUID);
+        loader = new DataLoader();
         this.userName = userName;
         this.gradYear = gradYear;
         this.majorName = major;
@@ -39,6 +41,7 @@ public class Student extends User{
         this.failedCourses = new ArrayList<>();
         this.currentCourses = new ArrayList<>();
         this.completedCourses = new HashMap<>();
+        this.major = loader.getMajor("json/json_examples/major_ex.json", majorName);
         //TODO Auto-generated constructor stub
     }
     /**
@@ -60,6 +63,7 @@ public class Student extends User{
         String gradYear, MajorName major, Double gpa, Scholarship scholarship, ArrayList<Course> failedCourses,
         ArrayList<Course> currentCourses, HashMap<Course, Grade> completedCourses) {
       super(userName, password, firstName, lastName, uscID, UUID.randomUUID());
+      loader = new DataLoader();
       this.userName = userName;
       this.gradYear = gradYear;
       this.majorName = major;
@@ -68,7 +72,8 @@ public class Student extends User{
       this.failedCourses = failedCourses;
       this.currentCourses = currentCourses;
       this.completedCourses = completedCourses;
-    }
+      this.major = loader.getMajor("json/json_examples/major_ex.json",major);
+      }
   protected void addEightSemesterPlan() {
 
   }

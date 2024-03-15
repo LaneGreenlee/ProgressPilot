@@ -1,6 +1,7 @@
 package lib;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class MajorList {
     private ArrayList<Major> major;
@@ -12,8 +13,8 @@ public class MajorList {
      * @param majorName name of the major from the MajorName enum
      * @param courses courses required to complete the major
      */
-    protected void addMajor (Double gpaRequirement, int totalHours, String college, MajorName majorName, ArrayList<Course> courses) {
-        Major newMajor = new Major(gpaRequirement, totalHours, college, majorName, courses);
+    protected void addMajor (UUID majorID, Double gpaRequirement, int totalHours, String college, MajorName majorName, ArrayList<Course> courses) {
+        Major newMajor = new Major(majorID, gpaRequirement, totalHours, college, majorName, courses);
         major.add(newMajor);
     }
     /**
@@ -33,6 +34,7 @@ public class MajorList {
      * @return returns the name
      */
     protected MajorName getMajor (MajorName majorName) {
+      
         return majorName;
 }
 }

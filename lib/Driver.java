@@ -3,6 +3,7 @@ package lib;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -160,6 +161,7 @@ private void studentOptions() {
     switch(userCommand) {
         case(0):
             System.out.println("View Courses: ");
+            System.out.println(dataLoader.getMajor("json/json_examples/major_ex.json",currentStudent.getMajorName()));
             HashMap<Course,Grade> completedCourses = currentStudent.getCompletedCourses();
             for (Map.Entry<Course, Grade> entry : completedCourses.entrySet()) {
                 System.out.println("Course Name: " + entry.getKey().getCourseCode() +" "+entry.getKey().getCourseNumber()+ " , Grade: " + entry.getValue());
@@ -169,7 +171,14 @@ private void studentOptions() {
 
         case(1):
             System.out.println("Courses that need to be taken: ");
-            //currentStudent.getCoursesRemaining();
+
+            ArrayList<Course> remainingCourses = currentStudent.getCoursesRemaining();
+        // Print the remaining courses
+             System.out.println("Remaining Courses:");
+             for (Course course : remainingCourses) {
+                System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+            }
+            //System.out.println(currentStudent.getCoursesRemaining());
             break;
         }
         System.out.println("\nWould you like to continue working?\n '1' for yes, '2' for no");

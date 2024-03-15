@@ -4,8 +4,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -41,6 +41,36 @@ public class DataLoader {
             e.printStackTrace();
         }
         return courses;
+    }
+    public Major getMajor(String filePath, MajorName majorNameCheck) {
+        Major majors = new Major(null, null, 0, null, null, null);
+        JSONParser parser = new JSONParser();
+
+        try (FileReader reader = new FileReader(filePath)) {
+            JSONArray coursesArray = (JSONArray) parser.parse(reader);
+            for (Object o : coursesArray) {
+                JSONObject majorJson = (JSONObject) o;
+                UUID majorID = UUID.fromString((String)majorJson.get("majorID"));
+                Double gpaRequirement = (Double) majorJson.get("gpaRequirement");
+                int totalHours = 125;
+                String college = (String) majorJson.get("college");
+                String majorString = (String) majorJson.get("majorName");
+                MajorName majorName =  Enum.valueOf(MajorName.class, majorString);
+                JSONArray currentCoursesJSON = (JSONArray)majorJson.get("courses");
+                ArrayList<Course> courses = new ArrayList<Course>();
+                for (Object idObj : currentCoursesJSON) {
+                    UUID courseId = UUID.fromString((String)idObj);
+                    Course course = CourseList.getInstance().getCourse(courseId);
+                    courses.add(course);
+                }
+                if (majorName.equals(majorNameCheck)) {
+                    majors = new Major(majorID,gpaRequirement, totalHours,college, majorName, courses);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return majors;
     }
 
     /**
