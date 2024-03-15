@@ -30,11 +30,18 @@ public class DataLoader {
                 String number = (String) courseJson.get("courseNumber");
                 String subject = (String) courseJson.get("courseCode");
                 String name = (String) courseJson.get("courseCode");
-                String description = "Hello";
                 double creditHours = Double.parseDouble(String.valueOf(courseJson.get("creditHours")));
                 int creditHoursInt = (int) creditHours; // Convert double to int 
-            
-                Course course = new Course(uuid, subject, number, name, coursesArray, description, creditHoursInt, false);
+                JSONArray courseDescriptionArray = (JSONArray) courseJson.get("courseDescription");
+                // Extracting the content from the JSONArray
+                String courseDescription = (String) courseDescriptionArray.get(0);
+                JSONArray courseAttributeArray = (JSONArray) courseJson.get("courseAttributes");
+                ArrayList<String> courseAttributes = new ArrayList<String>();
+                // Extracting the content from the JSONArray
+                for(Object object : courseAttributeArray) {
+                    courseAttributes.add((String)object);
+                }
+                Course course = new Course(uuid, subject, number, name, courseAttributes, courseDescription, creditHoursInt, false);
                 courses.add(course);
             }
         } catch (Exception e) {
