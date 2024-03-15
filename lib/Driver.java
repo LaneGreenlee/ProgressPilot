@@ -3,6 +3,8 @@ package lib;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 import org.json.simple.parser.ParseException;
@@ -158,7 +160,10 @@ private void studentOptions() {
     switch(userCommand) {
         case(0):
             System.out.println("View Courses: ");
-            currentStudent.getCompletedCourses();
+            HashMap<Course,Grade> completedCourses = currentStudent.getCompletedCourses();
+            for (Map.Entry<Course, Grade> entry : completedCourses.entrySet()) {
+                System.out.println("Course Name: " + entry.getKey().getCourseCode() +" "+entry.getKey().getCourseNumber()+ " , Grade: " + entry.getValue());
+            }
             dataWriter.saveAllStudents();
             break;
 

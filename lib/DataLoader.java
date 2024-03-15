@@ -4,8 +4,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -101,9 +101,20 @@ public class DataLoader {
                     Course course = CourseList.getInstance().getCourse(courseId);
                     currentCourses.add(course);
                 }
-                // Hashmap cast needs to be checked for json (not correct atm)
-                //HashMap<Course, Grade> completedCourses = (HashMap<Course, Grade>) studentJson.get("completedCourses");
-                HashMap<Course, Grade> completedCourses = null;
+                // HashMap conversion
+                JSONObject completedCoursesJSON = (JSONObject) studentJson.get("completedCourses");
+                HashMap<Course, Grade> completedCourses = new HashMap<>();
+                for (Object courseIdObj : completedCoursesJSON.keySet()) {
+                    String courseIdString = (String) courseIdObj;
+                    UUID courseId = UUID.fromString(courseIdString);
+                    // update later
+                    Grade gradeValue = Grade.B_PLUS;
+                
+                    Course course = CourseList.getInstance().getCourse(courseId); 
+                    Grade grade = gradeValue; 
+                
+                    completedCourses.put(course, grade);
+                }
                 
                 UserList.students.add(new Student(user_UUID, userName, password, firstName,lastName, uscID,
                 gradYear, major, gpa, scholarship, failedCourses, currentCourses, completedCourses));
