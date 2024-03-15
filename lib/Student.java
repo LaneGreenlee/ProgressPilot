@@ -176,6 +176,9 @@ public String getUserName() {
     remaining.removeAll(completedCourses.keySet());
     return remaining;
   }
+  public MajorName getMajorName() {
+    return majorName;
+  }
 public boolean meetsPrerequisites(Course course) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'meetsPrerequisites'");

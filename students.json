@@ -1,1 +1,1 @@
-[{"lastName":"West","completedCourses":null,"currentCourses":null,"type":"Student","userName":"Brax","failedCourses":null,"firstName":"Brax","password":"West","major":Computer_Information_Systems,"scholarships":Hope,"gpa":3.6,"id":"Q45629187","gradYear":"2026"}]
+[{"lastName":"West","completedCourses":null,"currentCourses":null,"type":"Student","userName":"Brax","failedCourses":[b3d392ff-ccd5-46af-92d5-d2663369c13d],"firstName":"Brax","password":"West","major":Computer_Science,"scholarships":Hope,"gpa":3.6,"id":"Q45629187","gradYear":"2026"}]

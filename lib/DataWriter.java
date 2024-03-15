@@ -75,7 +75,7 @@ public class DataWriter {
         studentDetails.put(USER_PASSWORD, student.getPassword());
         studentDetails.put(STUDENT_GRAD_YEAR, student.getGradYear());
         studentDetails.put(STUDENT_SCHOLARSHIPS, student.getScholarship());
-        studentDetails.put(STUDENT_MAJOR, MajorName.Computer_Information_Systems);
+        studentDetails.put(STUDENT_MAJOR, student.getMajorName());
         studentDetails.put(STUDENT_GPA, student.getGPA());
         // Handle scholarships, failedCourses, currentCourses, completedCourses appropriately
         // For lists and maps, you might need to convert them to JSONArray or JSONObject
