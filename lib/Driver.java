@@ -171,7 +171,6 @@ private void studentOptions() {
 
         case(1):
             System.out.println("Courses that need to be taken: ");
-
             ArrayList<Course> remainingCourses = currentStudent.getCoursesRemaining();
         // Print the remaining courses
              System.out.println("Remaining Courses:");

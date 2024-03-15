@@ -1,6 +1,5 @@
 package lib;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.UUID;
 
 public class Course {
@@ -62,7 +61,7 @@ public class Course {
      * @return true if GFL, false if not
      */
     public boolean isGFL(Course course) {
-        return false;
+        return (course.courseAttributes.contains("GFL"));
     }
     /***
      * Checks if the course passed in is GHS
@@ -119,6 +118,9 @@ public class Course {
      */
     public Course getPrereq(Course course) {
         return null;
+    }
+    public ArrayList<String> getCourseAttributes() {
+            return this.courseAttributes;
     }
     /**
      * combines class code, number and description

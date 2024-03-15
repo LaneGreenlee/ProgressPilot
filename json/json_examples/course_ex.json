@@ -219,10 +219,10 @@
     "courseID":"ded8e5f4-a93b-42de-ba28-418c5493429b"
 },
 {
-    "courseCode":" ",
-    "courseNumber":" ",
-    "courseAttributes":[" "],
-    "courseDescription":[" "],
+    "courseCode":"CSCE",
+    "courseNumber":"330",
+    "courseAttributes":["PR"],
+    "courseDescription":["Formal specification of syntax and semantics; structure of algorithms; list processing and string manipulation languages; statement types, control structures, and interfacing procedures."],
     "creditHours":3,
     "isTransfer":false,
     "courseID":"89430a8a-232e-4f75-9b3f-f833e7712b66"

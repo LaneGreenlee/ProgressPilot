@@ -34,7 +34,6 @@ public class MajorList {
      * @return returns the name
      */
     protected MajorName getMajor (MajorName majorName) {
-      
         return majorName;
 }
 }

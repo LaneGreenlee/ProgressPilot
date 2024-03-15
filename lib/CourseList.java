@@ -57,7 +57,15 @@ public class CourseList {
         System.out.println("Sorry no course were found with that name");
         return null;
     }
-
+    public ArrayList<Course> getGFL() {
+      ArrayList<Course> gflCourses = new ArrayList<Course>();
+      for (Course course : Courses) {
+          if (course.getCourseAttributes().contains("GFL")){
+              gflCourses.add(course);
+          }
+      }
+      return gflCourses;
+  }
     protected Course getCourse(UUID id) {
       for (int i =0; i < Courses.size(); i++) {
         if (id.equals(Courses.get(i).getCourseID())) {
