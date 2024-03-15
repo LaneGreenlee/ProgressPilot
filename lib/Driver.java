@@ -158,7 +158,7 @@ private void studentOptions() {
     switch(userCommand) {
         case(0):
             System.out.println("View Courses: ");
-            //currentStudent.getCompletedCourses();
+            currentStudent.getCompletedCourses();
             dataWriter.saveAllStudents();
             break;
 
