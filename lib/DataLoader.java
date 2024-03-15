@@ -108,8 +108,8 @@ public class DataLoader {
                     String courseIdString = (String) courseIdObj;
                     UUID courseId = UUID.fromString(courseIdString);
                     // update later
-                    Grade gradeValue = Grade.B_PLUS;
-                
+                    String gradeString = (String) completedCoursesJSON.get(courseIdString);
+                    Grade gradeValue =  Enum.valueOf(Grade.class, gradeString);
                     Course course = CourseList.getInstance().getCourse(courseId); 
                     Grade grade = gradeValue; 
                 
