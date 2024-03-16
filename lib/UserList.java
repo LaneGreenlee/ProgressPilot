@@ -38,6 +38,13 @@ public class UserList {
     }
         return null;
     }
+    public static  Student getStudentUSCID(String uscID) {
+        for (int i =0; i < students.size(); i++) {
+               if (students.get(i).getId().equals(uscID))
+                return students.get(i);
+    }
+        return null;
+    }
         /**
      * looks through the advisor array list until finds a advisor that matches the username
      * @param userName username that is being searched for

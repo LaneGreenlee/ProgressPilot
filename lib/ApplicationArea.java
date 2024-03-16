@@ -8,7 +8,7 @@ import java.util.Set;
 public class ApplicationArea {
     public String applicationArea;
     public ArrayList<Course> requiredCourses;
-    public CourseList courseList;
+    public CourseList courseList = CourseList.getInstance();
     Scanner scanner = new Scanner(System.in);
     /***
      * constructor by taking in application area and required courses
@@ -90,7 +90,7 @@ public class ApplicationArea {
                 System.out.println("Test 1");
                 selectedCourses.add(courseID);
                 System.out.println("Test 2");
-                requiredCourses.add(courseList.getCourse(courseID)); 
+                requiredCourses.add(courseList.getCourse(courseID));
                 System.out.println("Test 3");
                 if (selectedCourses.size() < 3) {
                     System.out.println(courseID + " added. Please enter the next course ID:");

@@ -44,6 +44,7 @@ public class Student extends User{
         this.currentCourses = new ArrayList<>();
         this.completedCourses = new HashMap<>();
         this.major = loader.getMajor("json/json_examples/major_ex.json", majorName);
+        this.notes = new ArrayList<String>();
         //TODO Auto-generated constructor stub
     }
     /**
@@ -75,6 +76,7 @@ public class Student extends User{
       this.currentCourses = currentCourses;
       this.completedCourses = completedCourses;
       this.major = loader.getMajor("json/json_examples/major_ex.json",major);
+      this.notes = new ArrayList<String>();
       }
   protected void addEightSemesterPlan() {
 

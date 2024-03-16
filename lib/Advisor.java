@@ -50,6 +50,9 @@ public class Advisor extends User{
     protected void addStudent( String username ) {
       students.add(UserList.getStudent(username));
     }
+    protected void addStudentByID( String uscID ) {
+      students.add(UserList.getStudentUSCID(uscID));
+    }
     /***
      * Removes a student from the list
      * @param student student who is being removed

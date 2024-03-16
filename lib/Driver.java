@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.UUID;
 
 import org.json.simple.parser.ParseException;
 
@@ -20,6 +21,7 @@ public class Driver {
     private DataLoader dataLoader;
     private DataWriter dataWriter;
     private Student currentStudent;
+    private Advisor currentAdvisor;
 
     /**
      * Creates scanner, facade variable, data loader variable, data writer variable and then adds all students and all advisors
@@ -49,7 +51,7 @@ public class Driver {
         }
         switch(userCommand) {
             case(0):
-                createAccount();
+                signup();
             case(1):
                 login();
             }
@@ -108,21 +110,61 @@ private void login() {
             break;
         }
 }
-
+private int signupType (int numCommands) {
+    System.out.print("Signup as a student or advisor? \n'1' for student or '2' for advisor ");
+    String userIn = scanner.nextLine();
+    int command = Integer.parseInt(userIn) - 1;
+    
+    if(command >= 0 && command <= numCommands -1) return command;
+    
+    return -1;
+}
+private void signup() {
+    int userCommand = signupType(loginOptions.length);
+    if (userCommand == -1) {
+        System.out.println("Not a valid command");
+    }
+    switch(userCommand) {
+        case(0):
+            System.out.println("Student Signup: ");
+            createAccountStudent();
+            break;
+        case(1):
+            System.out.println("Advisor Signup: ");
+            createAccountAdvisor();
+            break;
+        }
+}
 private String getField(String prompt) {
     System.out.print(prompt + ": ");
     return scanner.nextLine();
 }
-/**
- * Takes in input from user and creates a new user with the information
- */
-private void createAccount() {
+private void createAccountStudent() {
     String userName = getField("Username");
     String password = getField("Password");
     String firstName = getField("First Name");
     String lastName = getField("Last Name");
     String uscID = getField("USC ID");
-    if(progressPilot.createAccount(userName, password, firstName, lastName, uscID)) {
+    Student newStudent = new Student(UUID.randomUUID(), userName, password, firstName, lastName, uscID, uscID, MajorName.Computer_Science, null, Scholarship.Hope);
+    progressPilot.userlist.addStudent(newStudent);
+    if(progressPilot.userlist.students.contains(newStudent)) {
+        System.out.println("You have successfully created an account");
+    } else {
+        System.out.println("Sorry an account with that username already exists");
+    }
+}
+/**
+ * Takes in input from user and creates a new user with the information
+ */
+private void createAccountAdvisor() {
+    String userName = getField("Username");
+    String password = getField("Password");
+    String firstName = getField("First Name");
+    String lastName = getField("Last Name");
+    String uscID = getField("USC ID");
+    Advisor newAdvisor = new Advisor(userName, password, firstName, lastName, uscID, UUID.randomUUID());
+    progressPilot.userlist.addAdvisor(newAdvisor);
+    if(progressPilot.userlist.advisors.contains(newAdvisor)) {
         System.out.println("You have successfully created an account");
     } else {
         System.out.println("Sorry an account with that username already exists");
@@ -137,12 +179,12 @@ private void studentLogin() {
     String password = getField("password");
     progressPilot.studentLogin(userName, password);
         currentStudent = progressPilot.studentLogin(userName, password);
-        dataWriter.saveAllStudents();
+        //dataWriter.saveAllStudents();
         System.out.println("Welcome " + currentStudent.getFirstName() + " " + currentStudent.getLastName() + "!");
         studentOptions();
 }
 private int studentChoice(int numCommands) {
-    System.out.print("Student Choices \n'1' View courses taken and grades earned, '2' Courses that need to be taken, '3' View elective courses or '4' Add a course to be taken\n");
+    System.out.print("Student Choices \n'1' View courses taken and grades earned, '2' Courses that need to be taken, '3' View elective courses, '4' Add a course to be taken\n '5' Add an application area\n");
     String userIn = scanner.nextLine();
     int command = Integer.parseInt(userIn) - 1;
 
@@ -187,7 +229,9 @@ private void studentOptions() {
         case(3):
             System.out.println("Please enter the Course Code you wish to add (CSCE, MATH etc.):");
             studentAddCourse();
+            break;
         case(4):
+            System.out.println("Press enter, then enter the application area you wish to add");
             addApplicationArea();
             break;
         }
@@ -277,6 +321,14 @@ private void addApplicationArea() {
     ArrayList<Course> apCourses = new ArrayList<Course>();
     ApplicationArea applicationArea = new ApplicationArea(apArea, apCourses);
     applicationArea.setRequiredCourses();
+    for (Course applicationCourses : applicationArea.requiredCourses) {
+         for (int i = 0; i < currentStudent.getMajor().courses.size(); i++) {
+            if (currentStudent.getMajor().courses.get(i).getCourseCode().equals("Application Area Elective")) {
+                currentStudent.getMajor().courses.set(i, applicationCourses);
+                break;
+        }
+    }
+    }
 }
 /**
  * Takes in username and password and checks the advisor array list to see if the profile
@@ -286,8 +338,67 @@ private void advisorLogin() {
     String userName = getField("Username");
     String password = getField("password");
     progressPilot.advisorLogin(userName, password);
-        Advisor currentAdvisor = progressPilot.advisorLogin(userName, password);
+        currentAdvisor = progressPilot.advisorLogin(userName, password);
         System.out.println("Welcome " + currentAdvisor.getFirstName() + " " + currentAdvisor.getLastName() + "!");
+    advisorOptions();
+}
+private int advisorChoice(int numCommands) {
+    System.out.print("Advisor Choices \n'1' Add new advisee, '2' View advisee, '3' Add note to advisee\n");
+    String userIn = scanner.nextLine();
+    int command = Integer.parseInt(userIn) - 1;
+
+    if(command >= 0 && command <= numCommands -1)
+        return command;
+    
+    return -1;
+}
+private void advisorOptions() {
+    boolean run = true;
+    int userChoose = 0;
+    while (run){
+    int userCommand = advisorChoice(3);
+    if (userCommand == -1) {
+        System.out.println("Not a valid command");
+    }
+    switch(userCommand) {
+        case(0):
+            System.out.println("Enter new advisee's USCID number: ");
+            String adviseeID = scanner.nextLine();
+            currentAdvisor.addStudentByID(adviseeID);
+            if (currentAdvisor.students.contains(UserList.students.contains(adviseeID))) {
+                System.out.println("Student successfully added");
+                break;
+            } else {
+                System.out.println("Unable to add new advisee, please try again");
+                break;
+            }
+
+        case(1):
+            System.out.println("Courses that need to be taken: ");
+            ArrayList<Course> remainingCourses = currentStudent.getCoursesRemaining();
+        // Print the remaining courses
+             System.out.println("Remaining Courses:");
+             for (Course course : remainingCourses) {
+                System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+            }
+            //System.out.println(currentStudent.getCoursesRemaining());
+            break;
+        case(2):
+            System.out.println("View Electives: ");
+            int choice = electiveChoice(electiveOptions.length);
+            showElective(choice);
+            break;
+    }
+        System.out.println("Would you like to continue working?\n '1' for yes, '2' for no");
+         String input = scanner.nextLine();
+        int command = Integer.parseInt(input);
+        if (command == 1){
+            userCommand = 0;
+            run = true;
+        }
+        else
+            run = false;
+    }
 }
 public static void main(String[] args) throws FileNotFoundException, ParseException, IOException {
     Driver ppInterface = new Driver();
