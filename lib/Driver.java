@@ -198,9 +198,9 @@ private void studentOptions() {
     }
 }
 private int electiveChoice(int numCommands) {
-    System.out.print("Elective Choices \n'1'View GHS courses \n'2' View GFL courses \n'3' View AIU courses \n'4' View CMS courses \n'5' View GSS courses \n'6' View INF courses \n ");
+    System.out.print("Elective Choices \n'1' View GHS courses \n'2' View GFL courses \n'3' View AIU courses \n'4' View CMS courses \n'5' View GSS courses \n'6' View INF courses \n ");
     String userIn = scanner.nextLine();
-    int command = Integer.parseInt(userIn);
+    int command = Integer.parseInt(userIn)-1;
 
     if(command >= 0 && command <= numCommands -1)
         return command;
