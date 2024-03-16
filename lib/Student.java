@@ -2,6 +2,7 @@ package lib;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class Student extends User{
@@ -205,10 +206,17 @@ public String toString() {
     ret += failedCourses.get(i).fullName + "\n";
   }
   ret += "Completed Courses: " + "\n";
-  for (int i =0; i < this.completedCourses.size(); i++)
-  {
-    ret += completedCourses.get(i) + "\n";
+  for (Map.Entry<Course, Grade> entry : completedCourses.entrySet()) {
+    Course course = entry.getKey();
+    Grade grade = entry.getValue();
+    ret += course.getFullName() + " - " + grade.toString() + "\n";
+  
+}
+  ret += "Notes: \n";
+  for (int i =0; i < notes.size(); i++) {
+  ret += notes.get(i) + "\n";
   }
+
   return ret;
 }
 // private String gradYear;
