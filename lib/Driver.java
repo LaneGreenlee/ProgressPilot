@@ -14,6 +14,7 @@ public class Driver {
     private static final String WELCOME_MESSAGE = "Welcome to Progress Pilot!";
     private String[] mainMenuOptions = {"Create Account", "Login"};
     private String[] loginOptions = {"Student", "Advisor"};
+    private String[] electiveOptions = {"GHS", "GFL", "AIU","CMS","GSS","INF"};
     private Scanner scanner;
     private ProgessPilotFACADE progressPilot;
     private DataLoader dataLoader;
@@ -141,7 +142,7 @@ private void studentLogin() {
         studentOptions();
 }
 private int studentChoice(int numCommands) {
-    System.out.print("Student Choices \n'1' View courses taken and grades earned or '2' Courses that need to be taken ");
+    System.out.print("Student Choices \n'1' View courses taken and grades earned, '2' Courses that need to be taken or '3' View elective courses\n");
     String userIn = scanner.nextLine();
     int command = Integer.parseInt(userIn) - 1;
 
@@ -154,14 +155,13 @@ private void studentOptions() {
     boolean run = true;
     int userChoose = 0;
     while (run){
-    int userCommand = studentChoice(loginOptions.length);
+    int userCommand = studentChoice(3);
     if (userCommand == -1) {
         System.out.println("Not a valid command");
     }
     switch(userCommand) {
         case(0):
             System.out.println("View Courses: ");
-            System.out.println(dataLoader.getMajor("json/json_examples/major_ex.json",currentStudent.getMajorName()));
             HashMap<Course,Grade> completedCourses = currentStudent.getCompletedCourses();
             for (Map.Entry<Course, Grade> entry : completedCourses.entrySet()) {
                 System.out.println("Course Name: " + entry.getKey().getCourseCode() +" "+entry.getKey().getCourseNumber()+ " , Grade: " + entry.getValue());
@@ -179,6 +179,12 @@ private void studentOptions() {
             }
             //System.out.println(currentStudent.getCoursesRemaining());
             break;
+        case(2):
+            System.out.println("View Electives: ");
+            int choice = electiveChoice(electiveOptions.length);
+            showElective(choice);
+            break;
+
         }
         System.out.println("\nWould you like to continue working?\n '1' for yes, '2' for no");
          String input = scanner.nextLine();
@@ -189,6 +195,50 @@ private void studentOptions() {
         }
         else
             run = false;
+    }
+}
+private int electiveChoice(int numCommands) {
+    System.out.print("Elective Choices \n'1'View GHS courses \n'2' View GFL courses \n'3' View AIU courses \n'4' View CMS courses \n'5' View GSS courses \n'6' View INF courses \n ");
+    String userIn = scanner.nextLine();
+    int command = Integer.parseInt(userIn);
+
+    if(command >= 0 && command <= numCommands -1)
+        return command;
+    
+    return -1;
+}
+private void showElective(int numCommand) {
+    switch(numCommand) {
+        case(0):
+            ArrayList<Course> ghsCourses = progressPilot.courseList.getGHS();
+            for (Course course : ghsCourses)
+                System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+            break;
+        case(1):
+            ArrayList<Course> gflCourses = progressPilot.courseList.getGFL();
+            for (Course course : gflCourses)
+                System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+            break;
+        case(2):
+            ArrayList<Course> aiuCourses = progressPilot.courseList.getAIU();
+            for (Course course : aiuCourses)
+                System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+            break;
+        case(3):
+             ArrayList<Course> cmsCourses = progressPilot.courseList.getCMS();
+             for (Course course : cmsCourses)
+                System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+            break;
+        case(4):
+            ArrayList<Course> gssCourses = progressPilot.courseList.getGSS();
+            for (Course course : gssCourses)
+                System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+            break;
+        case(5):
+        ArrayList<Course> infCourses = progressPilot.courseList.getINF();
+        for (Course course : infCourses)
+            System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+        break;
     }
 }
 /**

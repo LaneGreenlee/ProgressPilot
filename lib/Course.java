@@ -69,7 +69,7 @@ public class Course {
      * @return true if GHS, false if not
      */
     public boolean isGHS(Course course) {
-        return false;
+        return (course.getCourseAttributes().get(0).contains("GHS"));
     }
     /***
      * Checks if the course passed in is GSS
@@ -77,40 +77,35 @@ public class Course {
      * @return true if GSS, false if not
      */
     public boolean isGSS(Course course) {
-        return false;
-    }
+        return (course.getCourseAttributes().get(0).contains("GSS"));    }
     /***
      * Checks if the course passed in is CMS
      * @param course course to check if it is CMS
      * @return true if CMS, false if not
      */
     public boolean isCMS(Course course) {
-        return false;
-    }
+        return (course.getCourseAttributes().get(0).contains("CMS"));    }
     /***
      * Checks if the course passed in is INF
      * @param course course to check if it is INF
      * @return true if INF, false if not
      */
     public boolean isINF(Course course) {
-        return false;
-    }
+        return (course.getCourseAttributes().get(0).contains("INF"));    }
     /***
      * Checks if the course passed in is a founding document course
      * @param course course to check if it is a founding document course
      * @return true if a founding document course, false if not
      */
     public boolean isFoundingDoc(Course course) {
-        return false;
-    }
+        return (course.getCourseAttributes().get(0).contains("Founding_Doc"));    }
     /***
      * Checks if the course passed in is Liberal Arts
      * @param course course to check if it is Liberal Arts
      * @return true if Liberal Arts, false if not
      */
     public boolean isLiberalArts(Course course) {
-        return false;
-    }
+        return (course.getCourseAttributes().get(0).contains("Liberal_Arts"));    }
     /***
      * Checks if the course passed has a pre req
      * @param course course to check if has a pre req
