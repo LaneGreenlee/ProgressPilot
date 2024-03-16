@@ -86,8 +86,11 @@ public class ApplicationArea {
             String courseID = scanner.nextLine().trim().toUpperCase();
             // checks if the courseID is already selected to ensure uniqueness.
             if (!selectedCourses.contains(courseID) && courseList.getCourse(courseID)!= null ) {
+                System.out.println("Test 1");
                 selectedCourses.add(courseID);
+                System.out.println("Test 2");
                 requiredCourses.add(courseList.getCourse(courseID)); 
+                System.out.println("Test 3");
                 if (selectedCourses.size() < 3) {
                     System.out.println(courseID + " added. Please enter the next course ID:");
                 }
