@@ -3,6 +3,9 @@ package lib;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 import org.json.simple.parser.ParseException;
@@ -11,10 +14,12 @@ public class Driver {
     private static final String WELCOME_MESSAGE = "Welcome to Progress Pilot!";
     private String[] mainMenuOptions = {"Create Account", "Login"};
     private String[] loginOptions = {"Student", "Advisor"};
+    private String[] electiveOptions = {"GHS", "GFL", "AIU","CMS","GSS","INF"};
     private Scanner scanner;
     private ProgessPilotFACADE progressPilot;
     private DataLoader dataLoader;
     private DataWriter dataWriter;
+    private Student currentStudent;
 
     /**
      * Creates scanner, facade variable, data loader variable, data writer variable and then adds all students and all advisors
@@ -28,9 +33,9 @@ public class Driver {
         progressPilot = new ProgessPilotFACADE();
         dataLoader = new DataLoader();
         dataWriter = new DataWriter();
+        dataLoader.getCourses("json/json_examples/course_ex.json");
         dataLoader.getAllStudents("json/json_examples/student_ex.json");
         dataLoader.getAllAdvisors("json/json_examples/admin_ex.json");
-
     }
     /**
     * Presents the user with the choice to either sign up or log in
@@ -86,7 +91,6 @@ private int getUserCommand(int numCommands) {
  * If user chooses one it checks the advisor array list and has user type in user name and password
  */
 private void login() {
-    boolean run = true;
     int userCommand = loginType(loginOptions.length);
     if (userCommand == -1) {
         System.out.println("Not a valid command");
@@ -95,6 +99,7 @@ private void login() {
         case(0):
             System.out.println("Student Login: ");
             studentLogin();
+
             dataWriter.saveAllStudents();
             break;
         case(1):
@@ -131,9 +136,110 @@ private void studentLogin() {
     String userName = getField("Username");
     String password = getField("password");
     progressPilot.studentLogin(userName, password);
-        Student currentStudent = progressPilot.studentLogin(userName, password);
+        currentStudent = progressPilot.studentLogin(userName, password);
         dataWriter.saveAllStudents();
         System.out.println("Welcome " + currentStudent.getFirstName() + " " + currentStudent.getLastName() + "!");
+        studentOptions();
+}
+private int studentChoice(int numCommands) {
+    System.out.print("Student Choices \n'1' View courses taken and grades earned, '2' Courses that need to be taken or '3' View elective courses\n");
+    String userIn = scanner.nextLine();
+    int command = Integer.parseInt(userIn) - 1;
+
+    if(command >= 0 && command <= numCommands -1)
+        return command;
+    
+    return -1;
+}
+private void studentOptions() {
+    boolean run = true;
+    int userChoose = 0;
+    while (run){
+    int userCommand = studentChoice(3);
+    if (userCommand == -1) {
+        System.out.println("Not a valid command");
+    }
+    switch(userCommand) {
+        case(0):
+            System.out.println("View Courses: ");
+            HashMap<Course,Grade> completedCourses = currentStudent.getCompletedCourses();
+            for (Map.Entry<Course, Grade> entry : completedCourses.entrySet()) {
+                System.out.println("Course Name: " + entry.getKey().getCourseCode() +" "+entry.getKey().getCourseNumber()+ " , Grade: " + entry.getValue());
+            }
+            dataWriter.saveAllStudents();
+            break;
+
+        case(1):
+            System.out.println("Courses that need to be taken: ");
+            ArrayList<Course> remainingCourses = currentStudent.getCoursesRemaining();
+        // Print the remaining courses
+             System.out.println("Remaining Courses:");
+             for (Course course : remainingCourses) {
+                System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+            }
+            //System.out.println(currentStudent.getCoursesRemaining());
+            break;
+        case(2):
+            System.out.println("View Electives: ");
+            int choice = electiveChoice(electiveOptions.length);
+            showElective(choice);
+            break;
+
+        }
+        System.out.println("\nWould you like to continue working?\n '1' for yes, '2' for no");
+         String input = scanner.nextLine();
+        int command = Integer.parseInt(input);
+        if (command == 1){
+            userCommand = 0;
+            run = true;
+        }
+        else
+            run = false;
+    }
+}
+private int electiveChoice(int numCommands) {
+    System.out.print("Elective Choices \n'1'View GHS courses \n'2' View GFL courses \n'3' View AIU courses \n'4' View CMS courses \n'5' View GSS courses \n'6' View INF courses \n ");
+    String userIn = scanner.nextLine();
+    int command = Integer.parseInt(userIn);
+
+    if(command >= 0 && command <= numCommands -1)
+        return command;
+    
+    return -1;
+}
+private void showElective(int numCommand) {
+    switch(numCommand) {
+        case(0):
+            ArrayList<Course> ghsCourses = progressPilot.courseList.getGHS();
+            for (Course course : ghsCourses)
+                System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+            break;
+        case(1):
+            ArrayList<Course> gflCourses = progressPilot.courseList.getGFL();
+            for (Course course : gflCourses)
+                System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+            break;
+        case(2):
+            ArrayList<Course> aiuCourses = progressPilot.courseList.getAIU();
+            for (Course course : aiuCourses)
+                System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+            break;
+        case(3):
+             ArrayList<Course> cmsCourses = progressPilot.courseList.getCMS();
+             for (Course course : cmsCourses)
+                System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+            break;
+        case(4):
+            ArrayList<Course> gssCourses = progressPilot.courseList.getGSS();
+            for (Course course : gssCourses)
+                System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+            break;
+        case(5):
+        ArrayList<Course> infCourses = progressPilot.courseList.getINF();
+        for (Course course : infCourses)
+            System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+        break;
+    }
 }
 /**
  * Takes in username and password and checks the advisor array list to see if the profile

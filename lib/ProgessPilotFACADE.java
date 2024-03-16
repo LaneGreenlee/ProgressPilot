@@ -15,8 +15,7 @@ public class ProgessPilotFACADE {
     public ProgessPilotFACADE () {
         userlist = new UserList();
         majorList = new MajorList();
-        courseList = new CourseList();
-
+        courseList = CourseList.getInstance();
     }
     // Login method
     /**

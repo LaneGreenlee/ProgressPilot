@@ -20,7 +20,8 @@ public class Major {
      * @param majorName name of the major from the MajorName enum
      * @param courses courses required to complete the major
      */
-    public Major (Double gpaRequirement, int totalHours, String college, MajorName majorName, ArrayList<Course> courses) {
+    public Major (UUID majorID, Double gpaRequirement, int totalHours, String college, MajorName majorName, ArrayList<Course> courses) {
+      this.majorID = majorID;
       this.gpaRequirement = gpaRequirement;
       this.totalHours = totalHours;
       this.college = college;

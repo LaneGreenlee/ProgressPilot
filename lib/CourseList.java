@@ -1,16 +1,26 @@
 package lib;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class CourseList {
-    private ArrayList<Course> Courses;
+    private static CourseList courseList;
+    public ArrayList<Course> Courses;
     private DataLoader loader;
     /**
      * Constructor by created ArrayList of courses
      */
-    public CourseList() {
+    private CourseList() {
        Courses = new ArrayList<Course>();
-       //Courses = loader.getCourses();
+       loader = new DataLoader();
+       Courses = loader.getCourses("json/json_examples/course_ex.json");
+    }
+
+    public static CourseList getInstance(){
+      if(courseList == null){
+        courseList = new CourseList();
+      }
+      return courseList;
     }
     /**
      * Removes course if a course with the course name exist
@@ -47,6 +57,70 @@ public class CourseList {
         System.out.println("Sorry no course were found with that name");
         return null;
     }
+    public ArrayList<Course> getGHS() {
+      ArrayList<Course> ghsCourses = new ArrayList<Course>();
+      for (Course course : Courses) {
+          if (course.isGHS(course)){
+              ghsCourses.add(course);
+          }
+      }
+      return ghsCourses;
+  }
+  public ArrayList<Course> getGFL() {
+    ArrayList<Course> gflCourses = new ArrayList<Course>();
+    for (Course course : Courses) {
+        if (course.isGFL(course)){
+            gflCourses.add(course);
+        }
+    }
+    return gflCourses;
+}
+public ArrayList<Course> getGSS() {
+  ArrayList<Course> gssCourses = new ArrayList<Course>();
+  for (Course course : Courses) {
+      if (course.isGSS(course)){
+          gssCourses.add(course);
+      }
+  }
+  return gssCourses;
+}
+public ArrayList<Course> getCMS() {
+  ArrayList<Course> cmsCourses = new ArrayList<Course>();
+  for (Course course : Courses) {
+      if (course.isCMS(course)){
+          cmsCourses.add(course);
+      }
+  }
+  return cmsCourses;
+}
+public ArrayList<Course> getAIU() {
+  ArrayList<Course> aiuCourses = new ArrayList<Course>();
+  for (Course course : Courses) {
+      if (course.isAIU(course)){
+          aiuCourses.add(course);
+      }
+  }
+  return aiuCourses;
+}
+public ArrayList<Course> getINF() {
+  ArrayList<Course> infCourses = new ArrayList<Course>();
+  for (Course course : Courses) {
+      if (course.isAIU(course)){
+          infCourses.add(course);
+      }
+  }
+  return infCourses;
+}
+    protected Course getCourse(UUID id) {
+      for (int i =0; i < Courses.size(); i++) {
+        if (id.equals(Courses.get(i).getCourseID())) {
+          return Courses.get(i);
+        }
+      }
+      System.out.println("Sorry no course were found with that name");
+      return null;
+  }
+
     /**
      * shows all courses that are in the array list
      * @return array list of all courses

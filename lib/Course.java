@@ -1,6 +1,5 @@
 package lib;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.UUID;
 
 public class Course {
@@ -70,7 +69,11 @@ public class Course {
      * @return true if GHS, false if not
      */
     public boolean isGHS(Course course) {
+<<<<<<< HEAD
         return (course.courseAttributes.contains("GHS"));
+=======
+        return (course.getCourseAttributes().get(0).contains("GHS"));
+>>>>>>> b3162e7c42aa805b7a5882412c546f372fbfc96d
     }
     /***
      * Checks if the course passed in is GSS
@@ -78,40 +81,55 @@ public class Course {
      * @return true if GSS, false if not
      */
     public boolean isGSS(Course course) {
+<<<<<<< HEAD
         return (course.courseAttributes.contains("GSS"));
     }
+=======
+        return (course.getCourseAttributes().get(0).contains("GSS"));    }
+>>>>>>> b3162e7c42aa805b7a5882412c546f372fbfc96d
     /***
      * Checks if the course passed in is CMS
      * @param course course to check if it is CMS
      * @return true if CMS, false if not
      */
     public boolean isCMS(Course course) {
+<<<<<<< HEAD
         return (course.courseAttributes.contains("CMS"));
     }
+=======
+        return (course.getCourseAttributes().get(0).contains("CMS"));    }
+>>>>>>> b3162e7c42aa805b7a5882412c546f372fbfc96d
     /***
      * Checks if the course passed in is INF
      * @param course course to check if it is INF
      * @return true if INF, false if not
      */
     public boolean isINF(Course course) {
+<<<<<<< HEAD
         return (course.courseAttributes.contains("INF"));
     }
+=======
+        return (course.getCourseAttributes().get(0).contains("INF"));    }
+>>>>>>> b3162e7c42aa805b7a5882412c546f372fbfc96d
     /***
      * Checks if the course passed in is a founding document course
      * @param course course to check if it is a founding document course
      * @return true if a founding document course, false if not
      */
     public boolean isFoundingDoc(Course course) {
+<<<<<<< HEAD
         return (course.courseAttributes.contains("Founding_Document"));
     }
+=======
+        return (course.getCourseAttributes().get(0).contains("Founding_Doc"));    }
+>>>>>>> b3162e7c42aa805b7a5882412c546f372fbfc96d
     /***
      * Checks if the course passed in is Liberal Arts
      * @param course course to check if it is Liberal Arts
      * @return true if Liberal Arts, false if not
      */
     public boolean isLiberalArts(Course course) {
-        return false;
-    }
+        return (course.getCourseAttributes().get(0).contains("Liberal_Arts"));    }
     /***
      * Checks if the course passed has a pre req
      * @param course course to check if has a pre req
@@ -119,6 +137,9 @@ public class Course {
      */
     public Course getPrereq(Course course) {
         return null;
+    }
+    public ArrayList<String> getCourseAttributes() {
+            return this.courseAttributes;
     }
     /**
      * combines class code, number and description

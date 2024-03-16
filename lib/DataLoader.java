@@ -25,22 +25,59 @@ public class DataLoader {
 
             for (Object o : coursesArray) {
                 JSONObject courseJson = (JSONObject) o;
-                UUID uuid = UUID.fromString((String) courseJson.get("uuid"));
-                String subject = (String) courseJson.get("subject");
-                String number = (String) courseJson.get("number");
-                String name = (String) courseJson.get("name");
-                String description = (String) courseJson.get("description");
-                int creditHours = (int)Double.parseDouble((String) courseJson.get("credit_hours"));
-                
-
-                Course course = new Course(uuid, subject, number, name, coursesArray, description, creditHours, false);
+                UUID uuid = UUID.fromString((String) courseJson.get("courseID"));
+                String code = (String) courseJson.get("courseCode");
+                String number = (String) courseJson.get("courseNumber");
+                String subject = (String) courseJson.get("courseCode");
+                String name = (String) courseJson.get("courseCode");
+                double creditHours = Double.parseDouble(String.valueOf(courseJson.get("creditHours")));
+                int creditHoursInt = (int) creditHours; // Convert double to int 
+                JSONArray courseDescriptionArray = (JSONArray) courseJson.get("courseDescription");
+                // Extracting the content from the JSONArray
+                String courseDescription = (String) courseDescriptionArray.get(0);
+                JSONArray courseAttributeArray = (JSONArray) courseJson.get("courseAttributes");
+                ArrayList<String> courseAttributes = new ArrayList<String>();
+                // Extracting the content from the JSONArray
+                for(Object object : courseAttributeArray) {
+                    courseAttributes.add((String)object);
+                }
+                Course course = new Course(uuid, subject, number, name, courseAttributes, courseDescription, creditHoursInt, false);
                 courses.add(course);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return courses;
+    }
+    public Major getMajor(String filePath, MajorName majorNameCheck) {
+        Major majors = new Major(null, null, 0, null, null, null);
+        JSONParser parser = new JSONParser();
+
+        try (FileReader reader = new FileReader(filePath)) {
+            JSONArray coursesArray = (JSONArray) parser.parse(reader);
+            for (Object o : coursesArray) {
+                JSONObject majorJson = (JSONObject) o;
+                UUID majorID = UUID.fromString((String)majorJson.get("majorID"));
+                Double gpaRequirement = (Double) majorJson.get("gpaRequirement");
+                int totalHours = 125;
+                String college = (String) majorJson.get("college");
+                String majorString = (String) majorJson.get("majorName");
+                MajorName majorName =  Enum.valueOf(MajorName.class, majorString);
+                JSONArray currentCoursesJSON = (JSONArray)majorJson.get("courses");
+                ArrayList<Course> courses = new ArrayList<Course>();
+                for (Object idObj : currentCoursesJSON) {
+                    UUID courseId = UUID.fromString((String)idObj);
+                    Course course = CourseList.getInstance().getCourse(courseId);
+                    courses.add(course);
+                }
+                if (majorName.equals(majorNameCheck)) {
+                    majors = new Major(majorID,gpaRequirement, totalHours,college, majorName, courses);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return majors;
     }
 
     /**
@@ -83,15 +120,39 @@ public class DataLoader {
                 String uscID = (String) studentJson.get("uscID");
                 UUID user_UUID = UUID.fromString((String)studentJson.get("user_UUID"));
                 String gradYear = (String) studentJson.get("gradYear");
-                MajorName major = MajorName.Computer_Information_Systems;
-                //MajorName major = Enum.valueOf(MajorName.class,(String)studentJson.get("major"));
+                //MajorName major = MajorName.Computer_Information_Systems;
+                String majorString = (String) studentJson.get("major");
+                MajorName major =  Enum.valueOf(MajorName.class, majorString);
                 Double gpa = (Double) studentJson.get("gpa");
                 Scholarship scholarship = Scholarship.Hope;
-                ArrayList<Course> failedCourses = (ArrayList<Course>) studentJson.get("failedCourse");
-                ArrayList<Course> currentCourses = (ArrayList<Course>) studentJson.get("currentCourses");
-                // Hashmap cast needs to be checked for json (not correct atm)
-                //HashMap<Course, Grade> completedCourses = (HashMap<Course, Grade>) studentJson.get("completedCourses");
-                HashMap<Course, Grade> completedCourses = null;
+                JSONArray failedCoursesJSON = (JSONArray)studentJson.get("failedCourses");
+                ArrayList<Course> failedCourses = new ArrayList<Course>();
+                for (Object idObj : failedCoursesJSON) {
+                    UUID courseId = UUID.fromString((String)idObj);
+                    Course course = CourseList.getInstance().getCourse(courseId);
+                    failedCourses.add(course);
+                }
+                JSONArray currentCoursesJSON = (JSONArray)studentJson.get("currentCourses");
+                ArrayList<Course> currentCourses = new ArrayList<Course>();
+                for (Object idObj : currentCoursesJSON) {
+                    UUID courseId = UUID.fromString((String)idObj);
+                    Course course = CourseList.getInstance().getCourse(courseId);
+                    currentCourses.add(course);
+                }
+                // HashMap conversion
+                JSONObject completedCoursesJSON = (JSONObject) studentJson.get("completedCourses");
+                HashMap<Course, Grade> completedCourses = new HashMap<>();
+                for (Object courseIdObj : completedCoursesJSON.keySet()) {
+                    String courseIdString = (String) courseIdObj;
+                    UUID courseId = UUID.fromString(courseIdString);
+                    // update later
+                    String gradeString = (String) completedCoursesJSON.get(courseIdString);
+                    Grade gradeValue =  Enum.valueOf(Grade.class, gradeString);
+                    Course course = CourseList.getInstance().getCourse(courseId); 
+                    Grade grade = gradeValue; 
+                
+                    completedCourses.put(course, grade);
+                }
                 
                 UserList.students.add(new Student(user_UUID, userName, password, firstName,lastName, uscID,
                 gradYear, major, gpa, scholarship, failedCourses, currentCourses, completedCourses));

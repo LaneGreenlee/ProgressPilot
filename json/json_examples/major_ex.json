@@ -1,8 +1,18 @@
 [{
+    "majorID":"30f5a001-10f9-471f-9a60-734d68051823",
     "gpaRequirement":2.5,
     "totalHours":125,
     "college":"College of Engineering and Computing",
     "majorName":"Computer_Science",
-    "courses":["f4dbb1b0-a3ce-4334-ac29-883bdf85a1f2", "4048368c-49c0-4e50-9336-f388c61a2ef1", 
-                "cee10ec9-ca43-40f4-abd2-e454dabd79fa"]
+    "courses":["375e8ad4-b152-487c-9e06-72ad02e7127b", "0cc1b74c-4d49-4f60-8bc3-e467907b3601",
+    "9f3e1d01-ef9c-4af3-8d2d-fdec413896b9", "767b7f00-cb3c-43a1-b405-6eccadf6ad77", "1bed169b-64b1-4140-9dbb-a585ee879347"
+    ,"b62aa096-37bb-4708-8f96-cc7d687973e2", "ef337ac9-e6ca-49e0-b856-50213daacc13", "e70af63e-fc98-46fa-8a0c-016c33b881ae"
+    ,"2914bf41-848b-4c8b-8b89-297f528c15b4", "898f6870-b58d-447f-8bd6-75cb9899db89", "16ec31cb-f8dc-49cc-add4-36f7061eef36",
+    "3486581f-77ac-4407-9d49-e28618035fd6", "1e489cea-4d50-47fe-b5ab-36b6eb0651ce","b20e56f4-42e0-470f-bef8-1a7637979d65", 
+    "abcaebdb-fad8-4911-9d8d-64a825325b03","e4bd594c-25d8-46e1-a7c9-26a4425d1e80", "098820f3-9b68-4fb0-b7c2-a2a8f71b077e", 
+    "0acc5f8e-d7ef-413c-81ea-1d522be7ea14", "ded8e5f4-a93b-42de-ba28-418c5493429b", "89430a8a-232e-4f75-9b3f-f833e7712b66",
+    "e0fa1013-dd7b-47fe-a05d-d9068f094483", "f62528f6-1081-4c61-91e1-01c5b9871b72", "fb845cb3-4553-468d-98d9-e968845aeaa8",
+    "1805c762-9328-430c-950f-dbe97a5fcfc1", "6aede8de-aa03-4b47-8444-991f31144607", "44922176-760c-4c8e-bb87-7fe9eb12b4c4",
+    "5f3d62ff-d693-4bd7-a085-8381a31eb356", "5f3781ca-4a14-4e5c-83bc-b9808a3f159c", "3afa38be-7b9b-43e2-bfcc-2ef76cc19b44",
+    "51efaa37-07b1-4944-812b-6f08399f1bc5"]
 }]

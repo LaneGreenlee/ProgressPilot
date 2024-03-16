@@ -14,6 +14,7 @@ public class Student extends User{
   private ArrayList<Course> failedCourses;
   private ArrayList<Course> currentCourses;
   public HashMap<Course, Grade> completedCourses;
+  private DataLoader loader;
   private ArrayList<String> notes;
   /**
    * The constructor of a brand new student who
@@ -32,6 +33,7 @@ public class Student extends User{
   public Student(UUID user_UUID, String userName, String password, String firstName, String lastName, String uscID,
         String gradYear, MajorName major, Double gpa, Scholarship scholarship) {
         super(userName, password, firstName, lastName, uscID, user_UUID);
+        loader = new DataLoader();
         this.userName = userName;
         this.gradYear = gradYear;
         this.majorName = major;
@@ -40,6 +42,7 @@ public class Student extends User{
         this.failedCourses = new ArrayList<>();
         this.currentCourses = new ArrayList<>();
         this.completedCourses = new HashMap<>();
+        this.major = loader.getMajor("json/json_examples/major_ex.json", majorName);
         //TODO Auto-generated constructor stub
     }
     /**
@@ -61,6 +64,7 @@ public class Student extends User{
         String gradYear, MajorName major, Double gpa, Scholarship scholarship, ArrayList<Course> failedCourses,
         ArrayList<Course> currentCourses, HashMap<Course, Grade> completedCourses) {
       super(userName, password, firstName, lastName, uscID, UUID.randomUUID());
+      loader = new DataLoader();
       this.userName = userName;
       this.gradYear = gradYear;
       this.majorName = major;
@@ -69,7 +73,8 @@ public class Student extends User{
       this.failedCourses = failedCourses;
       this.currentCourses = currentCourses;
       this.completedCourses = completedCourses;
-    }
+      this.major = loader.getMajor("json/json_examples/major_ex.json",major);
+      }
   protected void addEightSemesterPlan() {
 
   }
@@ -171,7 +176,15 @@ public String getUserName() {
   public ArrayList<Course> getFailedCourses() {
     return this.failedCourses;
   }
-
+  public ArrayList<Course> getCoursesRemaining() {
+    ArrayList<Course> remaining = new ArrayList<Course>();
+    remaining.addAll(major.courses);
+    remaining.removeAll(completedCourses.keySet());
+    return remaining;
+  }
+  public MajorName getMajorName() {
+    return majorName;
+  }
 public boolean meetsPrerequisites(Course course) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'meetsPrerequisites'");
@@ -182,7 +195,30 @@ public void addNotes(String notes) {
 }
 public String toString() {
   String ret ="";
-  
+  ret += "Username: " + this.userName;
+  ret += "Major: " + major.toString() + "\n";
+  ret += "GPA: " + this.gpa + "\n";
+  ret += "Scholarship: " + this.scholarship.toString() + "\n";
+  ret += "Failed Courses: " + "\n";
+  for (int i =0; i < this.failedCourses.size(); i++)
+  {
+    ret += failedCourses.get(i).fullName + "\n";
+  }
+  ret += "Completed Courses: " + "\n";
+  for (int i =0; i < this.completedCourses.size(); i++)
+  {
+    ret += completedCourses.get(i) + "\n";
+  }
   return ret;
 }
+// private String gradYear;
+//   private Major major;
+//   private MajorName majorName;
+//   private String userName;
+//   private Double gpa;
+//   private Scholarship scholarship;
+//   private ArrayList<Course> failedCourses;
+//   private ArrayList<Course> currentCourses;
+//   public HashMap<Course, Grade> completedCourses;
+//   private ArrayList<String> notes;
 }
