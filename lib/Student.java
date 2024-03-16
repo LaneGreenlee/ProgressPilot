@@ -219,14 +219,5 @@ public String toString() {
 
   return ret;
 }
-// private String gradYear;
-//   private Major major;
-//   private MajorName majorName;
-//   private String userName;
-//   private Double gpa;
-//   private Scholarship scholarship;
-//   private ArrayList<Course> failedCourses;
-//   private ArrayList<Course> currentCourses;
-//   public HashMap<Course, Grade> completedCourses;
-//   private ArrayList<String> notes;
+
 }

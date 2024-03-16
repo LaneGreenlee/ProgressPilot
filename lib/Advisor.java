@@ -58,7 +58,7 @@ public class Advisor extends User{
 
     }
     protected void checkStudentProgress(String username) {
-      
+      System.out.println(UserList.getStudent(username).toString());
     }
     protected void addStudentNotes(String username, String notes) {
       this.students.get(this.students.indexOf(UserList.getStudent(username))).addNotes(notes);
