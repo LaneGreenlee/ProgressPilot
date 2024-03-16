@@ -10,7 +10,6 @@ public class ApplicationArea {
     public ArrayList<Course> requiredCourses;
     public CourseList courseList;
     Scanner scanner = new Scanner(System.in);
-
     /***
      * constructor by taking in application area and required courses
      * @param applicationArea application area the student is pursuing

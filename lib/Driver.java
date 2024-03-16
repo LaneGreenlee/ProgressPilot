@@ -155,7 +155,7 @@ private void studentOptions() {
     boolean run = true;
     int userChoose = 0;
     while (run){
-    int userCommand = studentChoice(4);
+    int userCommand = studentChoice(5);
     if (userCommand == -1) {
         System.out.println("Not a valid command");
     }
@@ -187,6 +187,9 @@ private void studentOptions() {
         case(3):
             System.out.println("Please enter the Course Code you wish to add (CSCE, MATH etc.):");
             studentAddCourse();
+        case(4):
+            addApplicationArea();
+            break;
         }
         System.out.println("\nWould you like to continue working?\n '1' for yes, '2' for no");
          String input = scanner.nextLine();
@@ -268,6 +271,12 @@ public void studentAddCourse() {
     } else {
         System.out.println("No GFL elective found to replace.");
     }
+}
+private void addApplicationArea() {
+    String apArea = scanner.nextLine();
+    ArrayList<Course> apCourses = new ArrayList<Course>();
+    ApplicationArea applicationArea = new ApplicationArea(apArea, apCourses);
+    applicationArea.setRequiredCourses();
 }
 /**
  * Takes in username and password and checks the advisor array list to see if the profile
