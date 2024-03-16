@@ -53,6 +53,13 @@ public class Advisor extends User{
     protected void addStudentByID( String uscID ) {
       students.add(UserList.getStudentUSCID(uscID));
     }
+    protected Student getStudentByID (String Id) {
+      for (int i = 0; i < students.size(); i++) {
+        if (students.get(i).getId().equals(Id))
+          return students.get(i);
+      }
+      return null;
+    }
     /***
      * Removes a student from the list
      * @param student student who is being removed

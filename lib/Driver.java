@@ -365,7 +365,8 @@ private void advisorOptions() {
             System.out.println("Enter new advisee's USCID number: ");
             String adviseeID = scanner.nextLine();
             currentAdvisor.addStudentByID(adviseeID);
-            if (currentAdvisor.students.contains(UserList.students.contains(adviseeID))) {
+            currentStudent = currentAdvisor.getStudentByID(adviseeID);
+            if (currentStudent != null) {
                 System.out.println("Student successfully added");
                 break;
             } else {
@@ -374,19 +375,26 @@ private void advisorOptions() {
             }
 
         case(1):
-            System.out.println("Courses that need to be taken: ");
-            ArrayList<Course> remainingCourses = currentStudent.getCoursesRemaining();
-        // Print the remaining courses
-             System.out.println("Remaining Courses:");
-             for (Course course : remainingCourses) {
-                System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+            System.out.println("View Advisee Courses taken: ");
+            HashMap<Course,Grade> completedCourses = currentStudent.getCompletedCourses();
+            for (Map.Entry<Course, Grade> entry : completedCourses.entrySet()) {
+                System.out.println("Course Name: " + entry.getKey().getCourseCode() +" "+entry.getKey().getCourseNumber()+ " , Grade: " + entry.getValue());
             }
-            //System.out.println(currentStudent.getCoursesRemaining());
+        // Print the remaining courses
+            System.out.println("Remaining Courses:");
+            ArrayList<Course> remainingCourses = currentStudent.getCoursesRemaining();
+            // Print the remaining courses
+                 System.out.println("Remaining Courses:");
+                 for (Course course : remainingCourses) {
+                    System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+                }
             break;
         case(2):
-            System.out.println("View Electives: ");
-            int choice = electiveChoice(electiveOptions.length);
-            showElective(choice);
+            System.out.println("Add note to advisee: ");
+            System.out.println("What would you like the note to say?");
+            String note = scanner.nextLine();
+                currentAdvisor.addNotes(note, currentStudent);
+            currentStudent.getNotes();
             break;
     }
         System.out.println("Would you like to continue working?\n '1' for yes, '2' for no");

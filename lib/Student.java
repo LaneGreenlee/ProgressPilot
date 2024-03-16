@@ -117,6 +117,9 @@ public class Student extends User{
   protected boolean meetsRequirements() {
     return false;
   }
+  protected String getNotes () {
+    return notes.get(0);
+  }
   /**
    * takes in a course and adds it to the array list
    * @param course course that will be added to current course
