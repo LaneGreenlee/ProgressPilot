@@ -142,7 +142,7 @@ private void studentLogin() {
         studentOptions();
 }
 private int studentChoice(int numCommands) {
-    System.out.print("Student Choices \n'1' View courses taken and grades earned, '2' Courses that need to be taken or '3' View elective courses\n");
+    System.out.print("Student Choices \n'1' View courses taken and grades earned, '2' Courses that need to be taken, '3' View elective courses or '4' Add a course to be taken\n");
     String userIn = scanner.nextLine();
     int command = Integer.parseInt(userIn) - 1;
 
@@ -155,7 +155,7 @@ private void studentOptions() {
     boolean run = true;
     int userChoose = 0;
     while (run){
-    int userCommand = studentChoice(3);
+    int userCommand = studentChoice(4);
     if (userCommand == -1) {
         System.out.println("Not a valid command");
     }
@@ -184,7 +184,9 @@ private void studentOptions() {
             int choice = electiveChoice(electiveOptions.length);
             showElective(choice);
             break;
-
+        case(3):
+            System.out.println("Please enter the Course Code you wish to add (CSCE, MATH etc.):");
+            studentAddCourse();
         }
         System.out.println("\nWould you like to continue working?\n '1' for yes, '2' for no");
          String input = scanner.nextLine();
@@ -239,6 +241,32 @@ private void showElective(int numCommand) {
         for (Course course : infCourses)
             System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
         break;
+    }
+}
+public void studentAddCourse() {
+    String courseCode = scanner.nextLine();
+    System.out.println("Now enter the course number (347, 101 etc.):");
+    String courseNumber = scanner.nextLine();
+    int gflIndex = -1;
+    for (int i = 0; i < currentStudent.getMajor().courses.size(); i++) {
+        Course course = currentStudent.getMajor().courses.get(i);
+        if (course.getCourseCode().equals("GFL Elective")) {
+            gflIndex = i;
+            break;
+        }
+    }
+    if (gflIndex != -1) {
+        for (Course course : progressPilot.courseList.Courses) {
+            if (courseCode.equals(course.getCourseCode()) && courseNumber.equals(course.getCourseNumber())) {
+                // If the course is found, replace the GFL elective with the new course
+                currentStudent.getMajor().courses.set(gflIndex, course);
+                System.out.println("Course successfully added and replaced the GFL elective.");
+                return; // Exit the method once the course is added
+            }
+        }
+        System.out.println("Course not found.");
+    } else {
+        System.out.println("No GFL elective found to replace.");
     }
 }
 /**

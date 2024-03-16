@@ -9,6 +9,24 @@
         "courseID":"84b21549-16e9-4117-978c-39a43fb665b2"
     },
     {
+        "courseCode":"GFL Elective",
+        "courseNumber":" ",
+        "courseAttributes":["GFL"],
+        "courseDescription":[" "],
+        "creditHours":3,
+        "isTransfer":false,
+        "courseID":"d870b4b1-5a5d-4fa9-ad45-3571c5573462"
+    },
+    {
+        "courseCode":"GHS Elective",
+        "courseNumber":" ",
+        "courseAttributes":["GHS"],
+        "courseDescription":[" "],
+        "creditHours":3,
+        "isTransfer":false,
+        "courseID":"496e58a7-3e38-4a74-b783-d63d1ef20324"
+    },
+    {
         "courseCode":"ENGL",
         "courseNumber":"101",
         "courseAttributes":["CC"],
