@@ -49,14 +49,18 @@ public class CourseList {
      * @return course that has the name of the String passed in 
      */
     protected Course getCourse(String courseName) {
-        for (int i =0; i < Courses.size(); i++) {
-          if (courseName.equals(Courses.get(i).getFullName())) {
-            return Courses.get(i);
+      String normalizedInput = courseName.trim().toUpperCase(); // Normalize input for comparison
+  
+      for (int i = 0; i < Courses.size(); i++) {
+          String normalizedCourseName = Courses.get(i).getFullName().toUpperCase(); // Normalize stored name
+          if (normalizedInput.equals(normalizedCourseName)) {
+              return Courses.get(i);
           }
-        }
-        System.out.println("Sorry no course were found with that name");
-        return null;
-    }
+      }
+      System.out.println("Sorry, no course was found with that name.");
+      return null;
+  }
+  
     public ArrayList<Course> getGHS() {
       ArrayList<Course> ghsCourses = new ArrayList<Course>();
       for (Course course : Courses) {
