@@ -47,8 +47,8 @@ public class Advisor extends User{
      * Adds a student to list of students
      * @param student new student who is being added to the list
      */
-    protected void addStudent( Student student ) {
-      students.add(student);
+    protected void addStudent( String username ) {
+      students.add(UserList.getStudent(username));
     }
     /***
      * Removes a student from the list
@@ -56,6 +56,12 @@ public class Advisor extends User{
      */
     protected void removeStudent( Student student ) {
 
+    }
+    protected void checkStudentProgress(String username) {
+      
+    }
+    protected void addStudentNotes(String username, String notes) {
+      this.students.get(this.students.indexOf(UserList.getStudent(username))).addNotes(notes);
     }
     /***
      * takes in a student and then checks course grade to see if any is failing

@@ -14,6 +14,7 @@ public class Student extends User{
   private ArrayList<Course> failedCourses;
   private ArrayList<Course> currentCourses;
   public HashMap<Course, Grade> completedCourses;
+  private ArrayList<String> notes;
   /**
    * The constructor of a brand new student who
    * has not taken any classes
@@ -174,5 +175,14 @@ public String getUserName() {
 public boolean meetsPrerequisites(Course course) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'meetsPrerequisites'");
+}
+public void addNotes(String notes) {
+  this.notes.add(notes);
+
+}
+public String toString() {
+  String ret ="";
+  
+  return ret;
 }
 }

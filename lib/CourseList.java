@@ -54,5 +54,12 @@ public class CourseList {
     public ArrayList<Course> getAllCourses() {
       return Courses;
     }
-
+    public ArrayList<Course> getAllAtributes(String attribute) {
+      ArrayList<Course> ret = new ArrayList<Course>();
+      for (int i =0; i < Courses.size(); i++) {
+        if (Courses.get(i).courseAttributes.contains(attribute))
+          ret.add(Courses.get(i));
+       }
+       return ret;
+    }
 }

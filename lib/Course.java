@@ -54,7 +54,7 @@ public class Course {
      * @return true if SCI, false if not
      */
     public boolean isSCI(Course course) {
-        return false;
+        return (course.courseAttributes.contains("SCI"));
     }
     /***
      * Checks if the course passed in is GFL
@@ -62,7 +62,7 @@ public class Course {
      * @return true if GFL, false if not
      */
     public boolean isGFL(Course course) {
-        return false;
+        return (course.courseAttributes.contains("GFL"));
     }
     /***
      * Checks if the course passed in is GHS
@@ -70,7 +70,7 @@ public class Course {
      * @return true if GHS, false if not
      */
     public boolean isGHS(Course course) {
-        return false;
+        return (course.courseAttributes.contains("GHS"));
     }
     /***
      * Checks if the course passed in is GSS
@@ -78,7 +78,7 @@ public class Course {
      * @return true if GSS, false if not
      */
     public boolean isGSS(Course course) {
-        return false;
+        return (course.courseAttributes.contains("GSS"));
     }
     /***
      * Checks if the course passed in is CMS
@@ -86,7 +86,7 @@ public class Course {
      * @return true if CMS, false if not
      */
     public boolean isCMS(Course course) {
-        return false;
+        return (course.courseAttributes.contains("CMS"));
     }
     /***
      * Checks if the course passed in is INF
@@ -94,7 +94,7 @@ public class Course {
      * @return true if INF, false if not
      */
     public boolean isINF(Course course) {
-        return false;
+        return (course.courseAttributes.contains("INF"));
     }
     /***
      * Checks if the course passed in is a founding document course
@@ -102,7 +102,7 @@ public class Course {
      * @return true if a founding document course, false if not
      */
     public boolean isFoundingDoc(Course course) {
-        return false;
+        return (course.courseAttributes.contains("Founding_Document"));
     }
     /***
      * Checks if the course passed in is Liberal Arts
