@@ -50,7 +50,7 @@ public class CourseList {
      */
     protected Course getCourse(String courseName) {
         for (int i =0; i < Courses.size(); i++) {
-          if (courseName.equals(Courses.get(i).getFullName())) {
+          if (courseName.equalsIgnoreCase(Courses.get(i).getFullName())) {
             return Courses.get(i);
           }
         }
