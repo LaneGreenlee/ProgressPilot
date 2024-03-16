@@ -85,14 +85,14 @@ public class ApplicationArea {
         while (selectedCourses.size() < 3) {
             String courseID = scanner.nextLine().trim().toUpperCase();
             // checks if the courseID is already selected to ensure uniqueness.
-            if (!selectedCourses.contains(courseID)) {
+            if (!selectedCourses.contains(courseID) && courseList.getCourse(courseID)!= null ) {
                 selectedCourses.add(courseID);
                 requiredCourses.add(courseList.getCourse(courseID)); 
                 if (selectedCourses.size() < 3) {
                     System.out.println(courseID + " added. Please enter the next course ID:");
                 }
             } else {
-                System.out.println("Course already selected. Please enter a different course ID:");
+                System.out.println("Course already selected or you have entered an incorrect name. Please enter a different course ID:");
             }
         }
         System.out.println("All required courses have been selected.");
