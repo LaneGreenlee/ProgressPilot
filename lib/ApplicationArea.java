@@ -1,11 +1,16 @@
 package lib;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
 
 public class ApplicationArea {
     public String applicationArea;
     public ArrayList<Course> requiredCourses;
     public CourseList courseList;
+    Scanner scanner = new Scanner(System.in);
+
     /***
      * constructor by taking in application area and required courses
      * @param applicationArea application area the student is pursuing
@@ -20,79 +25,80 @@ public class ApplicationArea {
      * application area the student adds to their major
      */
     public void setRequiredCourses() {
-        requiredCourses.clear(); // Ensure the list is empty before adding new courses
+        Scanner scanner = new Scanner(System.in);
+        Set<String> selectedCourses = new HashSet<>();
+        requiredCourses.clear(); // Clears the list to ensure it's empty before adding new courses.
     
-        switch (this.applicationArea) {
+        System.out.println("Enter the application area:");
+        String applicationArea = scanner.nextLine().trim();
+    
+        switch (applicationArea) {
             case "Bioinformatics":
-                requiredCourses.add(courseList.getCourse("BIOL 302"));
-                requiredCourses.add(courseList.getCourse("BIOL 301"));
-                requiredCourses.add(courseList.getCourse("CHEM 333"));
+                System.out.println("Select three unique courses from the following list for Bioinformatics:");
+                System.out.println("BIOL 302, BIOL 301, BIOL 303, CHEM 333");
                 break;
             case "Cloud Native Application Development":
-                requiredCourses.add(courseList.getCourse("MGMT 371"));
-                requiredCourses.add(courseList.getCourse("MGMT 374"));
-                requiredCourses.add(courseList.getCourse("MGMT 376"));
+                System.out.println("Select three unique courses from the following list for Cloud Native Application Development:");
+                System.out.println("MGMT 371, MGMT 374, MGMT 376, MGMT 402, MGMT 403");
                 break;
             case "Computer Game Design and Development":
-                requiredCourses.add(courseList.getCourse("MART 201"));
-                requiredCourses.add(courseList.getCourse("MART 210"));
-                requiredCourses.add(courseList.getCourse("MATH 527"));
+                System.out.println("Select three unique courses from the following list for Computer Game Design and Development:");
+                System.out.println("MART 201, MART 210, MART 380, MART 581D, MART 371, MART 571C, MATH 527, MATH 576");
                 break;
             case "Data Scientist":
-                requiredCourses.add(courseList.getCourse("STAT 530"));
-                requiredCourses.add(courseList.getCourse("STAT 511"));
-                requiredCourses.add(courseList.getCourse("STAT 535"));
+                System.out.println("Select three unique courses from the following list for Data Scientist:");
+                System.out.println("STAT 530, STAT 511, STAT 535, STAT 512, STAT 513");
                 break;
             case "Cybersecurity":
-                requiredCourses.add(courseList.getCourse("CRJU 313"));
-                requiredCourses.add(courseList.getCourse("LAWS 525"));
-                requiredCourses.add(courseList.getCourse("JOUR 303"));
+                System.out.println("Select three unique courses from the following list for the Cybersecurity program:");
+                System.out.println("CRJU 313, CRJU 314, CRJU 341, LAWS 525, LAWS 526, LAWS 547, JOUR 303, JOUR 504");
                 break;
             case "Geographic Information Systems Developer":
-                requiredCourses.add(courseList.getCourse("GEOG 341"));
-                requiredCourses.add(courseList.getCourse("GEOG 345"));
-                requiredCourses.add(courseList.getCourse("GEOG 363"));
+                System.out.println("Select three unique courses from the following list for GIS Developer:");
+                System.out.println("GEOG 341, GEOG 345, GEOG 363, GEOG 541, GEOG 551, GEOG 562, GEOG 563, GEOG 564");
                 break;
             case "Linguistics":
-                requiredCourses.add(courseList.getCourse("LING 340"));
-                requiredCourses.add(courseList.getCourse("LING 421"));
-                requiredCourses.add(courseList.getCourse("LING 440"));
+                System.out.println("Select three unique courses from the following list for Linguistics:");
+                System.out.println("LING 340, LING 421, LING 440, LING 565, LING 567");
                 break;
             case "New Media":
-                requiredCourses.add(courseList.getCourse("MART 201"));
-                requiredCourses.add(courseList.getCourse("MART 210"));
-                requiredCourses.add(courseList.getCourse("MART 380"));
+                System.out.println("Select three unique courses from the following list for New Media:");
+                System.out.println("MART 201, MART 210, MART 371, MART 380");
                 break;
             case "Risk and Insurance":
-                requiredCourses.add(courseList.getCourse("FINA 363"));
-                requiredCourses.add(courseList.getCourse("FINA 341"));
-                requiredCourses.add(courseList.getCourse("FINA 442"));
-                break;
-            case "Scientific Computing":
-                requiredCourses.add(courseList.getCourse("MATH 242"));
-                requiredCourses.add(courseList.getCourse("MATH 300"));
-                requiredCourses.add(courseList.getCourse("MATH 520"));
+                System.out.println("Select three unique courses from the following list for Risk and Insurance:");
+                System.out.println("FINA 363, FINA 341, FINA 442, FINA 443, FINA 444, FINA 445");
                 break;
             case "Aerospace Engineering":
-                requiredCourses.add(courseList.getCourse("EMCH 577"));
-                requiredCourses.add(courseList.getCourse("EMCH 578"));
-                requiredCourses.add(courseList.getCourse("EMCH 508"));
+                System.out.println("Select three unique courses from the following list for Aerospace Engineering:");
+                System.out.println("EMCH 577, EMCH 578, EMCH 508, EMCH 585");
                 break;
             case "Robotics":
-                requiredCourses.add(courseList.getCourse("EMCH 535"));
-                requiredCourses.add(courseList.getCourse("ELCT 331"));
-                requiredCourses.add(courseList.getCourse("ELCT 531"));
-                break;
-            case "Web Developer":
-                requiredCourses.add(courseList.getCourse("MART 201"));
-                requiredCourses.add(courseList.getCourse("MART 210"));
-                requiredCourses.add(courseList.getCourse("MART 380"));
+                System.out.println("Select three unique courses from the following list for Robotics:");
+                System.out.println("EMCH 535, ELCT 331, ELCT 531");
                 break;
             default:
-                System.out.println("Application area not recognized. No courses added.");
-                break;
+                System.out.println("Application area not recognized or does not require course selection. No courses added.");
+                return; // Exits the method if not valid
         }
+    
+        System.out.println("Enter the course IDs one by one:");
+        while (selectedCourses.size() < 3) {
+            String courseID = scanner.nextLine().trim().toUpperCase();
+            // checks if the courseID is already selected to ensure uniqueness.
+            if (!selectedCourses.contains(courseID)) {
+                selectedCourses.add(courseID);
+                requiredCourses.add(courseList.getCourse(courseID)); 
+                if (selectedCourses.size() < 3) {
+                    System.out.println(courseID + " added. Please enter the next course ID:");
+                }
+            } else {
+                System.out.println("Course already selected. Please enter a different course ID:");
+            }
+        }
+        System.out.println("All required courses have been selected.");
     }
+    
     
 
 }
