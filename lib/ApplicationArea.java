@@ -84,6 +84,7 @@ public class ApplicationArea {
         System.out.println("Enter the course IDs one by one:");
         while (selectedCourses.size() < 3) {
             String courseID = scanner.nextLine().trim().toUpperCase();
+            System.out.println(courseID);
             // checks if the courseID is already selected to ensure uniqueness.
             if (!selectedCourses.contains(courseID) && courseList.getCourse(courseID)!= null ) {
                 System.out.println("Test 1");
