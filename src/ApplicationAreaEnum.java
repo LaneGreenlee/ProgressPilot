@@ -1,4 +1,4 @@
-package lib;
+package src;
 
 public enum ApplicationAreaEnum {
     Bioinformatics,
