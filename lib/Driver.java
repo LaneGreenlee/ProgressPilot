@@ -393,8 +393,11 @@ public class Driver {
                 System.out.println("Add note to advisee: ");
                 System.out.println("What would you like the note to say?");
                 String note = scanner.nextLine();
-                    currentAdvisor.addNotes(note, currentStudent);
-                //currentStudent.getNotes();
+                    currentAdvisor.addStudentNotes(currentStudent.getUserName(), note);
+                
+                System.out.println("\nProof that the student note is stored for the student");
+                for (String notes : currentStudent.getNotes())
+                    System.out.println(notes);
                 break;
         }
             System.out.println("Would you like to continue working?\n '1' for yes, '2' for no");
