@@ -117,8 +117,12 @@ public class Student extends User{
   protected boolean meetsRequirements() {
     return false;
   }
-  protected String getNotes () {
-    return notes.get(0);
+  protected ArrayList<String> getNotes () {
+    ArrayList<String> ret = new ArrayList<String>();
+    for (int i = 0; i< this.notes.size(); i ++) {
+    ret.add(this.notes.get(i));
+    }
+    return ret;
   }
   /**
    * takes in a course and adds it to the array list

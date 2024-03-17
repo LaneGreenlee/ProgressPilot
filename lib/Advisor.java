@@ -34,15 +34,7 @@ public class Advisor extends User{
       super(userName, password, firstName, lastName, uscID, user_UUID);
       this.students = students;
     }
-    /***
-     * Pass in a String which is the note and a student who's account the note will be put on
-     * @param note note being left on the profile
-     * @param student student who is being left a note
-     * @return String which contains notes for student
-     */
-    public String addNotes(String note, Student student ) {
-      return null;
-    }
+    
     /***
      * Adds a student to list of students
      * @param student new student who is being added to the list
@@ -70,6 +62,12 @@ public class Advisor extends User{
     protected void checkStudentProgress(String username) {
       System.out.println(UserList.getStudent(username).toString());
     }
+    /***
+     * Pass in a String which is the note and a student who's account the note will be put on
+     * @param Username student who is being left a note
+     * @param notes note being left on the profile
+     * @return String which contains notes for student
+     */
     protected void addStudentNotes(String username, String notes) {
       this.students.get(this.students.indexOf(UserList.getStudent(username))).addNotes(notes);
     }
@@ -145,6 +143,14 @@ public class Advisor extends User{
     protected void deleteAccount(Student student) {
         
     }
+    /***
+     * 
+     * @return an ArrayList of Strings of the student notes
+     */
+    public ArrayList<String> printStudentNotes(String username, String notes) {
+      return this.students.get(this.students.indexOf(UserList.getStudent(username))).getNotes();
+  }
+
     /***
      * 
      * @return an ArrayList of students
