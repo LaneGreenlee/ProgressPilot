@@ -96,7 +96,7 @@ public class ApplicationArea {
                 System.out.println("You have entered an incorrect name. Please enter a different course ID:");
             }
               else {
-                System.out.println("You have added this course. Please enter a different course ID:")
+                System.out.println("You have added this course. Please enter a different course ID:");
               }
         }
         System.out.println("All required courses have been selected.");
