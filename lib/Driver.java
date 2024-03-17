@@ -367,7 +367,7 @@ public class Driver {
                 currentAdvisor.addStudentByID(adviseeID);
                 currentStudent = currentAdvisor.getStudentByID(adviseeID);
                 if (currentStudent != null) {
-                    System.out.println("Student successfully added");
+                    System.out.println(currentStudent.getUserName() + " successfully added");
                     break;
                 } else {
                     System.out.println("Unable to add new advisee, please try again");
@@ -377,6 +377,7 @@ public class Driver {
             case(1):
                 System.out.println("View Advisee Courses taken: ");
                 HashMap<Course,Grade> completedCourses = currentStudent.getCompletedCourses();
+                System.out.println("You are viewing: " + currentStudent.getUserName());
                 for (Map.Entry<Course, Grade> entry : completedCourses.entrySet()) {
                     System.out.println("Course Name: " + entry.getKey().getCourseCode() +" "+entry.getKey().getCourseNumber()+ "\t, Grade: " + entry.getValue());
                 }
