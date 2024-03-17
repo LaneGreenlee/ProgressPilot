@@ -44,7 +44,7 @@ public class Driver {
     */
     public void run() {
         System.out.println(WELCOME_MESSAGE);
-        System.out.println("Press '1' for sign up or press '2' for login");
+        System.out.println("Press '1' for sign up\nPress '2' for login");
         int userCommand = getUserCommand(mainMenuOptions.length);
         if (userCommand == -1) {
             System.out.println("Not a valid command");
@@ -64,7 +64,7 @@ public class Driver {
  * @return int that the user put in
  */
 private int loginType (int numCommands) {
-    System.out.print("Login as a student or advisor? \n'1' for student or '2' for advisor ");
+    System.out.print("Login as a student or advisor?\n'1' for student\n'2' for advisor\n");
     String userIn = scanner.nextLine();
     int command = Integer.parseInt(userIn) - 1;
     
@@ -176,7 +176,7 @@ private void createAccountAdvisor() {
  */
 private void studentLogin() {
     String userName = getField("Username");
-    String password = getField("password");
+    String password = getField("Password");
     progressPilot.studentLogin(userName, password);
         currentStudent = progressPilot.studentLogin(userName, password);
         //dataWriter.saveAllStudents();
@@ -184,7 +184,7 @@ private void studentLogin() {
         studentOptions();
 }
 private int studentChoice(int numCommands) {
-    System.out.print("Student Choices \n'1' View courses taken and grades earned, '2' Courses that need to be taken, '3' View elective courses, '4' Add a course to be taken\n '5' Add an application area\n");
+    System.out.print("Student Choices:\n'1' View courses taken and grades earned\n'2' Courses that need to be taken\n'3' View elective courses\n'4' Add a course to be taken\n'5' Add an application area\nYour Choice: ");
     String userIn = scanner.nextLine();
     int command = Integer.parseInt(userIn) - 1;
 
