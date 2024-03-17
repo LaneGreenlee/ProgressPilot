@@ -206,7 +206,7 @@ private void studentOptions() {
             System.out.println("View Courses: ");
             HashMap<Course,Grade> completedCourses = currentStudent.getCompletedCourses();
             for (Map.Entry<Course, Grade> entry : completedCourses.entrySet()) {
-                System.out.println("Course Name: " + entry.getKey().getCourseCode() +" "+entry.getKey().getCourseNumber()+ " , Grade: " + entry.getValue());
+                System.out.println("Course Name: " + entry.getKey().getCourseCode() +" "+entry.getKey().getCourseNumber()+ "\t, Grade: " + entry.getValue());
             }
             dataWriter.saveAllStudents();
             break;
@@ -378,7 +378,7 @@ private void advisorOptions() {
             System.out.println("View Advisee Courses taken: ");
             HashMap<Course,Grade> completedCourses = currentStudent.getCompletedCourses();
             for (Map.Entry<Course, Grade> entry : completedCourses.entrySet()) {
-                System.out.println("Course Name: " + entry.getKey().getCourseCode() +" "+entry.getKey().getCourseNumber()+ " , Grade: " + entry.getValue());
+                System.out.println("Course Name: " + entry.getKey().getCourseCode() +" "+entry.getKey().getCourseNumber()+ "\t, Grade: " + entry.getValue());
             }
         // Print the remaining courses
             System.out.println("Remaining Courses:");
@@ -394,7 +394,7 @@ private void advisorOptions() {
             System.out.println("What would you like the note to say?");
             String note = scanner.nextLine();
                 currentAdvisor.addNotes(note, currentStudent);
-            currentStudent.getNotes();
+            //currentStudent.getNotes();
             break;
     }
         System.out.println("Would you like to continue working?\n '1' for yes, '2' for no");

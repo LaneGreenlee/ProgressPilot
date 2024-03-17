@@ -3,7 +3,7 @@
     "password":"West",
     "firstName":"Brax",
     "lastName":"West",
-    "uscID":"12",
+    "uscID":"P123290",
     "user_UUID":"dfd6364e-d994-4e1f-bf55-1b1fd823b0c4",
     "gradYear":"2026",
     "major":"Computer_Science",
@@ -31,5 +31,41 @@
         "0cc1b74c-4d49-4f60-8bc3-e467907b3601" : "B",
         "375e8ad4-b152-487c-9e06-72ad02e7127b" : "A"
 
+    }
+},
+{
+    "username":"Tawnie",
+    "password":"Hill",
+    "firstName":"Tawnie",
+    "lastName":"Hill",
+    "uscID":"P12345",
+    "user_UUID":"e4de81a3-c6eb-4812-8a68-a26113a89054",
+    "gradYear":"2026",
+    "major":"Computer_Science",
+    "gpa":3.6,
+    "scholarships":["Palmetto Fellows"],
+    "failedCourses":["b3d392ff-ccd5-46af-92d5-d2663369c13d"],
+    "currentCourses":[],
+    "completedCourses": {
+        "0acc5f8e-d7ef-413c-81ea-1d522be7ea14" : "B",
+        "098820f3-9b68-4fb0-b7c2-a2a8f71b077e" : "B",
+        "e4bd594c-25d8-46e1-a7c9-26a4425d1e80" : "A",
+        "abcaebdb-fad8-4911-9d8d-64a825325b03" : "A",
+        "b20e56f4-42e0-470f-bef8-1a7637979d65" : "C",
+        "1e489cea-4d50-47fe-b5ab-36b6eb0651ce" : "C",
+        "3486581f-77ac-4407-9d49-e28618035fd6" : "B",
+        "16ec31cb-f8dc-49cc-add4-36f7061eef36" : "B",
+        "898f6870-b58d-447f-8bd6-75cb9899db89" : "A",
+        "2914bf41-848b-4c8b-8b89-297f528c15b4" : "A",
+        "e70af63e-fc98-46fa-8a0c-016c33b881ae" : "A",
+        "ef337ac9-e6ca-49e0-b856-50213daacc13" : "C",
+        "b62aa096-37bb-4708-8f96-cc7d687973e2" : "A",
+        "1bed169b-64b1-4140-9dbb-a585ee879347" : "C",
+        "767b7f00-cb3c-43a1-b405-6eccadf6ad77" : "B",
+        "9f3e1d01-ef9c-4af3-8d2d-fdec413896b9" : "A",
+        "0cc1b74c-4d49-4f60-8bc3-e467907b3601" : "B",
+        "375e8ad4-b152-487c-9e06-72ad02e7127b" : "C",
+        "669e88d5-9009-4f74-85aa-e675ffaaaf12" : "A",
+        "b9dcfb53-90b8-4c64-b9c0-a7933604bedc" : "B"
     }
 }]

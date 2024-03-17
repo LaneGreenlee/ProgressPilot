@@ -621,5 +621,24 @@
     "creditHours":3,
     "isTransfer":false,
     "courseID":"3f2e51dc-dd56-4f80-a36f-e952e7160f19"
+},
+{
+    "courseCode":"STAT",
+    "courseNumber":"206",
+    "courseAttributes":[" "],
+    "courseDescription":["Fundamental statistical methods with applications in business. Includes descriptive statistics, graphical methods, probability, distributions, sampling, inference, contingency tables, and linear regression."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"669e88d5-9009-4f74-85aa-e675ffaaaf12"
+},
+
+{
+    "courseCode":"STAT",
+    "courseNumber":"112",
+    "courseAttributes":[" "],
+    "courseDescription":["Statistics and the Media. (3) Statistical and information literacy.  Experimental and survey design; descriptive statistics; basic probability; simple confidence intervals and hypothesis tests; statistical software; collection, management, and evaluation of information; and presentation of statistics in the media."],
+    "creditHours":3,
+    "isTransfer":false,
+    "courseID":"b9dcfb53-90b8-4c64-b9c0-a7933604bedc"
 }
 ]
