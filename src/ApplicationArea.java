@@ -1,4 +1,4 @@
-package lib;
+package src;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -92,9 +92,12 @@ public class ApplicationArea {
                 if (selectedCourses.size() < 3) {
                     System.out.println(courseID + " added. Please enter the next course ID:");
                 }
-            } else {
-                System.out.println("Course already selected or you have entered an incorrect name. Please enter a different course ID:");
+            } else if (courseList.getCourse(courseID)== null) {
+                System.out.println("You have entered an incorrect name. Please enter a different course ID:");
             }
+              else {
+                System.out.println("You have added this course. Please enter a different course ID:");
+              }
         }
         System.out.println("All required courses have been selected.");
     }

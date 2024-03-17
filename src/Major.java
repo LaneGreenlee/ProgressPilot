@@ -1,4 +1,4 @@
-package lib;
+package src;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -90,7 +90,9 @@ public class Major {
             courses.addAll(applicationArea.requiredCourses);
     }
     
-
+    /**
+     * @return String containing major name total major hours, college name, and major id. 
+     */
   
     public String toString(){
       String ret = "";

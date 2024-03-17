@@ -1,4 +1,4 @@
-package lib;
+package src;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -182,23 +182,38 @@ public String getUserName() {
   public ArrayList<Course> getFailedCourses() {
     return this.failedCourses;
   }
+  /**
+     * @return Arraylist of courses remaining
+     */
   public ArrayList<Course> getCoursesRemaining() {
     ArrayList<Course> remaining = new ArrayList<Course>();
     remaining.addAll(major.courses);
     remaining.removeAll(completedCourses.keySet());
     return remaining;
   }
+  /**
+     * @return MajorName of the student.
+     */
   public MajorName getMajorName() {
     return majorName;
   }
+  /**
+     * @return Boolean if student meets prerequisites
+     */
 public boolean meetsPrerequisites(Course course) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'meetsPrerequisites'");
 }
+/**
+     * adds notes to students note variable takes in a string
+     */
 public void addNotes(String notes) {
   this.notes.add(notes);
 
 }
+/**
+     * @return String containing student progress
+     */
 public String toString() {
   String ret ="";
   ret += "Username: " + this.userName;
