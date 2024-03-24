@@ -24,7 +24,6 @@ public class FacadeTest {
         userList.addStudent(tim);
     }
 
-    @SuppressWarnings("deprecation")
     @Test
     public void capSensitiveStudentLoginTest() {
         Student studentTest = facade.studentLogin("Advisor", "Test");
@@ -114,5 +113,26 @@ public class FacadeTest {
         User user = facade.signup("Advisor","signup", "Hey", "Man", null);
         User userTest = (UserList.getUser("Advisor"));
         assertEquals(user, userTest);
+    }
+
+    @Test
+    public void testUserNameDuplicateAccountSignUp() {
+        // Assuming the username doesn't already exist in the system
+        User userDuplicate = new User ("Advisor", "Duplicate", "Test", "Sign", "P1231");
+        UserList.addUser(userDuplicate);
+        User user = facade.signup("Advisor","signup", "Hey", "Man", null);
+        assertEquals(user, null);
+    }
+
+    @Test
+    public void testLogout() {
+        facade.logout();
+        assertNull("Logout should return null", null);
+    }
+
+    @Test
+    public void isLoggedIn() {
+        facade.studentLogin("hey", "man");
+        assertEquals(true, facade.isLoggedIn());
     }
 }
