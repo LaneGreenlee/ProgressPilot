@@ -99,7 +99,7 @@ public class DataLoader {
      * @param filePath String of path to the JSON file that contains the students
      * @return Array List of all students from the JSON
      */
-     public ArrayList<Student> getAllStudents(String filePath) {
+     public static ArrayList<Student> getAllStudents(String filePath) {
         //ArrayList<Student> students = new ArrayList<>();
 
         try {
@@ -169,7 +169,7 @@ public class DataLoader {
      * @param filePath String of the file path to the advisors JSON
      * @return array list loaded with all advisors from JSON
      */
-    public ArrayList<Advisor> getAllAdvisors(String filePath) {
+    public static ArrayList<Advisor> getAllAdvisors(String filePath) {
 
         try {
             FileReader reader = new FileReader(filePath);
