@@ -243,5 +243,8 @@ public String toString() {
 
   return ret;
 }
+public void updateGPA(double d) {
+  this.gpa = d;
+}
 
 }
