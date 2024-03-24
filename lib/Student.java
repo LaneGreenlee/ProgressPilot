@@ -29,17 +29,17 @@ public class Student extends User{
    * @param gradYear the grad year of the student
    * @param major the major of the student
    * @param gpa the gpa of the student
-   * @param scholarship the current scholarship of the student
+   * @param palmettoFellows the current scholarship of the student
    */
   public Student(UUID user_UUID, String userName, String password, String firstName, String lastName, String uscID,
-        String gradYear, MajorName major, Double gpa, Scholarship scholarship) {
+        String gradYear, MajorName major, Double gpa, lib.Scholarship palmettoFellows) {
         super(userName, password, firstName, lastName, uscID, user_UUID);
         loader = new DataLoader();
         this.userName = userName;
         this.gradYear = gradYear;
         this.majorName = major;
         this.gpa = gpa;
-        this.scholarship = scholarship;
+        this.scholarship = palmettoFellows;
         this.failedCourses = new ArrayList<>();
         this.currentCourses = new ArrayList<>();
         this.completedCourses = new HashMap<>();

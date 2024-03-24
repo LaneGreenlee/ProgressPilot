@@ -1,7 +1,5 @@
 package lib;
 
-import java.util.ArrayList;
-
 public class ProgessPilotFACADE {
     private User user;
     private Student student;
@@ -103,26 +101,6 @@ public class ProgessPilotFACADE {
             UserList.addUser(newUser); // Assuming there's an addUser method in UserList
             return newUser;
         }
-    }
-    /**
-     * @return array list of all courses
-     */
-    public ArrayList<Course> getAllCourses() {
-      return null;
-    }
-    /**
-     * @return array list of all majors
-     */
-    public ArrayList<Major> getAllMajors() {
-      return null;
-    }
-    /**
-     * 
-     * @param major takes in major
-     * @return all courses needed for the major
-     */
-    public ArrayList<Course> getCourseByMajor (Major major) {
-      return null;
     }
     /**
      * Creates a new user and then adds to the list using the passed in params
