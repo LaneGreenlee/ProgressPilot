@@ -1,0 +1,20 @@
+[
+    {
+        "courseCode":"MATH",
+        "courseNumber":"142",
+        "courseAttributes":["CC"],
+        "courseDescription":["Methods of integration, sequences and series, approximations.   Four classroom hours and one laboratory hour per week."],
+        "creditHours":4,
+        "isTransfer":false,
+        "courseID":"b62aa096-37bb-4708-8f96-cc7d687973e2"
+    },
+    {
+        "courseCode":"CHEM",
+        "courseNumber":"111",
+        "courseAttributes":["SCI"],
+        "courseDescription":["Methods of integration, sequences and series, approximations.   Four classroom hours and one laboratory hour per week."],
+        "creditHours":3,
+        "isTransfer":false,
+        "courseID":"ef337ac9-e6ca-49e0-b856-50213daacc13"
+    }
+]

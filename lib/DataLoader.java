@@ -16,7 +16,7 @@ public class DataLoader {
      * Returns an array list of courses
      * @return ArrayList of courses
      */
-    public ArrayList<Course> getCourses(String filePath) {
+    public static ArrayList<Course> getCourses(String filePath) {
         ArrayList<Course> courses = new ArrayList<>();
         JSONParser parser = new JSONParser();
 

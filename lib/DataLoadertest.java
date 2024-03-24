@@ -1,4 +1,5 @@
 package lib;
+import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
@@ -14,18 +15,21 @@ class DataLoadertest {
 	private ArrayList<User> userList = new ArrayList<User>();
 	private ArrayList<Student> students = new ArrayList<Student>();
 	private ArrayList<Advisor> advisors = new ArrayList<Advisor>();
+	private ArrayList<Course> courses = new ArrayList<Course>();
 
 	@BeforeEach
 	public void setup() {
 		userList.clear();
 		students = DataLoader.getAllStudents("json/test_json/student_test.json");
 		advisors = DataLoader.getAllAdvisors("json/test_json/advisor_test.json");
+		courses = DataLoader.getCourses("json/test_json/course_test.json");
 	}
 	
 	@AfterEach
 	public void tearDown() {
 		students.clear();
 		advisors.clear();
+		courses.clear();
 		UserList.getInstance().getAllUsers().clear();
 	}
 	
@@ -57,7 +61,7 @@ class DataLoadertest {
 
 	@Test
 	void testgetuser_UUID() {
-		assertEquals("b3d392ff-ccd5-46af-92d5-d2663369c13d", students.get(0).getID());
+		assertEquals(UUID.fromString("dfd6364e-d994-4e1f-bf55-1b1fd823b0c4"), students.get(0).getID());
 	}
 	@Test
 	void testgetuserGradYear() {
@@ -66,7 +70,7 @@ class DataLoadertest {
 
 	@Test
 	void testgetMajor() {
-		assertEquals("Computer_Science", students.get(0).getMajorName());
+		assertEquals(MajorName.Computer_Science, students.get(0).getMajorName());
 	}
 
 	@Test
@@ -81,7 +85,7 @@ class DataLoadertest {
 
 	@Test
 	void testGetFailedCourses() {
-		assertEquals("b3d392ff-ccd5-46af-92d5-d2663369c13d", students.get(0).getFailedCourses().get(0).getCourseID());
+		assertEquals(UUID.fromString("b3d392ff-ccd5-46af-92d5-d2663369c13d"), students.get(0).getFailedCourses().get(0).getCourseID());
 	}
 
 	@Test
@@ -130,7 +134,46 @@ class DataLoadertest {
 		assertEquals("22a71808-5493-4e9e-abf4-905c37a0642b", advisors.get(0).getID());
 	}
 
-	
+	//courses
+	@Test
+	void testCourseSize() {
+		assertEquals(2, courses.size());
+	}
+
+	@Test
+	void testCourseCode() {
+		assertEquals("MATH", courses.get(0).getCourseCode());
+	}
+
+	@Test
+	void testCourseNumber() {
+		assertEquals("142", courses.get(0).getCourseNumber());
+	}
+
+	@Test
+	void testCourseAttribute() {
+		assertEquals("CC", courses.get(0).getCourseAttributes().get(0));
+	}
+
+	@Test
+	void testCourseDescription() {
+		assertEquals("Methods of integration, sequences and series, approximations.   Four classroom hours and one laboratory hour per week.", courses.get(0).getDescription());
+	}
+
+	@Test
+	void testCreditHours() {
+		assertEquals(4, courses.get(0).getCreditHours());
+	}
+
+	@Test
+	void testIsTransfer() {
+		assertFalse(courses.get(0).isTransfer);
+	}
+
+	@Test
+	void testCourseUUID () {
+		assertEquals(UUID.fromString("b62aa096-37bb-4708-8f96-cc7d687973e2"), courses.get(0).getCourseID());
+	}
 }
 
 
