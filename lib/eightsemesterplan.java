@@ -6,7 +6,7 @@ import java.util.HashMap;
  * Represents an eight-semester academic plan for a student, including major requirements,
  * elective courses, and semester-wise course planning.
  */
-public class EightSemesterPlan {
+public class eightsemesterplan {
     private  ArrayList<Semester> semestersNeeded;
     private Student student;
     protected ArrayList<Course> whatIfCourses;
@@ -19,9 +19,10 @@ public class EightSemesterPlan {
      *
      * @param student The student for whom the plan is being created.
      * @param takeCourses The initial set of courses to take.
+ * @return 
      */
-    public EightSemesterPlan (Student student, ArrayList<Course> takeCourses ) {
-
+    public Object EightSemesterPlan (Student student, ArrayList<Course> takeCourses ) {
+        return null;
 }
 
 

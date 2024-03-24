@@ -1,0 +1,10 @@
+[{
+    "username":"JSmith",
+    "password":"koala",
+    "firstName":"Joanne",
+    "lastName":"Smith",
+    "uscID":"W83567892",
+    "user-UUID":"22a71808-5493-4e9e-abf4-905c37a0642b",
+    "students":["dfd6364e-d994-4e1f-bf55-1b1fd823b0c4","fee5cee4-1069-4359-81f4-b8878d570366",
+                "83ba200a-3075-4b39-9cc6-47089f5cec1b"]
+}]

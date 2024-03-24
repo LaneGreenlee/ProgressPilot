@@ -1,0 +1,17 @@
+[{
+    "username":"Brax",
+    "password":"West",
+    "firstName":"Brax",
+    "lastName":"West",
+    "uscID":"P123290",
+    "user_UUID":"dfd6364e-d994-4e1f-bf55-1b1fd823b0c4",
+    "gradYear":"2026",
+    "major":"Computer_Science",
+    "gpa":3.6,
+    "scholarships":["Life","Palmetto Fellows"],
+    "failedCourses":["b3d392ff-ccd5-46af-92d5-d2663369c13d"],
+    "currentCourses":[],
+    "completedCourses": {
+        "0acc5f8e-d7ef-413c-81ea-1d522be7ea14" : "A"
+    }
+}]
