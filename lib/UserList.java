@@ -13,6 +13,7 @@ public class UserList {
     public UserList() {
         students = new ArrayList<>();
         advisors = new ArrayList<>();
+        user = new ArrayList<>();
     }
     /**
      * looks through the user array list until finds a user that matches the username
