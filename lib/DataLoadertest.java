@@ -109,6 +109,28 @@ class DataLoadertest {
 	void testGetAdminPassword() {
 		assertEquals("koala", advisors.get(0).getPassword());
 	}
+
+	@Test
+	void testGetAdminFirstName() {
+		assertEquals("Joanne", advisors.get(0).getFirstName());
+	}
+
+	@Test
+	void testGetAdminLastName() {
+		assertEquals("Smith", advisors.get(0).getLastName());
+	}
+
+	@Test
+	void testGetAdminUSCID() {
+		assertEquals("W83567892", advisors.get(0).getUSCID());
+	}
+
+	@Test
+	void testGetAdminUUID() {
+		assertEquals("22a71808-5493-4e9e-abf4-905c37a0642b", advisors.get(0).getID());
+	}
+
+	
 }
 
 
