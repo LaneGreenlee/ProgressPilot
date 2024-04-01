@@ -5,53 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progress Pilot - Degree Audit System</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        body, html {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #fff;
-            text-align: center;
+            height: 100%;
+            overflow: hidden; /* Prevents scrolling */
         }
-        .container {
-            max-width: 600px;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-        a {
-            display: inline-block;
-            background-color: #fff;
-            color: #5a55a3;
-            padding: 10px 25px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        a:hover {
-            background-color: #5a55a3;
-            color: #fff;
+        iframe {
+            width: 100vw; /* 100% of the viewport width */
+            height: 100vh; /* 100% of the viewport height */
+            border: none; /* Removes the border around the iframe */
+            position: fixed; /* Makes the iframe stay in place even on scroll */
+            top: 0;
+            left: 0;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Progress Pilot: Your Degree Audit System</h1>
-        <p>Welcome to Progress Pilot, an innovative tool designed to streamline your academic journey. Explore the prototype to discover how Progress Pilot can transform your degree planning and tracking experience.</p>
-        <a href="https://mockitt.wondershare.com/proto/NoG0lTlzsayv7w44BFsBZH/sharing?view_mode=read_only #New Project-分享" target="_blank">Explore Progress Pilot</a>
-    </div>
+    <iframe src="https://mockitt.wondershare.com/proto/NoG0lTlzsayv7w44BFsBZH/sharing?view_mode=read_only" allowfullscreen></iframe>
 </body>
 </html>
